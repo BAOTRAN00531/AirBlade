@@ -1,4 +1,4 @@
-<form action="test2.php" method="post">
+<form action="khieunai_process.php" method="post">
 <input type="text" name="noidung" id="noidung">
 <br>
 <input type="text" name="UserID" value="1">
