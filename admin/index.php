@@ -46,6 +46,7 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet">
     <!-- css pu đánh giá -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
    
     <!-- <link rel="stylesheet" href="danhgia.css"> -->
     <!-- css nút ... -->
@@ -66,6 +67,8 @@
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
     
 </head>
     <body>
@@ -248,9 +251,14 @@
                 <!-- <div class="second-child"><?php
                          //include 'userpannel.php';
                         ?></div>    -->
+         
             </div>
             <section class="content-section">
-            
+                <?php
+                 $timezone=timezone_open('Asia/Ho_Chi_Minh');
+                 var_dump($timezone)
+                ?>
+            <div id="myfirstchart" style="height: 250px;"></div>
 <?php
     include "../dao/pdo.php";
     include "../dao/danhmuc.php";
@@ -395,7 +403,7 @@
                     break;
             }
         } 
-        
+      
 ?>
 
 </section>
@@ -412,11 +420,27 @@
         <script src="/js(new)/fb.js"></script>
         <script src="/js(new)/chedosangtoi.js"></script>
         <script>
-        // Chuyển giá trị PHP sang JavaScript
-        let isDay = <?php echo json_encode($themeMode === 'day'); ?>;
-
-        // Gọi hàm toggle() từ theme.js
-        toggle();
+                
+                    new Morris.Line({
+            // ID of the element in which to draw the chart.
+            element: 'myfirstchart',
+            // Chart data records -- each entry in this array corresponds to a point on
+            // the chart.
+            data: [
+                { year: '2008', value: 20 },
+                { year: '2009', value: 10 },
+                { year: '2010', value: 5 },
+                { year: '2011', value: 5 },
+                { year: '2012', value: 20 }
+            ],
+            // The name of the data record attribute that contains x-values.
+            xkey: 'year',
+            // A list of names of data record attributes that contain y-values.
+            ykeys: ['value'],
+            // Labels for the ykeys -- will be displayed when you hover over the
+            // chart.
+            labels: ['Value']
+            });
     </script>
         </div>
     </body> 
