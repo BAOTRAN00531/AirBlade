@@ -5,4 +5,9 @@ function khieunai_insert( $UserID , $ProductID , $NoiDung , $Image ){
     $sql = "INSERT INTO khieunai(MAND,MASP,NoiDung,HINH) VALUES('$UserID','$ProductID','$NoiDung','$Image')";
     pdo_execute($sql);
 }
+function khieunai_selectall()
+{
+    $sql = "SELECT * FROM khieunai";
+    return pdo_query($sql);
+}
 ?>
