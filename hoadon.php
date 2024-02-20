@@ -1,0 +1,31 @@
+<?php 
+include "../AirBlade/dao/pdo.php";
+include "../AirBlade/dao/hoadon.php";
+$NGAYDATHANG = date('d-m-Y H:i:s');
+$MASP = $_POST['idsp'];
+$iduser = $_POST['iduser'];
+$HOTEN = $_POST['name'];
+$DIACHI = $_POST['address'];
+$PHONE = $_POST['tel'];
+$EMAIL = $_POST['email'];
+$TONG = $_POST['total'];
+$PTTT = $_POST['pttt'];
+echo $_POST['name'];
+echo "<br>";
+echo $_POST['email'];
+echo "<br>";
+echo $_POST['address'];
+echo "<br>";
+echo $_POST['tel'];
+echo "<br>";
+echo $_POST['idsp'];
+echo "<br>";
+echo $_POST['iduser'];
+echo "<br>";
+echo $_POST['total'];
+echo "<br>";
+echo $_POST['pttt'];
+echo "<br>";
+echo $NGAYDATHANG;
+hoadon_insert( $MASP , $iduser , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );
+?>
