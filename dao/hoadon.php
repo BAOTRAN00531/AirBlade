@@ -7,4 +7,9 @@ include_once "pdo.php";
     VALUES( '$MASP' , '$iduser' , '$HOTEN' , '$DIACHI' , '$PHONE' , '$EMAIL' , '$TONG' , '$PTTT' , '$NGAYDATHANG' )";
     pdo_execute($sql);
     }
+    function hoadon_selectall()
+    {
+        $sql = "SELECT * FROM donhang";
+        return pdo_query($sql);
+    }
 ?>
