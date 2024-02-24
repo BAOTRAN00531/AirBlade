@@ -1,13 +1,33 @@
-<a href="index.php?action=listkn">list</a>
+<a href="Processor.php?action=listkn">list</a>
 <br>
 <?php 
 include "dao/pdo.php";
 include "dao/khieunai.php";
+include "dao/baidang.php";
+include "dao/danhgia.php";
 if ( isset( $_GET['action'] ) )
 {
     $act = $_GET['action'];
     switch ( $act )
     {
+        case 'themdg':
+            $NoiDung = $_POST['noidung'];
+            $ProductID = $_POST['ProductID'];
+            $UserID = $_POST['UserID'];
+            $Sao = $_POST['Sao'];
+            danhgia_insert($UserID,$ProductID,$NoiDung,$Sao);
+            $list_danhgia = danhgia_selectall();
+            break;
+        case 'thembd':
+            $NoiDung = $_POST['noidung'];
+            $Tag = $_POST['Tag'];
+            $UserID = $_POST['UserID'];
+            $Image = $_POST['image'];
+            $NgayDang = date('d-m-Y H:i:s');
+            baidang_insert( $UserID , $NoiDung ,$Tag , $Image , $NgayDang );
+            $list_baidang = baidang_selectall();
+            include "baidang_process.php";            
+            break;
         case 'themkn':
             $NoiDung = $_POST['noidung'];
             $ProductID = $_POST['ProductID'];
