@@ -10,7 +10,7 @@
                         <a href="#">Trang Chủ</a>
                         <a href="../HTML/gioithieu.html">Giới thiệu</a>
                             <div class="dropdown">
-                                    <button class="dropbtn"><a href="../HTML/danhmuc.html">Danh mục</a>
+                                    <button class="dropbtn"><a href="index.php?action=catory">Danh mục</a>
                                         <i class="fa fa-caret-down"></i>
                                     </button>
                                     <div class="dropdown-content">
@@ -24,7 +24,7 @@
 
                     <!--Biểu tượng login-->
                     <div class="login">
-                        <a href="#"><i class='fas fa-user-circle' style='font-size:50px'></i></a></i>
+                        <a href="../dangnhap.php"><i class='fas fa-user-circle' style='font-size:50px'></i></a></i>
                     </div>
             </div>
     </header>
