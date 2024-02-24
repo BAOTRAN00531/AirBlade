@@ -1,4 +1,4 @@
-<a href="index.php?action=listkn">list</a>
+<a href="khieunai.php?action=listkn">list</a>
 <br>
 <?php 
 include "dao/pdo.php";
