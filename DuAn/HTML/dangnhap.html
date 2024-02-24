@@ -4,158 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập</title>
-   <!-- <link rel="stylesheet" href="../CSS/trangchu.css"> -->
-
-    <style>
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #f0f0f0;
-            height: 10vh;
-        }
-
-        .header img {
-            width: 150px;
-        }
-
-        .header h1 {
-            margin: 0;
-        }
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .main .container {
-            display: flex;
-            padding: 0;
-            margin: 0;
-            justify-content: center;
-            align-items: center;
-            flex-direction: row;
-            background: #00b894;
-        }
-
-        .main .container{
-            padding:0%;
-            margin:0%;
-        }
-
-        .main .container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .main .container form {
-            display: flex;
-            flex-direction: column;
-            width: 300px;
-        }
-
-        .main .container form input {
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-
-        .main .container form button {
-            padding: 10px;
-            background-color: #f3f738;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        .footer {
-            padding: 20px;
-            text-align: center;
-            background-color: #f0f0f0;
-            height: 10vh;
-            display: flex;
-        }
-
-        .footer div {
-            width: 300px;
-        }
-
-        .footer a {
-            color: #00b894;
-            text-decoration: none;
-        }
-
-        .header .logo {
-            display: flex;
-            flex-direction: row;
-            align-content: flex-end;
-            align-items: center;
-        }
-
-        .text-help {
-            color: red;
-        }
-
-        .main-logo {
-            width: 500px;
-            padding-left: -100px;
-            margin: 0%;
-    
-        }
-
-        .form-container {
-            background: white;
-            padding: 10px;
-            margin-right: 50px;
-            width: 500px;
-            text-align: center;
-        }
-
-        form{
-padding-left: 100px;
-        }
-
-        .separate {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-   
-
-        .buttons-container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .facebook-button, .google-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            border-radius: 5px;
-            text-decoration: none;
-            color: #fff;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .facebook-button {
-            background-color: #486197; /* Facebook blue */
-        }
-
-        .google-button {
-            background-color: #57d84b; /* Google red */
-        }
-
-        .facebook-button:hover, .google-button:hover {
-            background-color: darken(currentColor, 10%);
-        }
-
-
-    </style>
+   <link rel="stylesheet" href="../CSS/login.css"> 
 </head>
 <body>
 <header class="header">
@@ -170,14 +19,16 @@ padding-left: 100px;
 <main class="main">
     <div class="container">
 
-        <img src="../IMG/logo.png" alt="main logo" class="main-logo">
+        <img src="../IMG/logo_final.png" alt="main logo" class="main-logo">
 
         <div class="form-container">
-            <h3>Đăng nhập</h3>
+            <br>
+            <h1>Đăng nhập</h1>
+            <br>
             <form action="/register" method="post">
                 <input type="text" name="username" placeholder="Email/ Số điện thoại / Tên đăng nhập">
                 <input type="password" name="password" placeholder="Mật khẩu">
-                <button type="submit">Đăng nhập</button>
+                <a href="../HTML/trangchu.html">Đăng nhập</a>
             </form>
             <br>
             <a href="#">Quên mật khẩu</a> 
@@ -188,7 +39,7 @@ padding-left: 100px;
                 <a href="https://www.facebook.com" class="facebook-button">Facebook</a>
                 <a href="https://www.google.com" class="google-button">Google</a>
             </div>
-            <p> Bạn có tài khoản chưa? <b>Đăng kí</b></p>
+            <p> Bạn có tài khoản chưa?<a href="../HTML/dangki.html"> Đăng ký</a></p>
         </div>
     </div>
 </main>
