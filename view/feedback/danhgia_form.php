@@ -1,4 +1,4 @@
-<form action="../../Processor.php?action=themdg" method="post">
+<form action="../../index.php?action=themdg" method="post">
 <input type="text" name="noidung" id="noidung">
 <br>
 <input type="text" name="UserID" value="1">
