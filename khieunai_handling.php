@@ -1,8 +1,8 @@
 <?php 
         foreach ($list_khieunai as $khieunai) {
           extract($khieunai);
-            $xoa="index.php?action=xoakn&MAKN=".$MAKN;
-            $luu="index.php?action=luukn&MAKN=".$MAKN."&iduser=".$iduser."&MASP=".$MASP."&NoiDung=".$NoiDung."&HINH=".$HINH."";
+            $xoa="Processor.php?action=xoakn&MAKN=".$MAKN;
+            $luu="Processor.php?action=luukn&MAKN=".$MAKN."&iduser=".$iduser."&MASP=".$MASP."&NoiDung=".$NoiDung."&HINH=".$HINH."";
             echo ' 
                 <tr>
             <td><input type="checkbox" name="name[]" id="check_all"></td>

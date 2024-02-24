@@ -1,9 +1,12 @@
-<form action="Processor.php?action=themkn" method="post">
+<form action="Processor.php?action=thembd" method="post">
 <input type="text" name="noidung" id="noidung">
 <br>
 <input type="text" name="UserID" value="1">
 <br>
-<input type="text" name="ProductID" value="1">
+<select name="Tag" id="Tag">
+    <option value="Yamaha">Yamaha</option>
+    <option value="Honda">Honda</option>
+</select>
 <br>
 <input type="file" name="image">
 <br>

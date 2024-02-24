@@ -1,14 +1,16 @@
 <?php 
-foreach ( $list_khieunai as $khieunai )
+foreach ( $list_baidang as $baidang )
 {
-    extract( $khieunai );
+    extract( $baidang );
     echo $NoiDung;
     echo "<br>";
-    echo $ProductID;
+    echo $Tag;
     echo "<br>";
     echo $UserID;
     echo "<br>";
     echo $Image;
+    echo "<br>";
+    echo $NgayDang;
 }
 ?>
 
