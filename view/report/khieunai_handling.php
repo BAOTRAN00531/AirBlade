@@ -13,6 +13,7 @@
             <td>'.$HINH.'</td>
             <td><a href="'.$xoa.'"><input type="button" value="Xóa"></a></td>
             <td><a href="'.$luu.'"><input type="button" value="luu"></a></td>
-                </tr>';
+                </tr>
+                <br>';
                             }
                         ?>

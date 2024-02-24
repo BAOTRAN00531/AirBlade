@@ -1,5 +1,5 @@
 <?php 
-foreach ( $list as $khieunai )
+foreach ( $list_khieunai as $khieunai )
 {
     extract( $khieunai );
     echo $NoiDung;
@@ -9,6 +9,7 @@ foreach ( $list as $khieunai )
     echo $UserID;
     echo "<br>";
     echo $Image;
+    echo "<br>";
 }
 ?>
 

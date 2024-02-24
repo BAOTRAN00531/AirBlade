@@ -17,6 +17,7 @@ if ( isset( $_GET['action'] ) )
             $Sao = $_POST['Sao'];
             danhgia_insert($UserID,$ProductID,$NoiDung,$Sao);
             $list_danhgia = danhgia_selectall();
+            include "../AirBlade/view/feedback/danhgia_process.php";
             break;
         case 'thembd':
             $NoiDung = $_POST['noidung'];
@@ -26,7 +27,7 @@ if ( isset( $_GET['action'] ) )
             $NgayDang = date('d-m-Y H:i:s');
             baidang_insert( $UserID , $NoiDung ,$Tag , $Image , $NgayDang );
             $list_baidang = baidang_selectall();
-            include "baidang_process.php";            
+            include "../AirBlade/view/post/baidang_process.php";            
             break;
         case 'themkn':
             $NoiDung = $_POST['noidung'];
@@ -35,11 +36,11 @@ if ( isset( $_GET['action'] ) )
             $Image = $_POST['image'];
             khieunai_insert( $UserID , $ProductID , $NoiDung , $Image );
             $list_khieunai = khieunai_selectall();
-            include "khieunai_process.php";
+            include "../AirBlade/view/report/khieunai_process.php";
             break;
         case 'listkn':
             $list_khieunai = khieunai_selectall();
-            include "khieunai_handling.php";
+            include "../AirBlade/view/report/khieunai_handling.php";
             break;
         case 'xoakn':
             if( isset( $_GET['MAKN'] ) && ( $_GET['MAKN'] > 0 ) )
@@ -47,7 +48,7 @@ if ( isset( $_GET['action'] ) )
                 khieunai_delete( $_GET['MAKN'] );
             }
             $list_khieunai = khieunai_selectall();
-            include "khieunai_handling.php";
+            include "../AirBlade/view/report/khieunai_handling.php";
         break;
         case 'luukn':
             if( isset( $_GET['MAKN'] ) && ( $_GET['MAKN'] > 0 ) )
@@ -60,7 +61,7 @@ if ( isset( $_GET['action'] ) )
                 luutru_khieunai( $UserID , $MASP , $NoiDung , $HINH );
             }
             $list_khieunai = khieunai_selectall();
-            include "khieunai_handling.php";
+            include "../AirBlade/view/report/khieunai_handling.php";
     }
 }
 
