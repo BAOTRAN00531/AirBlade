@@ -8,6 +8,15 @@ if ( isset( $_GET['action'] ) )
     $act = $_GET['action'];
     switch ( $act )
     {
+        case 'themkn':
+            $NoiDung = $_POST['noidung'];
+            $ProductID = $_POST['ProductID'];
+            $UserID = $_POST['UserID'];
+            $Image = $_POST['image'];
+            khieunai_insert( $UserID , $ProductID , $NoiDung , $Image );
+            $list_khieunai = khieunai_selectall();
+            include "khieunai_process.php";
+            break;
         case 'listkn':
             $list_khieunai = khieunai_selectall();
             include "khieunai_handling.php";
