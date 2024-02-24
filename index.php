@@ -82,9 +82,23 @@
                         $list_baidang = baidang_selectall();
                         include "../AirBlade/view/post/baidang_process.php";            
                         break;    
+                
                     case 'catory':
                         include "catory.php";
                         break;
+                    case 'news':
+                        include "view/content/news.php";
+                    case 'introduce':
+                        include "view/content/introduce.php";
+                    case 'contact':
+                            include "view/content/contact.php";
+                    case 'signup':
+                                include "view/sign/register.php";
+                                break;
+                    case 'signin':
+                            include "view/sign/login.php";
+                   
+
                 }}
          else {
                 include "view/content/main.php";    

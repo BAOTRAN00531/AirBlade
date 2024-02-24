@@ -20,7 +20,7 @@ if (!isset($_SESSION['valid'])) {
 <body>
     <div class="nav">
         <div class="logo">
-            <p><a href="home.php">Logo</a> </p>
+        
         </div>
 
         <div class="right-links">

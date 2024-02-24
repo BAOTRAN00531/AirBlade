@@ -1,53 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="../CSS/trangchu.css">
-        <link rel="stylesheet" href="../CSS/style2.css">
-        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> <!-- Thêm icon-->
-        <title>Airblade Team</title>
-    </head>
-    <body>
-        <header>
-
-            <div class="topnav">
-              <!--Logo-->
-              <div class="top-content">
-                  <img src="../IMG/logo.png" alt="">
-              </div>
-      
-              <!--Menu-->
-              <div class="navbar">
-                <a href="../HTML/trangchu.html">Trang Chủ</a>
-                <a href="../HTML/gioithieu.html">Giới thiệu</a>
-                <div class="dropdown">
-                    <button class="dropbtn"><a href="../HTML/danhmuc.html">Danh mục</a>
-                      <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                      <a href="../HTML/honda.html">Honda</a>
-                      <a href="../HTML/yamaha.html">Yamaha</a>
-                    </div>
-                  </div>
-                  <a href="#">Tin tức</a>
-                  <a href="../HTML/lienhe.html">Liên hệ</a>
-              </div>
-      
-                <!--Biểu tượng login-->
-                <div class="login">
-                  <a href="../HTML/dangnhap.html"><i class='fas fa-user-circle' style='font-size:50px'></i></a></i>
-              </div>
-              </div>
-      </header>
-      
-      <!----------------------- Banner------------------------->
-      <div class="banner">
-        <img src="../IMG/banner_new_final.png">
-      </div>
-      <section id="main">
+<section id="main">
         <h1>Tin tức mới</h1>
         <hr>
         <div class="container">
@@ -144,20 +95,3 @@
             </div>
         </div>
     </section>
-    <footer>
-        <div class="left-column">
-          LIÊN HỆ<br>
-              · SDT: 0977234567<br>
-              · Email: Abladeshowroom@gmail.com
-        </div>
-        
-        <div class="right-column">
-          ĐỊA CHỈ SHOWROOM<br>
-              · Tòa nhà innovation,<br> Công viên 
-                 phần mềm Quang Trung Quận 12
-        </div>
-        <hr>
-       <h5>@2024. Copyright by ABlade VN</h5>
-      </footer>
-    </body>
-</html>

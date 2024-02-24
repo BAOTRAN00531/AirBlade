@@ -17,7 +17,7 @@ session_start();
         <div class="box form-box">
             <?php
 
-            include("php/config.php");
+
             if (isset($_POST['submit'])) {
                 $email = mysqli_real_escape_string($con, $_POST['email']);
                 $password = mysqli_real_escape_string($con, $_POST['password']);
@@ -58,7 +58,7 @@ session_start();
                         <input type="submit" class="btn" name="submit" value="Đăng nhập" required>
                     </div>
                     <div class="links">
-                        Bạn chưa có tài khoản? <a href="register.php">Đăng ký ngay</a>
+                        Bạn chưa có tài khoản? <a href="index.php?action=signup">Đăng ký ngay</a>
                     </div>
                 </form>
         </div>
