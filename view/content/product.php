@@ -2,7 +2,7 @@
     <div class="container" id="'.$LOAISP.'">
         <?php  
         
-       foreach ($dsdm as $dm)
+       foreach ($dsdmf as $dm)
             {
               $THUTU = $dm['THUTU']; // Trích xuất giá trị của $THUTU từ mỗi phần tử trong mảng
                $LOAISP = $dm['LOAISP'];
@@ -22,7 +22,7 @@
                                 <img src="'.$hinh.'" alt="'.$TENSP.'">
                                 <h4>'.$TENSP.'</h4>
                                 <p>'. $GIASP . " ₫ ".'</p>
-                                <button>Mua ngay</button>;
+                                <button>Mua ngay</button>
                                 </a>
                         </div>
                     ';
