@@ -61,6 +61,13 @@
                             $dssp = sanpham_selectall($search, $iddm);
                             include "view/product/product.php";
                         break;
+                    case 'showdetail':
+                        if(isset($_GET['idsp'])&&($_GET['idsp']>0)){
+                            $id=$_GET['idsp'];
+                          $onesp=sanpham_select_by_id($id);}
+                          include "view/maincontent/showdetailpo.php";
+                        break;
+                        break;
                     case 'luukn':
                         if( isset( $_GET['MAKN'] ) && ( $_GET['MAKN'] > 0 ) )
                         {
