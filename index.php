@@ -59,7 +59,7 @@
                                 //include "view/maincontent/chinh.php";
                             }
                             $dssp = sanpham_selectall($search, $iddm);
-                            include "view/content/product.php";
+                            include "view/product/product.php";
                         break;
                     case 'luukn':
                         if( isset( $_GET['MAKN'] ) && ( $_GET['MAKN'] > 0 ) )
