@@ -89,7 +89,7 @@ function sanpham_select_all($keyw,$iddm){
  */
 function sanpham_select_by_id($ma_hh){
     $sql = "SELECT * FROM sanpham WHERE MASP=".$ma_hh;
-    return pdo_query($sql);
+    return pdo_query_one($sql);
 }
 
 function sanpham_exist($ma_hh){

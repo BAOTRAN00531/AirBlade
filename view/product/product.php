@@ -2,12 +2,12 @@
     <div class="container" id="'.$LOAISP.'">
         <?php  
         
-       foreach ($dsdmf as $dm)
+       foreach ($dmf as $dm)
             {
               $THUTU = $dm['THUTU']; // Trích xuất giá trị của $THUTU từ mỗi phần tử trong mảng
                $LOAISP = $dm['LOAISP'];
             
-                echo '<h2 >'.$LOAISP.'</h2>';
+                echo '<h2>'.$LOAISP.'</h2>';
                                         }
         ?>
         <div class="row">

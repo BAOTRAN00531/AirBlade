@@ -40,18 +40,16 @@
                             }
                             if(isset($_POST['iddm']) && ($_POST['iddm'] > 0)){
                                 $IDDM = $_POST['IDDM'];
-                                $dsdmf = danhmucSelectByID($IDDM);
                             } else {
                                 $iddm = 0;
                             }
                             if(isset($_GET['thutu']) && ($_GET['thutu'] > 0)){
                                 $thutu = $_GET['thutu'];
                                 $iddm = getIDDMByOrder($thutu);
-                                $dsdmf = danhmucSelectByID($THUTU);
                                 if ($iddm) {
                                     $dssp = sanpham_selectall("", $iddm);
-                                    $tendm = load_tendm($iddm);
-                                
+                                    $tendm = load_tendm($thutu);
+                                    $dmf = danhmuc_filter($thutu);
                                 } else {
                                     // Xử lý trường hợp không tìm thấy danh mục
                                 }
