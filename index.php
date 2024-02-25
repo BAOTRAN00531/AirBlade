@@ -39,15 +39,16 @@
                             else{
                                 $search = "";
                             }
-                            if(isset($_GET['iddm']) && ($_GET['iddm'] > 0)){
-                                $iddm = $_POST['iddm'];
+                            if(isset($_POST['iddm']) && ($_POST['iddm'] > 0)){
+                                $IDDM = $_POST['IDDM'];
+                                $dsdmf = danhmucSelectByID($IDDM);
                             } else {
                                 $iddm = 0;
                             }
-                            
                             if(isset($_GET['thutu']) && ($_GET['thutu'] > 0)){
                                 $thutu = $_GET['thutu'];
                                 $iddm = getIDDMByOrder($thutu);
+                                $dsdmf = danhmucSelectByID($THUTU);
                                 if ($iddm) {
                                     $dssp = sanpham_selectall("", $iddm);
                                     $tendm = load_tendm($iddm);
@@ -58,6 +59,7 @@
                             } else {
                                 //include "view/maincontent/chinh.php";
                             }
+                            
                             $dssp = sanpham_selectall($search, $iddm);
                             include "view/product/product.php";
                         break;

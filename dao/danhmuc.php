@@ -64,6 +64,12 @@ function danhmuc_loadall(){
     $listdanhmuc=pdo_query($sql);
     return $listdanhmuc;
 }
+function danhmucSelectByID($THUTU)
+{
+    $sql = "SELECT * FROM danhmuc WHERE THUTU=$THUTU";
+    $dsdmf = pdo_query($sql);
+    return $dsdmf;
+}
 function getIDDMByOrder($thutu) {
     $sql = "SELECT IDDM FROM danhmuc WHERE THUTU = ?";
     return pdo_query_value($sql, $thutu);
