@@ -1,11 +1,21 @@
+<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+<style>
+table
+{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+</style>
 <section id="main">
     <?php 
-        foreach ($dssp as $sp) {
+        foreach ($onesp as $sp) {
             extract($sp);
-            $hinh = $imgPath . $hinhanh;
-            echo'<table class="xe">
+            $hinh = "uploads/". $hinhanh;
+            echo
+            '<table class="xe">
                     <tr>
-                    <th><img src="'.$hinh.'"alt="'.$TENSP.'"></th>
+                    <th><img src="'.$hinh.'"alt="'.$TENSP.'" height="204px" width="450px"></th>
                     <th class="tieude"><p><h2>'.$TENSP.'</h2>
                                     <br>
                                     <h3>'. $GIASP . " ₫ ".'</h3>
@@ -31,17 +41,19 @@
      <br>
      <div class="wrapper">
         <h3> ĐÁNH GIÁ KHÁCH HÀNG</h3><br>
-        <form>
+        <form action="../../index.php?action=themdg" method="post">
             <div class="rating">
-                <input type="number" name="rating" hidden>
-                <i class='bx bx-star star'></i>
-                <i class='bx bx-star star'></i>
-                <i class='bx bx-star star'></i>
-                <i class='bx bx-star star'></i>
-                <i class='bx bx-star star'></i>
+                <input type="number" name="Sao" hidden>
+                <i class="bx bx-star star"></i>
+                <i class="bx bx-star star"></i>
+                <i class="bx bx-star star"></i>
+                <i class="bx bx-star star"></i>
+                <i class="bx bx-star star"></i>
             </div>
-            <textarea name="opinion" cols="70" row="9" placeholder="Hãy chia sẻ cảm nhận..."></textarea>
+            <textarea name="noidung" cols="70" row="9" placeholder="Hãy chia sẻ cảm nhận..."></textarea>
             <div class="btn-group">
+            <input type="text" name="UserID" value="0" hidden>
+            <input type="text" name="ProductID" value="'.$id.'" hidden>
                 <button type="submit" class="btn submit">Submit</button>
 
             </div>

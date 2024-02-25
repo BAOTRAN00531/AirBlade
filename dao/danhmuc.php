@@ -47,7 +47,8 @@ function danhmuc_select_all(){
  */
 function danhmuc_select_by_id($id){
     $sql = "SELECT * FROM danhmuc WHERE THUTU=".$id;
-    return pdo_query_one($sql);
+    $onesp = pdo_query($sql);
+    return $onesp;
 }
 /**
  * Kiểm tra sự tồn tại của một loại

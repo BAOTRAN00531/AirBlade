@@ -7,15 +7,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
-        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous">
-    </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="CSS/trangchu.css">
-    <link rel="stylesheet" href="CSS/danhgia.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS/trangchu.css">
+    <link rel="stylesheet" href="../CSS/chitietsp.css">
+    <link rel="stylesheet" href="../CSS/danhgia.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> <!-- Thêm icon-->
-    <title>AirBlade</title>
+    <title>Airblade Team</title>
 </head>
 
 <body>
@@ -67,8 +66,7 @@
                         if(isset($_GET['idsp'])&&($_GET['idsp']>0)){
                             $id=$_GET['idsp'];
                           $onesp=sanpham_select_by_id($id);}
-                          include "view/maincontent/showdetailpo.php";
-                        break;
+                          include "view/product/showdetail.php";
                         break;
                     case 'luukn':
                         if( isset( $_GET['MAKN'] ) && ( $_GET['MAKN'] > 0 ) )

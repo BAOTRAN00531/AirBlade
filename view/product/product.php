@@ -19,7 +19,7 @@
                     echo'  
                     <div class="product">
                     <a href="index.php?action=showdetail&idsp='.$MASP.'">
-                                <img src="'.$hinh.'" alt="'.$TENSP.'">
+                                <img src="'.$hinh.'" alt="'.$TENSP.'" width="20%" height="20%">
                                 <h4>'.$TENSP.'</h4>
                                 <p>'. $GIASP . " ₫ ".'</p>
                                 <button>Mua ngay</button>
