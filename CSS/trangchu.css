@@ -247,29 +247,56 @@ h1{
 }
 
 /*----------------------- lien hệ----------------------------*/
-.bentrai{
-  width: 40%;
-  height: 200px;
-  float: left;
-  padding: 2%;
-  font-size: 20px;
-  padding-top: 0px;
-  padding-left:150px ;
-  background-color: rgb(222, 222, 222);
+.hoidap .row {
+  align-items: center;
 }
 
-.benphai{
-  width: 60%;
-  height: 200px;
-  float: right;
-  padding: 2%;
-  padding-left: 5%;
-  background-color: rgb(172, 171, 171);
-  font-size: 30px;
+.hoidap .row form {
+
+  padding: 10px 45px;
+  box-shadow: 3px 4px rgba(0, 0, 0, .1);
+  border: 3px solid rgba(0, 0, 0, .1);
+  background: none;
+  border-radius: 30px;
 }
 
-iframe{
-  padding-top: 15px;
-  padding-bottom: 15px;
+#img {
+  width: 75%;
+  margin-left: 100px;
+  height: auto;
+}
 
+.hoidap .row form .box {
+  padding: 10px;
+  font-size: 17px;
+  color: #333;
+  text-transform: none;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 10px;
+  margin: 7px 0;
+  width: 100%;
+}
+
+button {
+  border: none;
+  display: inline-block;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 12px 48px;
+  border-radius: 50px;
+  background-color: #017a74;
+  cursor: pointer;
+  color:white;
+}
+button:hover {
+  background-color: #00d6cb;
+}
+
+.hoidap .row form textarea {
+  height: 150px;
+  resize: none;
+}
+
+.hoidap {
+  padding-left: 70px;
 }
