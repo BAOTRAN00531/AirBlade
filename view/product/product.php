@@ -18,12 +18,12 @@
                     $hinh = $imgPath . $hinhanh;
                     echo'  
                     <div class="product">
-                    <a href="index.php?action=sanphamct&idsp='.$MASP.'">
+                    <a href="index.php?action=showdetail&idsp='.$MASP.'">
                                 <img src="'.$hinh.'" alt="'.$TENSP.'">
                                 <h4>'.$TENSP.'</h4>
                                 <p>'. $GIASP . " ₫ ".'</p>
                                 <button>Mua ngay</button>
-                                </a>
+                        </a>
                         </div>
                     ';
                 }
