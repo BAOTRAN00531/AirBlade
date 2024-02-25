@@ -85,7 +85,7 @@
                     <input type="submit" class="btn" name="submit" value="Đăng ký">
                 </div>
                 <div class="links">
-                    Đã có tài khoản? <a href="index.php">Đăng nhập</a>
+                    Đã có tài khoản? <a href="index.php?action=signin">Đăng nhập</a>
                 </div>
             </form>
             <?php } ?>
