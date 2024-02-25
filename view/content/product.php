@@ -1,7 +1,14 @@
 <section id="main">
-    <div class="container">
+    <div class="container" id="'.$LOAISP.'">
         <?php  
-              echo '<h2>'.$LOAISP.'</h2>';
+        
+       foreach ($dsdm as $dm)
+            {
+              $THUTU = $dm['THUTU']; // Trích xuất giá trị của $THUTU từ mỗi phần tử trong mảng
+               $LOAISP = $dm['LOAISP'];
+            
+                echo '<h2 >'.$LOAISP.'</h2>';
+                                        }
         ?>
         <div class="row">
             <?php
