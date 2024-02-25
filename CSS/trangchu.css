@@ -247,6 +247,7 @@ h1{
 }
 
 /*----------------------- lien hệ----------------------------*/
+
 .hoidap .row {
   align-items: center;
 }
@@ -299,4 +300,68 @@ button:hover {
 
 .hoidap {
   padding-left: 70px;
+}
+
+/*KHIẾU NẠI */
+#display_image{
+  width: 700px;
+  height: 200px;
+  border: 1px solid black;
+  background-position: center;
+  background-size: cover;
+}
+
+.khieunai .row {
+  align-items: center;
+}
+
+.khieunai .row form {
+
+  padding: 10px 45px;
+  box-shadow: 3px 4px rgba(0, 0, 0, .1);
+  border: 3px solid rgba(0, 0, 0, .1);
+  background: none;
+  border-radius: 30px;
+}
+
+#img {
+  width: 75%;
+  margin-left: 100px;
+  height: auto;
+}
+
+.khieunai .row form .box {
+  padding: 10px;
+  font-size: 17px;
+  color: #333;
+  text-transform: none;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 10px;
+  margin: 7px 0;
+  width: 100%;
+}
+
+button {
+  border: none;
+  display: inline-block;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 12px 48px;
+  border-radius: 50px;
+  background-color: #017a74;
+  cursor: pointer;
+  color:white;
+}
+button:hover {
+  background-color: #00d6cb;
+}
+
+.khieunai .row form textarea {
+  height: 150px;
+  resize: none;
+}
+
+.khieunai {
+  padding-left: 70px;
+  margin-bottom: 15px;
 }
