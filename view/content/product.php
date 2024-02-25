@@ -1,9 +1,26 @@
-<div class="row">
-            <!-- Dãy hiển thị sản phẩm 1 -->
-                <div class="product">
-                    <img src="../IMG/Products1.jpg" alt="Sản phẩm 1">
-                    <h4>Tên sản phẩm 1</h4>
-                    <p>Giá: 100.000 VND</p>
-                    <button>Mua ngay</button>
-                </div>
+<section id="main">
+    <div class="container">
+        <?php  
+              echo '<h2>'.$LOAISP.'</h2>';
+        ?>
+        <div class="row">
+            <?php
+            $imgPath="uploads/";
+                foreach ($dssp as $sp) {
+                    extract($sp);
+                    $hinh = $imgPath . $hinhanh;
+                    echo'  
+                    <div class="product">
+                    <a href="index.php?action=sanphamct&idsp='.$MASP.'">
+                                <img src="'.$hinh.'" alt="'.$TENSP.'">
+                                <h4>'.$TENSP.'</h4>
+                                <p>'. $GIASP . " ₫ ".'</p>
+                                <button>Mua ngay</button>;
+                                </a>
+                        </div>
+                    ';
+                }
+            ?>
             </div>
+    </div>
+</section>

@@ -12,6 +12,8 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="CSS/trangchu.css">
+    <link rel="stylesheet" href="CSS/danhgia.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> <!-- Thêm icon-->
     <title>AirBlade</title>
 </head>
@@ -25,10 +27,40 @@
         include "dao/hoadon.php";
         include "dao/khieunai.php";
         include "dao/baidang.php";
+        $dsdm=danhmuc_loadall();
         include "view/header.php";
         if (isset($_GET['action'] )&&($_GET['action'])) {
             $action = $_GET['action'];
                 switch ($action) {
+                    case 'product':
+                        if(isset($_POST['search']) && ($_POST['search'] !="")){
+                                $search = $_POST["search"];
+                            }
+                            else{
+                                $search = "";
+                            }
+                            if(isset($_GET['iddm']) && ($_GET['iddm'] > 0)){
+                                $iddm = $_POST['iddm'];
+                            } else {
+                                $iddm = 0;
+                            }
+                            
+                            if(isset($_GET['thutu']) && ($_GET['thutu'] > 0)){
+                                $thutu = $_GET['thutu'];
+                                $iddm = getIDDMByOrder($thutu);
+                                if ($iddm) {
+                                    $dssp = sanpham_selectall("", $iddm);
+                                    $tendm = load_tendm($iddm);
+                                
+                                } else {
+                                    // Xử lý trường hợp không tìm thấy danh mục
+                                }
+                            } else {
+                                //include "view/maincontent/chinh.php";
+                            }
+                            $dssp = sanpham_selectall($search, $iddm);
+                            include "view/content/product.php";
+                        break;
                     case 'luukn':
                         if( isset( $_GET['MAKN'] ) && ( $_GET['MAKN'] > 0 ) )
                         {

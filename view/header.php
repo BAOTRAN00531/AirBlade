@@ -10,12 +10,19 @@
                         <a href="#">Trang Chủ</a>
                         <a href="index.php?action=introduce">Giới thiệu</a>
                             <div class="dropdown">
-                                    <button class="dropbtn"><a href="index.php?action=catory">Danh mục</a>
+                                    <button class="dropbtn"><a href="index.php?action=product">Danh mục</a>
                                         <i class="fa fa-caret-down"></i>
                                     </button>
                                     <div class="dropdown-content">
-                                        <a href="../HTML/honda.html">Honda</a>
-                                        <a href="../HTML/yamaha.html">Yamaha</a>
+                                    <?php
+                                        foreach ($dsdm as $dm)
+                                        {
+                                            $THUTU = $dm['THUTU']; // Trích xuất giá trị của $THUTU từ mỗi phần tử trong mảng
+                                            $LOAISP = $dm['LOAISP'];
+                                            $dm = "index.php?action=product&thutu=".$THUTU;
+                                            echo '<a href="'.$dm.'">'.$LOAISP.'</a>';
+                                        }
+                                   ?>
                                     </div>
                                 </div>
                         <a href="index.php?action=news">Tin tức</a>
