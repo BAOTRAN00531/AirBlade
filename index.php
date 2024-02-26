@@ -31,6 +31,22 @@
         if (isset($_GET['action'] )&&($_GET['action'])) {
             $action = $_GET['action'];
                 switch ($action) {
+                    case 'catalogs':
+                        $dmf1 = danhmuc_filter(1);
+                        foreach ( $dmf1 as $one )
+                        {
+                            extract($one);
+                            $iddm1 = $one['IDDM'];
+                        }
+                        $list1 = sanpham_selectall("", $iddm1);
+                        $dmf2 = danhmuc_filter(2);
+                        foreach ( $dmf2 as $two )
+                        {
+                            extract($two);
+                            $iddm2 = $two['IDDM'];
+                        }
+                        include "view/product/catalogs.php";
+                        break;
                     case 'product':
                         if(isset($_POST['search']) && ($_POST['search'] !="")){
                                 $search = $_POST["search"];

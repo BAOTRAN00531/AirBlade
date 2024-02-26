@@ -2,7 +2,7 @@
         <div class="topnav">
                     <!--Logo-->
                     <div class="top-content">
-                        <img src="IMG/logo.png" alt="">
+                        <a href="../index.php?"><img src="IMG/logo.png" alt=""></a>
                     </div>
 
                     <!--Menu-->
@@ -10,7 +10,7 @@
                         <a href="#">Trang Chủ</a>
                         <a href="index.php?action=introduce">Giới thiệu</a>
                             <div class="dropdown">
-                                    <button class="dropbtn"><a href="index.php?action=product">Danh mục</a>
+                                    <button class="dropbtn"><a href="index.php?action=catalogs">Danh mục</a>
                                         <i class="fa fa-caret-down"></i>
                                     </button>
                                     <div class="dropdown-content">
