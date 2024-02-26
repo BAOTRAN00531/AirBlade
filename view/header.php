@@ -29,13 +29,13 @@
                         <a href="index.php?action=contact">Liên hệ</a>
                     </div>
 
-                    <!--Biểu tượng login-->
-                    <div class="login">
-                        <a href="index.php?action=signin"><i class='fas fa-user-circle' style='font-size:50px'></i></a></i>
-                    </div>
-            </div>
-    </header>
-    <!----------------------- Banner------------------------->
+        <!--Biểu tượng login-->
+        <div class="login">
+            <a href="index.php?action=signin"><i class='fas fa-user-circle' style='font-size:50px'></i></a></i>
+        </div>
+    </div>
+</header>
+<!----------------------- Banner------------------------->
 <div class="banner">
-        <img src="IMG/banner_new_final.png">
+    <img src="IMG/banner_new_final.png">
 </div>
