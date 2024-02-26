@@ -2,12 +2,12 @@
     <div class="container" id="'.$LOAISP.'">
         <?php  
         
-       foreach ($dsdm as $dm)
+       foreach ($dmf as $dm)
             {
               $THUTU = $dm['THUTU']; // Trích xuất giá trị của $THUTU từ mỗi phần tử trong mảng
                $LOAISP = $dm['LOAISP'];
             
-                echo '<h2 >'.$LOAISP.'</h2>';
+                echo '<h2>'.$LOAISP.'</h2>';
                                         }
         ?>
         <div class="row">
@@ -18,12 +18,12 @@
                     $hinh = $imgPath . $hinhanh;
                     echo'  
                     <div class="product">
-                    <a href="index.php?action=sanphamct&idsp='.$MASP.'">
-                                <img src="'.$hinh.'" alt="'.$TENSP.'">
+                    <a href="index.php?action=showdetail&idsp='.$MASP.'">
+                                <img src="'.$hinh.'" alt="'.$TENSP.'" width="20%" height="20%">
                                 <h4>'.$TENSP.'</h4>
                                 <p>'. $GIASP . " ₫ ".'</p>
-                                <button>Mua ngay</button>;
-                                </a>
+                                <button>Mua ngay</button>
+                        </a>
                         </div>
                     ';
                 }
