@@ -7,7 +7,7 @@
 
                     <!--Menu-->
                     <div class="navbar">
-                        <a href="#">Trang Chủ</a>
+                        <a href="index.php">Trang Chủ</a>
                         <a href="index.php?action=introduce">Giới thiệu</a>
                             <div class="dropdown">
                                     <button class="dropbtn"><a href="index.php?action=catalogs">Danh mục</a>
