@@ -21,12 +21,12 @@
 		</a>
 		<ul class="side-menu top">
 			<li>
-				<a href="#">
+				<a href="index.php?action=listdm">
 					<i class='bx bxs-doughnut-chart' ></i>
-					<span class="text">Quản lý thống kê</span>
+					<span class="text">Quản lý danh mục</span>
 				</a>
 			</li>
-			<li>
+			<li >
 				<a href="index.php?action=listsp">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Quản lý sản phẩm</span>
@@ -56,7 +56,7 @@
 					<span class="text">Quản lý đánh giá</span>
 				</a>
 			</li>
-			<li class="active">
+			<li>
 				<a href="#">
 					<i class='bx bxs-group' ></i>
 					<span class="text">Quản lý tài khoản</span>
@@ -78,16 +78,6 @@
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu' ></i>
-			<!-- <a href="#" class="nav-link" class="sp">Quản lý sản phẩm</a> -->
-			<form action="#">
-				<div class="form-input">
-					<input type="search" placeholder="Search...">
-					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
-				</div>
-			</form>
-                
-			<input type="checkbox" id="switch-mode" hidden>
-			<label for="switch-mode" class="switch-mode"></label>
 		</nav>
 		<!-- NAVBAR -->
         <?php
