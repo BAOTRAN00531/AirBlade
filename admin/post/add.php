@@ -41,7 +41,7 @@
         <div>
             <input type="submit" id="add" name="addpost" value="Thêm">
             <input type="reset" value="Nhập lại">
-            <a href="index.php?action=listdm"><input type="button" value="Danh Sách">
+            <a href=""><input type="button" value="Danh Sách">
         </div>
     </form>
 </body>
