@@ -26,7 +26,7 @@
 					<span class="text">Quản lý danh mục</span>
 				</a>
 			</li>
-			<li class="active">
+			<li >
 				<a href="index.php?action=listsp">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Quản lý sản phẩm</span>
