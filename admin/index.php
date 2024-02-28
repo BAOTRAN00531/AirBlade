@@ -21,9 +21,9 @@
 		</a>
 		<ul class="side-menu top">
 			<li>
-				<a href="#">
+				<a href="index.php?action=listdm">
 					<i class='bx bxs-doughnut-chart' ></i>
-					<span class="text">Quản lý thống kê</span>
+					<span class="text">Quản lý danh mục</span>
 				</a>
 			</li>
 			<li class="active">
