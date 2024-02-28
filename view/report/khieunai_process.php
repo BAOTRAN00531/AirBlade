@@ -1,7 +1,6 @@
 <?php 
-foreach ( $list_khieunai as $khieunai )
-{
-    extract( $khieunai );
+
+
     echo $NoiDung;
     echo "<br>";
     echo $ProductID;
@@ -10,6 +9,6 @@ foreach ( $list_khieunai as $khieunai )
     echo "<br>";
     echo $Image;
     echo "<br>";
-}
+
 ?>
 

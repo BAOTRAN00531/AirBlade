@@ -33,7 +33,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="index.php?action=listdh">
 					<i class='bx bxs-receipt'></i>
 					<span class="text">Quản lý đơn hàng</span>
 				</a>
@@ -95,6 +95,7 @@
     include "../dao/danhmuc.php";
     include "../dao/sanpham.php";
     include "../dao/post.php";
+    include "../dao/hoadon.php";
     if (isset($_GET['action'] )) {
         $act = $_GET['action'];
         switch ($act) {
@@ -209,6 +210,45 @@
                 $sanpham=sanpham_select_by_id($id);
                 include "product/list.php";
                 break;
+            case 'listdh':
+                $listdh = hoadon_selectall();
+                include "order/list.php";
+                break;
+            case 'xoadh':
+                if (isset($_GET['IDDH'])&&($_GET['IDDH']>0)) {
+                    hoadon_delete($_GET['IDDH']);
+                  }
+                  $listdh = hoadon_selectall();
+                  include "order/list.php";
+                break;
+                case 'suadh':
+                    if (isset($_GET['IDDH'])&&($_GET['IDDH']>0)) {
+                        $dh=hoadon_select_by_id($_GET['IDDH']);
+                        if (is_array($dh)) {
+                            extract($dh);
+                        } else {
+                            echo "Không tìm thấy sản phẩm";
+                        }
+                    }
+                    include "order/update.php";
+                    break;
+                case 'updatedh':
+                    if (isset($_POST['capnhatdh'])&&($_POST['capnhatdh'])) {
+                        $IDDH = $_POST['IDDH'];
+                        $HOTEN = $_POST['HOTEN'];
+                        $DIACHI = $_POST['DIACHI'];
+                        $PHONE = $_POST['PHONE'];
+                        $EMAIL = $_POST['EMAIL'];
+                        $PTTT = $_POST['PTTT'];
+                        $TONG = $_POST['TONG'];
+                        $NGAYDATHANG = $_POST['NGAYDATHANG'];
+                        
+                      }
+                      hoadon_update( $IDDH , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );  
+                    $listdh = hoadon_selectall();
+                    include "order/list.php";
+                    break;
+                
             case 'addpost':
                     if(isset($_POST['addpost'])&&($_POST['addpost'])){
                         $ten=$_POST['tenbv'];

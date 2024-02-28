@@ -33,6 +33,19 @@ ob_start();
         if (isset($_GET['action'] )&&($_GET['action'])) {
             $action = $_GET['action'];
                 switch ($action) {
+                    case 'hoadon':
+                        $NGAYDATHANG = date('d-m-Y');
+                        $MASP = $_POST['idsp'];
+                        $iduser = $_POST['iduser'];
+                        $HOTEN = $_POST['HOTEN'];
+                        $DIACHI = $_POST['DIACHI'];
+                        $PHONE = $_POST['SDT'];
+                        $EMAIL = $_POST['email'];
+                        $TONG = $_POST['TONG'];
+                        $PTTT = $_POST['pttt'];
+                        hoadon_insert( $MASP , $iduser , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );
+                        include "view/order/hoadon.php";
+                        break;
                     case 'catalogs':
                         $dmf1 = danhmuc_filter(1);
                         foreach ( $dmf1 as $one )
