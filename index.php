@@ -47,6 +47,7 @@ ob_start();
                             extract($two);
                             $iddm2 = $two['IDDM'];
                         }
+                        $list2 = sanpham_selectall("", $iddm2);
                         include "view/product/catalogs.php";
                         break;
                     case 'product':

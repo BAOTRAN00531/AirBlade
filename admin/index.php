@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+   
 	<!-- My CSS -->
 	<link rel="stylesheet" href="../CSS/admin.css">
 
@@ -44,9 +45,9 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="index.php?action=addpost">
 					<i class='bx bxs-edit-alt'></i>
-					<span class="text">Quản lý khiếu nại</span>
+					<span class="text">Quản lý bài đăng</span>
 				</a>
 			</li>
 			<li>
@@ -72,10 +73,6 @@
 		</ul>
 	</section>
 	<!-- SIDEBAR -->
-    
-   
-
-
 	<!-- CONTENT -->
 	<section id="content">
 		<!-- NAVBAR -->
@@ -87,6 +84,7 @@
     include "../dao/pdo.php";
     include "../dao/danhmuc.php";
     include "../dao/sanpham.php";
+    include "../dao/post.php";
     if (isset($_GET['action'] )) {
         $act = $_GET['action'];
         switch ($act) {
@@ -202,7 +200,24 @@
                 include "product/list.php";
                 break;
             case 'addpost':
-                
+                    if(isset($_POST['addpost'])&&($_POST['addpost'])){
+                        $ten=$_POST['tenbv'];
+                        $tomtat=$_POST['tomtat'];
+                        $noidung=$_POST['noidung'];
+                        $iddm=$_POST['iddm'];
+                        $filename=$_FILES['hinh']['name'];
+                        $target_dir = "../uploads/";
+                        $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                        if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)){
+    
+                        }else{
+    
+                        }
+                        post_insert($ten,$tomtat,$noidung,$iddm,$filename);
+                       }
+                    $listdm=danhmuc_select_all();              
+                    include "post/add.php";
+                    
                 break;
             case 'logout':
                     unset( $_SESSION['ROLE'] );
@@ -223,7 +238,7 @@
                         mysqli_query($conn,$sql_xoa);  
                         header('Location:../../index.php?action=binhluan');  
                     }          
-                  
+                
             default:
                     # code...
                     break;
@@ -233,7 +248,34 @@
 ?>
 	</section>
 	<!-- CONTENT -->
-        
+    
 	<script src="../JS/admin.js"></script>
+  <script
+    type="text/javascript"
+    src='https://cdn.tiny.cloud/1/0i54asjabx2x5mm0zu0itj3e2pcs5uk4bcy1nr8pg5cr9gca/tinymce/6/tinymce.min.js'
+    referrerpolicy="origin">
+  </script>
+  <script type="text/javascript">
+  tinymce.init({
+    selector: '#myTextarea',
+    width: 600,
+    height: 300,
+    plugins: [
+      'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+      'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
+      'media', 'table', 'emoticons', 'template', 'help'
+    ],
+    toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
+      'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
+      'forecolor backcolor emoticons | help',
+    menu: {
+      favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }
+    },
+    menubar: 'favs file edit view insert format tools table help',
+    content_css: 'css/content.css'
+  });
+  </script>
+
+
 </body>
 </html>
