@@ -7,7 +7,7 @@ body {
 
 h1 {
     text-align: center;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 form {
@@ -17,6 +17,7 @@ form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Thêm để giữ nút trong form */
 }
 
 form div {
@@ -29,21 +30,14 @@ label {
 
 input[type="text"],
 input[type="file"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    resize: vertical;
-}
-
+textarea,
 select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    resize: vertical;
 }
 
 input[type="submit"],
@@ -84,4 +78,14 @@ input[type="button"]:hover {
         width: 100%;
         margin-top: 5px;
     }
+}
+
+.baiviet {
+    background-color: #017a74;
+    color: #fff;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
 }
