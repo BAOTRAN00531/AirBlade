@@ -1,0 +1,81 @@
+/* Thiết lập giao diện cho tiêu đề */
+h1 {
+    text-align: center;
+    color: #333;
+    /* margin-top: 20px; */
+    background-color: #017a74;
+    color: #fff;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Thiết lập giao diện cho form */
+form {
+    max-width: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    overflow: hidden\;
+}
+
+/* Thiết lập giao diện cho input text */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Thiết lập giao diện cho nút */
+input[type="submit"], input[type="reset"], input[type="button"] {
+    background-color: #017a74;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
+    background-color: #2980b9;
+}
+
+/* Thiết lập giao diện cho các phần tử động */
+#add {
+    margin-right: 0;
+}
+
+/* Thiết lập giao diện cho liên kết */
+a {
+    text-decoration: none;
+}
+
+/* Thiết lập giao diện cho nút danh sách */
+#list-button {
+    background-color: #2ecc71;
+}
+
+#list-button:hover {
+    background-color: #27ae60;
+}
+/* Thiết lập giao diện cho select box */
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
