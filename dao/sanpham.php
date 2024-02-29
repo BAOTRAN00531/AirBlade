@@ -89,7 +89,7 @@ function product_select_all($keyw,$iddm){
  */
 function product_select_by_id($ma_hh){
     $sql = "SELECT * FROM sanpham WHERE MASP=".$ma_hh;
-    return pdo_query_one($sql);
+    return pdo_query($sql);
 }
 function sanphamSelectByIDDM($iddm){
     $sql = "SELECT * FROM sanpham WHERE IDDM=$iddm";

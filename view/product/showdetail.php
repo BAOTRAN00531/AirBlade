@@ -20,7 +20,11 @@ table
                                     <br>
                                     <h3>'. $GIASP . " ₫ ".'</h3>
                                     <br>
-                                    <a href="#">Mua ngay</a></p></th>
+                                <form action="/view/order/muahang.php" method="post">
+                                <input type="text" name="TENSP" value="'.$TENSP.'" hidden>
+                                <input type="text" name="MASP" value="'.$MASP.'" hidden>
+                                    <button type="submit">Mua ngay</button></p></th>
+                                    </form>
                     
                     </tr>
                 </table>

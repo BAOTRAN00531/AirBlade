@@ -1,10 +1,10 @@
 <?php 
 include_once "pdo.php";
 
-    function bill_insert( $MASP , $iduser , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG )
+    function bill_insert( $MASP , $iduser , $HOTEN , $DIACHI , $PHONE , $TONG , $PTTT , $NGAYDATHANG )
     {
-    $sql = "INSERT INTO donhang( MASP , iduser , HOTEN , DIACHI , PHONE , EMAIL , TONG , PTTT , NGAYDATHANG ) 
-    VALUES( '$MASP' , '$iduser' , '$HOTEN' , '$DIACHI' , '$PHONE' , '$EMAIL' , '$TONG' , '$PTTT' , '$NGAYDATHANG' )";
+    $sql = "INSERT INTO donhang( MASP , iduser , HOTEN , DIACHI , PHONE , TONG , PTTT , NGAYDATHANG ) 
+    VALUES( '$MASP' , '$iduser' , '$HOTEN' , '$DIACHI' , '$PHONE' , '$TONG' , '$PTTT' , '$NGAYDATHANG' )";
     pdo_execute($sql);
     }
     function bill_selectall()

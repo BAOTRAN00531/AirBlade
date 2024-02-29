@@ -177,6 +177,10 @@
         }
     </style>
 </head>
+<?php 
+$TENSP = $_POST['TENSP'];
+$GIASP = $_POST['GIASP'];
+?>
 <body>
     <div class="container">
         <h2>Đơn hàng</h2>
@@ -184,39 +188,31 @@
             <div>
                 <img src="/web/mẫu.jpg" alt="Hình sản phẩm">
             </div>
-            <div>
-                <h1> Honda Airblade 125/160</h1>
-                <h1>43.000.000(chi phí dự kiến)</h1>
-                <h2>Chi phí dự tính sang tên</h2>
-                <label for="registration_location">Nơi Đăng Ký:</label>
-                <select id="registration_location">
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                    <!-- Thêm các option khác nếu cần -->
-                </select>
-                <button type="button" onclick="makeCall()">Gọi Điện</button> <br>
+            <form action="../../index.php?action=hoadon" method="post">
+                <h1><?php echo $TENSP ?></h1>
+                <h1><?php echo $GIASP ?></h1>
                 <div style="display:flex;">
                     <div style="flex:1;margin-right:10px;">
-                        <label for="full_name">Họ và Tên:</label>
-                        <input type="text" id="full_name">
+                        <label for="HOTEN">Họ và Tên:</label>
+                        <input type="text" pattern="^sáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựýỳỷỹỵÁÀẢÃẠĂẮẰẲẴẶÂẤẦẨẪẬÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰÝỲỶỸỴđĐ]+$/" 
+                        name="HOTEN" id="HOTEN">
                     </div>
                     <div style="flex:1;">
-                        <label for="phone_number">Số Điện Thoại:</label>
-                        <input type="tel" id="phone_number">
+                        <label for="SDT">Số Điện Thoại:</label>
+                        <input type="tel" name="SDT" id="SDT">
                     </div>
                 </div>
-                <label for="address">Địa Chỉ:</label>
-                <input type="text" id="address">
-                <label for="payment_method">Phương Thức Thanh Toán:</label>
-                <select id="payment_method">
-                    <option value="cash">Tiền Mặt</option>
-                    <option value="card">Thẻ Ngân Hàng</option>
+                <label for="DIACHI">Địa Chỉ:</label>
+                <input type="text" name="DIACHI" id="DIACHI">
+                <label for="PTTT">Phương Thức Thanh Toán:</label>
+                <select name="PTTT" id="PTTT">
+                    <option value="1">Tiền Mặt</option>
+                    <option value="2">Thẻ Ngân Hàng</option>
                     
                     <!-- Thêm các phương thức thanh toán khác nếu cần -->
                 </select>
-                <button type="button" onclick="placeOrder()">Đặt Hàng</button>
-            </div>
+                <button type="submit">Đặt Hàng</button>
+    </form>
         </div>
     </div>
 
