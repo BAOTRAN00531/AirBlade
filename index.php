@@ -38,7 +38,7 @@ ob_start();
                         break;
                     case 'hoadon':
                         $NGAYDATHANG = date('d-m-Y');
-                        $MASP = $_POST['idsp'];
+                        $MASP = $_POST['MASP'];
                         $iduser = $_POST['iduser'];
                         $HOTEN = $_POST['HOTEN'];
                         $DIACHI = $_POST['DIACHI'];
@@ -54,6 +54,7 @@ ob_start();
                         {
                             extract($one);
                             $iddm1 = $one['IDDM'];
+                            $loaisp1 = $one['LOAISP'];
                         }
                         $list1 = product_selectall("", $iddm1);
                         $dmf2 = catalog_filter(2);
@@ -61,6 +62,7 @@ ob_start();
                         {
                             extract($two);
                             $iddm2 = $two['IDDM'];
+                            $loaisp2 = $two['LOAISP'];
                         }
                         $list2 = product_selectall("", $iddm2);
                         include "view/product/catalogs.php";

@@ -181,13 +181,14 @@
 $TENSP = $_POST['TENSP'];
 $GIASP = $_POST['GIASP'];
 $HINH = $_POST['HINH'];
+$MASP = $_POST['MASP'];
 ?>
 <body>
     <div class="container">
         <h2>Đơn hàng</h2>
         <div class="form-container">
             <div>
-                <img src="<?php echo $HINH ?>" alt="Hình sản phẩm">
+                <img src="../../<?php echo $HINH?>" alt="Hình sản phẩm">
             </div>
             <form action="../../index.php?action=hoadon" method="post">
                 <h1><?php echo $TENSP ?></h1>
@@ -212,6 +213,10 @@ $HINH = $_POST['HINH'];
                     
                     <!-- Thêm các phương thức thanh toán khác nếu cần -->
                 </select>
+                <input type="text" name="iduser" id="iduser" hidden value='0'>
+                <input type="text" name="MASP" value="<?php echo $MASP ?>" hidden>
+                <input type="text" name="TONG" id="TONG" value="<?php echo $GIASP ?>" hidden>
+                
                 <button type="submit">Đặt Hàng</button>
     </form>
         </div>
