@@ -90,14 +90,12 @@ function sanpham_select_all($keyw,$iddm){
 function sanpham_select_by_id($ma_hh){
     $sql = "SELECT * FROM sanpham WHERE MASP=".$ma_hh;
     return pdo_query_one($sql);
-<<<<<<< HEAD
-=======
 }
 function sanphamSelectByIDDM($iddm){
     $sql = "SELECT * FROM sanpham WHERE IDDM=$iddm";
     $listf = pdo_query($sql);
     return $listf;
->>>>>>> parent of 6172427 (fixed post)
+
 }
 
 function sanpham_exist($ma_hh){
