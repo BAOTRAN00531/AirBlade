@@ -7,6 +7,7 @@
 <div class="row">    
     <div class="row frmtitle">
         <h1>CẬP NHẬT LOẠI HÀNG</h1>
+        <link rel="stylesheet" href="../CSS/admin_product_update.css">
     </div>
     <div class="row frmcontent">
         <form action="index.php?action=updatedm" method="post">
