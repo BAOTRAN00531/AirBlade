@@ -33,6 +33,7 @@ ob_start();
         if (isset($_GET['action'] )&&($_GET['action'])) {
             $action = $_GET['action'];
                 switch ($action) {
+                    
                     case 'complaint':
                         include "view/report/report_form.php";
                         break;
