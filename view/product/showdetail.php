@@ -60,6 +60,63 @@ table
         </form>
     </div>';
         }
+        foreach( $list_danhgia as $list )
+        {
+            extract($list);
+            if( $Sao == 1 )
+            {
+            echo '            
+            <input type="text" name="Sao" hidden>
+            <i class="bx bxs-star star active"></i>
+            <i class="bx bx-star star"></i>
+            <i class="bx bx-star star"></i>
+            <i class="bx bx-star star"></i>
+            <i class="bx bx-star star"></i>';                
+            }
+            elseif( $Sao == 2 )
+            {
+                echo '            
+                <input type="text" name="Sao" hidden>
+                <i class="bx bxs-star star active"></i>
+                <i class="bx bxs-star star active"></i>
+                <i class="bx bx-star star"></i>
+                <i class="bx bx-star star"></i>
+                <i class="bx bx-star star"></i>';   
+            }
+            elseif( $Sao == 3 )
+            {
+                echo '            
+                <input type="text" name="Sao" hidden>
+                <i class="bx bxs-star star active"></i>
+                <i class="bx bxs-star star active"></i>
+                <i class="bx bxs-star star active"></i>
+                <i class="bx bx-star star"></i>
+                <i class="bx bx-star star"></i>';   
+            }
+            elseif( $Sao == 4 )
+            {
+                echo '            
+                <input type="text" name="Sao" hidden>
+                <i class="bx bxs-star star active"></i>
+                <i class="bx bxs-star star active"></i>
+                <i class="bx bxs-star star active"></i>
+                <i class="bx bxs-star star active"></i>
+                <i class="bx bx-star star"></i>';   
+            }
+            elseif( $Sao == 5 )
+            {
+                echo '            
+                <input type="text" name="Sao" hidden>
+                <i class="bx bxs-star star active"></i>
+                <i class="bx bxs-star star active"></i>
+                <i class="bx bxs-star star active"></i>
+                <i class="bx bxs-star star active"></i>
+                <i class="bx bxs-star star active"></i>';   
+            }
+            echo "<br>";
+            echo $NoiDung;
+            echo "<br>";
+        }
     ?>
   
     <script src="../JS/danhgia.js"></script>

@@ -24,4 +24,9 @@ function danhgia_update($IDDG,$NoiDung,$Sao){
     $sql="UPDATE danhgia SET NoiDung='$NoiDung',Sao='$Sao' WHERE IDDG='$IDDG' ";
 pdo_execute($sql);
 }
+function danhgia_select_by_sp($MASP){
+    $sql = "SELECT * FROM danhgia WHERE MASP=".$MASP;
+    return pdo_query($sql);
+
+}
 ?>

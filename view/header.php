@@ -26,8 +26,9 @@
             </div>
             <a href="index.php?action=news">Tin tức</a>
             <a href="index.php?action=contact">Liên hệ</a>
+        <a href="index.php?action=complaint">Khiếu nại</a>    
         </div>
-
+        
         <!--Biểu tượng login-->
         <div class="login">
             <a href="index.php?action=signin"><i class='fas fa-user-circle' style='font-size:40px'></i></a></i>

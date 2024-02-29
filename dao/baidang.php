@@ -1,18 +1,18 @@
 <?php 
 include_once "pdo.php";
 
-function baidang_insert( $UserID , $NoiDung , $Tag , $Image , $NgayDang ){
-    $sql = "INSERT INTO baidang(iduser,NoiDung,Tag,HINH,NgayDang) VALUES('$UserID','$NoiDung','$Tag','$Image','$NgayDang')";
+function post_insert( $UserID , $NoiDung , $Tag , $Image , $NgayDang ){
+    $sql = "INSERT INTO post(iduser,NoiDung,Tag,HINH,NgayDang) VALUES('$UserID','$NoiDung','$Tag','$Image','$NgayDang')";
     pdo_execute($sql);
 }
-function baidang_selectall()
+function post_selectall()
 {
-    $sql = "SELECT * FROM baidang";
+    $sql = "SELECT * FROM post";
     return pdo_query($sql);
 }
-function baidang_delete( $MABD )
+function post_delete( $MABD )
 {
-    $sql = "DELETE FROM baidang WHERE MABD = $MABD";
+    $sql = "DELETE FROM post WHERE MABD = $MABD";
     pdo_execute($sql);
 }
 

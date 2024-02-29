@@ -1,8 +1,8 @@
 <?php 
 include_once "pdo.php";
 
-function khieunai_insert( $UserID , $ProductID , $NoiDung , $Image ){
-    $sql = "INSERT INTO khieunai(iduser,MASP,NoiDung,HINH) VALUES('$UserID','$ProductID','$NoiDung','$Image')";
+function khieunai_insert( $UserID , $NoiDung , $Image ){
+    $sql = "INSERT INTO khieunai(iduser,NoiDung,HINH) VALUES('$UserID','$NoiDung','$Image')";
     pdo_execute($sql);
 }
 function khieunai_selectall()

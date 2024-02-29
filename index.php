@@ -26,14 +26,17 @@ ob_start();
         include "dao/danhgia.php";
         include "dao/danhmuc.php";
         include "dao/hoadon.php";
-        include "dao/post.php";
-        include "dao/khieunai.php";
         include "dao/baidang.php";
+        include "dao/khieunai.php";
+        //include "dao/post.php";
         $dsdm=danhmuc_loadall();
         include "view/header.php";
         if (isset($_GET['action'] )&&($_GET['action'])) {
             $action = $_GET['action'];
                 switch ($action) {
+                    case 'complaint':
+                        include "view/report/khieunai_form.php";
+                        break;
                     case 'hoadon':
                         $NGAYDATHANG = date('d-m-Y');
                         $MASP = $_POST['idsp'];
@@ -96,7 +99,9 @@ ob_start();
                     case 'showdetail':
                         if(isset($_GET['idsp'])&&($_GET['idsp']>0)){
                             $id=$_GET['idsp'];
-                          $onesp=sanpham_select_by_id($id);}
+                            $onesp=sanpham_select_by_id($id);
+                            $list_danhgia = danhgia_select_by_sp($id);
+                        }
                           include "view/product/showdetail.php";
                         break;
                     case 'luukn':
@@ -126,10 +131,16 @@ ob_start();
                         break;
                     case 'themkn':
                         $NoiDung = $_POST['noidung'];
-                        $ProductID = $_POST['ProductID'];
-                        $UserID = $_POST['UserID'];
-                        $Image = $_POST['image'];
-                        khieunai_insert( $UserID , $ProductID , $NoiDung , $Image );
+                        $UserID = 0;
+                        $filename=$_FILES['image']['name'];
+                        $target_dir = "../AirBlade/uploads/";
+                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)){
+    
+                        }else{
+    
+                        }
+                        khieunai_insert( $UserID , $NoiDung , $filename );
                         $list_khieunai = khieunai_selectall();
                         include "../AirBlade/view/report/khieunai_process.php";
                         break;
@@ -148,9 +159,9 @@ ob_start();
                         $UserID = $_POST['UserID'];
                         $Image = $_POST['image'];
                         $NgayDang = date('d-m-Y H:i:s');
-                        baidang_insert( $UserID , $NoiDung ,$Tag , $Image , $NgayDang );
-                        $list_baidang = baidang_selectall();
-                        include "../AirBlade/view/post/baidang_process.php";            
+                        post_insert( $UserID , $NoiDung ,$Tag , $Image , $NgayDang );
+                        $list_post = post_selectall();
+                        include "../AirBlade/view/post/post_process.php";            
                         break;   
                     case 'catory':
                         include "catory.php";

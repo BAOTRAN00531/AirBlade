@@ -1,7 +1,7 @@
 <?php 
-foreach ( $list_baidang as $baidang )
+foreach ( $list_post as $post )
 {
-    extract( $baidang );
+    extract( $post );
     echo $NoiDung;
     echo "<br>";
     echo $Tag;
