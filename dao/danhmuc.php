@@ -47,8 +47,7 @@ function danhmuc_select_all(){
  */
 function danhmuc_select_by_id($id){
     $sql = "SELECT * FROM danhmuc WHERE THUTU=".$id;
-    $onesp = pdo_query($sql);
-    return $onesp;
+    return pdo_query_one($sql);
 }
 /**
  * Kiểm tra sự tồn tại của một loại
@@ -65,15 +64,9 @@ function danhmuc_loadall(){
     $listdanhmuc=pdo_query($sql);
     return $listdanhmuc;
 }
-
 function getIDDMByOrder($thutu) {
     $sql = "SELECT IDDM FROM danhmuc WHERE THUTU = ?";
     return pdo_query_value($sql, $thutu);
-}
-function danhmuc_filter($thutu) {
-    $sql = "SELECT * FROM danhmuc WHERE THUTU = $thutu";
-    $dmf = pdo_query($sql);
-    return $dmf;
 }
 
 
