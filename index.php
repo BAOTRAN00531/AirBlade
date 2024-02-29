@@ -27,7 +27,7 @@ ob_start();
         include "dao/danhmuc.php";
         include "dao/hoadon.php";
         include "dao/khieunai.php";
-        //include "dao/post.php";
+        include "dao/post.php";
         $dsdm=catalog_loadall();
         include "view/header.php";
         if (isset($_GET['action'] )&&($_GET['action'])) {
@@ -164,8 +164,14 @@ ob_start();
                     case 'catory':
                         include "catory.php";
                         break;
+                    case 'detailnews':
+                            if(isset($_GET['idp'])&&($_GET['idp']>0)){
+                                $id=$_GET['idp'];
+                              $onepost=post_select_by_id($id);}
+                                include "view/post/detailpost.php";
+                                break;
                     case 'news':
-                        
+                        $news=post_selectall();
                         include "view/content/news.php";
                         break;
                     case 'introduce':

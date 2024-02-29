@@ -12,7 +12,7 @@
                             <th>Họ tên</th>
                             <th>Địa chỉ</th>
                             <th>Số điện thoại</th>
-                            <th>Email</th>
+                          
                             <th>Tổng tiền</th>
                             <th>Phương thức thanh toán</th>
                             <th>Ngày đặt hàng</th>
@@ -30,7 +30,7 @@
                                     <td>'.$HOTEN.'</td>
                                     <td>'.$DIACHI.'</td>
                                     <td>'.$PHONE.'</td>
-                                    <td>'.$EMAIL.'</td>
+                         
                                     <td>'.$TONG.'</td>
                                     <td>'.$PTTT.'</td>
                                     <td>'.$NGAYDATHANG.'</td>
