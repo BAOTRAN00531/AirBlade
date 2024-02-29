@@ -67,27 +67,27 @@
                 if(isset($_POST['addlist'])&&($_POST['addlist'])){
                      $ten=$_POST['ten'];
                      $madm=$_POST['madm'];
-                     danhmuc_insert($madm, $ten);
+                     catalog_insert($madm, $ten);
                     }
-                $listdm=danhmuc_select_all();
+                $listdm=catalog_select_all();
                 include "danhmuc/add.php";
                 break;
             case 'listdm':
-                $listdm=danhmuc_select_all();
+                $listdm=catalog_select_all();
                 include "danhmuc/list.php";
                 break;
             case 'xoadm':
                 if (isset($_GET['id'])&&($_GET['id']>0)) {
-                   danhmuc_delete($_GET['id']);
+                   catalog_delete($_GET['id']);
                  }
-                 $listdm=danhmuc_select_all();
+                 $listdm=catalog_select_all();
                 $sql="select * from danhmuc order by LOAISP desc";
                 $listdm=pdo_query($sql);
                 include "danhmuc/list.php";
                 break;
             case 'suadm':
                 if (isset($_GET['id'])&&($_GET['id']>0)) {
-                   $dm=danhmuc_select_by_id($_GET['id']);
+                   $dm=catalog_select_by_id($_GET['id']);
                   }
                 include "danhmuc/update.php";
                 break;
@@ -97,9 +97,9 @@
                     $ten=$_POST['ten'];
                     $thutu=$_POST['thutu'];
                     $madm=$_POST['madm'];
-                    danhmuc_update($thutu,$madm,$ten);
+                    catalog_update($thutu,$madm,$ten);
                 }
-                $listdm=danhmuc_select_all();
+                $listdm=catalog_select_all();
                 include "danhmuc/list.php";
                 break; 
             case 'addsp':
@@ -117,9 +117,9 @@
                     }else{
 
                     }
-                    sanpham_insert($iddm,$ten,$gia,$soluong,$filename,$mota);
+                    product_insert($iddm,$ten,$gia,$soluong,$filename,$mota);
                    }
-                $listdm=danhmuc_select_all();              
+                $listdm=catalog_select_all();              
                 include "sanpham/add.php";
                 break;
             case 'listsp':
@@ -130,22 +130,22 @@
                     $keyw='';
                     $iddm=0;
                 }
-                $listdm=danhmuc_select_all();
-                $listsp=sanpham_select_all($keyw,$iddm);
+                $listdm=catalog_select_all();
+                $listsp=product_select_all($keyw,$iddm);
                 include "sanpham/list.php";
                 break;
             case 'xoasp':
                 if (isset($_GET['id'])&&($_GET['id']>0)) {
-                    sanpham_delete($_GET['id']);
+                    product_delete($_GET['id']);
                   }
                  
-                  $listsp=sanpham_select_all("",0);
+                  $listsp=product_select_all("",0);
                   include "sanpham/list.php";
                 break;
             case 'suasp':
                 if (isset($_GET['id'])&&($_GET['id']>0)) {
-                    $sanpham=sanpham_select_by_id($_GET['id']);
-                    $listdm = danhmuc_select_all(); // Khởi tạo $listdm
+                    $sanpham=product_select_by_id($_GET['id']);
+                    $listdm = catalog_select_all(); // Khởi tạo $listdm
                     if ($sanpham) {
                         extract($sanpham);
                     } else {
@@ -170,8 +170,8 @@
                     }else{
                     }
                 }
-                sanpham_update($id,$ten,$gia,$soluong,$filename,$mota);
-                $sanpham=sanpham_select_by_id($id);
+                product_update($id,$ten,$gia,$soluong,$filename,$mota);
+                $sanpham=product_select_by_id($id);
                 include "sanpham/list.php";
                 break;
             case 'addpost':

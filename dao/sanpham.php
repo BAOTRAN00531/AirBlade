@@ -10,12 +10,12 @@ require_once 'pdo.php';
  * @param String $mo_ta là mô tả
  * @throws PDOException lỗi thêm mới
  */
-function sanpham_insert($ma_loai, $ten_hh, $don_gia,$so_luong, $hinh, $mo_ta){
+function product_insert($ma_loai, $ten_hh, $don_gia,$so_luong, $hinh, $mo_ta){
     $sql = "INSERT INTO sanpham(IDDM, TENSP, GIASP,TONKHO,hinhanh, MOTA) VALUES ('$ma_loai', '$ten_hh', '$don_gia','$so_luong' ,'$hinh','$mo_ta')";
     pdo_execute($sql);
 }
 
-function sanpham_update($id,$ten_hh, $don_gia,$so_luong, $hinh, $mo_ta){
+function product_update($id,$ten_hh, $don_gia,$so_luong, $hinh, $mo_ta){
     if($hinh!=""){
         $sql=" update sanpham set TENSP='".$ten_hh."',GIASP='".$don_gia."',TONKHO='".$so_luong."',hinhanh='".$hinh."',MOTA='".$mo_ta."'where MASP=".$id;
     }
@@ -24,16 +24,16 @@ function sanpham_update($id,$ten_hh, $don_gia,$so_luong, $hinh, $mo_ta){
     }     pdo_execute($sql);
 }
 
-function sanpham_delete($id){
+function product_delete($id){
     $sql = "DELETE FROM sanpham WHERE MASP=".$id;
     pdo_execute($sql);
 }
-function sanpham_select_all_home(){
+function product_select_all_home(){
     $sql = "SELECT * FROM sanpham where 1 order by MASP desc limit 0,9";
     $listsp=pdo_query($sql);
     return $listsp;
 } 
-function sanpham_selectall($keyw, $iddm){
+function product_selectall($keyw, $iddm){
     $sql = "SELECT * FROM sanpham";
     if ($keyw != "") {
         $sql .= " WHERE TENSP LIKE '%" . $keyw . "%'";
@@ -70,7 +70,7 @@ function sanphamselectall($keyw, $iddm){
     return $listsp;
 }
 
-function sanpham_select_all($keyw,$iddm){
+function product_select_all($keyw,$iddm){
     $sql = "SELECT * FROM sanpham where 1";
     if($keyw!=""){
         $sql.=" and TENSP like'%".$keyw."%'";
@@ -87,7 +87,7 @@ function sanpham_select_all($keyw,$iddm){
  * @param int $ma_hh là mã loại danh mục
  * @throws PDOException lỗi thêm mới
  */
-function sanpham_select_by_id($ma_hh){
+function product_select_by_id($ma_hh){
     $sql = "SELECT * FROM sanpham WHERE MASP=".$ma_hh;
     return pdo_query_one($sql);
 }
@@ -96,39 +96,39 @@ function sanphamSelectByIDDM($iddm){
     $listf = pdo_query($sql);
     return $listf;
 }
-function sanpham_exist($ma_hh){
+function product_exist($ma_hh){
     $sql = "SELECT count(*) FROM hang_hoa WHERE ma_hh=?";
     return pdo_query_value($sql, $ma_hh) > 0;
 }
 
-function sanpham_tang_so_luot_xem($ma_hh){
+function product_tang_so_luot_xem($ma_hh){
     $sql = "UPDATE hang_hoa SET so_luot_xem = so_luot_xem + 1 WHERE ma_hh=?";
     pdo_execute($sql, $ma_hh);
 }
 
-function sanpham_select_top10(){
+function product_select_top10(){
     $sql = "SELECT * FROM hang_hoa WHERE so_luot_xem > 0 ORDER BY so_luot_xem DESC LIMIT 0, 10";
     return pdo_query($sql);
 }
 
-function sanpham_select_dac_biet(){
+function product_select_dac_biet(){
     $sql = "SELECT * FROM hang_hoa WHERE dac_biet=1";
     return pdo_query($sql);
 }
 
-function sanpham_select_by_loai($ma_loai){
+function product_select_by_loai($ma_loai){
     $sql = "SELECT * FROM hang_hoa WHERE ma_loai=?";
     return pdo_query($sql, $ma_loai);
 }
 
-function sanpham_select_keyword($keyword){
+function product_select_keyword($keyword){
     $sql = "SELECT * FROM hang_hoa hh "
             . " JOIN loai lo ON lo.ma_loai=hh.ma_loai "
             . " WHERE ten_hh LIKE ? OR ten_loai LIKE ?";
     return pdo_query($sql, '%'.$keyword.'%', '%'.$keyword.'%');
 }
 
-function sanpham_select_page(){
+function product_select_page(){
     if(!isset($_SESSION['page_no'])){
         $_SESSION['page_no'] = 0;
     }
@@ -148,7 +148,7 @@ function sanpham_select_page(){
     $sql = "SELECT * FROM hang_hoa ORDER BY ma_hh LIMIT ".$_SESSION['page_no'].", 10";
     return pdo_query($sql);
 }
-function sanpham_chitiet_by_id(){
+function product_chitiet_by_id(){
     $sql = "SELECT * FROM sanpham WHERE MASP";
     return pdo_query_one($sql);
 }

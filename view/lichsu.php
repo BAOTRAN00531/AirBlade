@@ -1,7 +1,7 @@
 <?php 
 include "../AirBlade/dao/pdo.php";
 include "../AirBlade/dao/hoadon.php";
-$list_hoadon = hoadon_selectall();
+$list_hoadon = bill_selectall();
 
 foreach ( $list_hoadon as $lichsu )
 {

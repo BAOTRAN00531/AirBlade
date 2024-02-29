@@ -29,13 +29,13 @@ ob_start();
         include "dao/baidang.php";
         include "dao/khieunai.php";
         //include "dao/post.php";
-        $dsdm=danhmuc_loadall();
+        $dsdm=catalog_loadall();
         include "view/header.php";
         if (isset($_GET['action'] )&&($_GET['action'])) {
             $action = $_GET['action'];
                 switch ($action) {
                     case 'complaint':
-                        include "view/report/khieunai_form.php";
+                        include "view/report/report_form.php";
                         break;
                     case 'hoadon':
                         $NGAYDATHANG = date('d-m-Y');
@@ -47,24 +47,24 @@ ob_start();
                         $EMAIL = $_POST['email'];
                         $TONG = $_POST['TONG'];
                         $PTTT = $_POST['pttt'];
-                        hoadon_insert( $MASP , $iduser , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );
+                        bill_insert( $MASP , $iduser , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );
                         include "view/order/hoadon.php";
                         break;
                     case 'catalogs':
-                        $dmf1 = danhmuc_filter(1);
+                        $dmf1 = catalog_filter(1);
                         foreach ( $dmf1 as $one )
                         {
                             extract($one);
                             $iddm1 = $one['IDDM'];
                         }
-                        $list1 = sanpham_selectall("", $iddm1);
-                        $dmf2 = danhmuc_filter(2);
+                        $list1 = product_selectall("", $iddm1);
+                        $dmf2 = catalog_filter(2);
                         foreach ( $dmf2 as $two )
                         {
                             extract($two);
                             $iddm2 = $two['IDDM'];
                         }
-                        $list2 = sanpham_selectall("", $iddm2);
+                        $list2 = product_selectall("", $iddm2);
                         include "view/product/catalogs.php";
                         break;
                     case 'product':
@@ -83,9 +83,9 @@ ob_start();
                                 $thutu = $_GET['thutu'];
                                 $iddm = getIDDMByOrder($thutu);
                                 if ($iddm) {
-                                    $dssp = sanpham_selectall("", $iddm);
+                                    $dssp = product_selectall("", $iddm);
                                     $tendm = load_tendm($thutu);
-                                    $dmf = danhmuc_filter($thutu);
+                                    $dmf = catalog_filter($thutu);
                                 } else {
                                     // Xử lý trường hợp không tìm thấy danh mục
                                 }
@@ -93,14 +93,14 @@ ob_start();
                                 //include "view/maincontent/chinh.php";
                             }
                             
-                            $dssp = sanpham_selectall($search, $iddm);
+                            $dssp = product_selectall($search, $iddm);
                             include "view/product/product.php";
                         break;
                     case 'showdetail':
                         if(isset($_GET['idsp'])&&($_GET['idsp']>0)){
                             $id=$_GET['idsp'];
-                            $onesp=sanpham_select_by_id($id);
-                            $list_danhgia = danhgia_select_by_sp($id);
+                            $onesp=product_select_by_id($id);
+                            $list_danhgia = feedback_select_by_sp($id);
                         }
                           include "view/product/showdetail.php";
                         break;
@@ -114,20 +114,20 @@ ob_start();
                             $HINH = $_GET['HINH'];
                             luutru_khieunai( $UserID , $MASP , $NoiDung , $HINH );
                         }
-                        $list_khieunai = khieunai_selectall();
-                        include "../AirBlade/view/report/khieunai_handling.php";
+                        $list_khieunai = report_selectall();
+                        include "../AirBlade/view/report/report_handling.php";
                         break;
                     case 'xoakn':
                         if( isset( $_GET['MAKN'] ) && ( $_GET['MAKN'] > 0 ) )
                         {
-                            khieunai_delete( $_GET['MAKN'] );
+                            report_delete( $_GET['MAKN'] );
                         }
-                        $list_khieunai = khieunai_selectall();
-                        include "../AirBlade/view/report/khieunai_handling.php";
+                        $list_khieunai = report_selectall();
+                        include "../AirBlade/view/report/report_handling.php";
                     break;
                     case 'listkn':
-                        $list_khieunai = khieunai_selectall();
-                        include "../AirBlade/view/report/khieunai_handling.php";
+                        $list_khieunai = report_selectall();
+                        include "../AirBlade/view/report/report_handling.php";
                         break;
                     case 'themkn':
                         $NoiDung = $_POST['noidung'];
@@ -140,18 +140,18 @@ ob_start();
                         }else{
     
                         }
-                        khieunai_insert( $UserID , $NoiDung , $filename );
-                        $list_khieunai = khieunai_selectall();
-                        include "../AirBlade/view/report/khieunai_process.php";
+                        report_insert( $UserID , $NoiDung , $filename );
+                        $list_khieunai = report_selectall();
+                        include "../AirBlade/view/report/report_process.php";
                         break;
                     case 'themdg':
                         $NoiDung = $_POST['noidung'];
                         $ProductID = $_POST['ProductID'];
                         $UserID = $_POST['UserID'];
                         $Sao = $_POST['Sao'];
-                        danhgia_insert($UserID,$ProductID,$NoiDung,$Sao);
-                        $list_danhgia = danhgia_selectall();
-                        include "../AirBlade/view/feedback/danhgia_process.php";
+                        feedback_insert($UserID,$ProductID,$NoiDung,$Sao);
+                        $list_danhgia = feedback_selectall();
+                        include "../AirBlade/view/feedback/feedback_process.php";
                         break;
                     case 'thembd':
                         $NoiDung = $_POST['noidung'];

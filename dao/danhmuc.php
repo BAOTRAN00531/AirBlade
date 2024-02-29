@@ -7,7 +7,7 @@ require_once 'pdo.php';
  * @param String $ma_loai là tên loại
  * @throws PDOException lỗi thêm mới
  */
-function danhmuc_insert($ma_loai, $tenloai){
+function catalog_insert($ma_loai, $tenloai){
     $sql = "INSERT INTO danhmuc(IDDM,LOAISP) VALUES('$ma_loai','$tenloai')";
     pdo_execute($sql);
 }
@@ -17,7 +17,7 @@ function danhmuc_insert($ma_loai, $tenloai){
  * @param String $ten_loai là tên loại mới
  * @throws PDOException lỗi cập nhật
  */
-function danhmuc_update($id, $madm, $ten_loai){
+function catalog_update($id, $madm, $ten_loai){
     $sql = "UPDATE danhmuc SET IDDM='".$madm."', LOAISP='".$ten_loai."' WHERE THUTU=".$id;
     pdo_execute($sql);
 }
@@ -26,7 +26,7 @@ function danhmuc_update($id, $madm, $ten_loai){
  * @param mix $id là mã loại hoặc mảng mã loại
  * @throws PDOException lỗi xóa
  */
-function danhmuc_delete($id){
+function catalog_delete($id){
     $sql = "DELETE FROM danhmuc WHERE THUTU=".$id;
     pdo_execute($sql);
 }
@@ -35,7 +35,7 @@ function danhmuc_delete($id){
  * @return array mảng loại truy vấn được
  * @throws PDOException lỗi truy vấn
  */
-function danhmuc_select_all(){
+function catalog_select_all(){
     $sql = "SELECT * FROM danhmuc";
     return pdo_query($sql);
 }
@@ -45,7 +45,7 @@ function danhmuc_select_all(){
  * @return array mảng chứa thông tin của một loại
  * @throws PDOException lỗi truy vấn
  */
-function danhmuc_select_by_id($id){
+function catalog_select_by_id($id){
     $sql = "SELECT * FROM danhmuc WHERE THUTU=".$id;
     $onesp = pdo_query($sql);
     return $onesp;
@@ -56,11 +56,11 @@ function danhmuc_select_by_id($id){
  * @return boolean có tồn tại hay không
  * @throws PDOException lỗi truy vấn
  */
-function danhmuc_exist($ma_loai){
+function catalog_exist($ma_loai){
     $sql = "SELECT count(*) FROM danhmuc WHERE IDDM=?";
     return pdo_query_value($sql) > 0;
 }
-function danhmuc_loadall(){
+function catalog_loadall(){
     $sql = "SELECT * FROM danhmuc order by THUTU desc";
     $listdanhmuc=pdo_query($sql);
     return $listdanhmuc;
@@ -70,7 +70,7 @@ function getIDDMByOrder($thutu) {
     $sql = "SELECT IDDM FROM danhmuc WHERE THUTU = ?";
     return pdo_query_value($sql, $thutu);
 }
-function danhmuc_filter($thutu) {
+function catalog_filter($thutu) {
     $sql = "SELECT * FROM danhmuc WHERE THUTU = $thutu";
     $dmf = pdo_query($sql);
     return $dmf;

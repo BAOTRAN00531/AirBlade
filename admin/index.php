@@ -38,6 +38,12 @@
 					<span class="text">Quản lý đơn hàng</span>
 				</a>
 			</li>
+            <li>
+				<a href="index.php?action=listdm">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Quản lý danh mục</span>
+				</a>
+			</li>
 			<li>
 				<a href="#">
 					<i class='bx bxs-message-dots' ></i>
@@ -51,7 +57,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+            <a href="index?action=listdg">
 					<i class='bx bxs-star'></i>
 					<span class="text">Quản lý đánh giá</span>
 				</a>
@@ -92,6 +98,7 @@
 		<!-- NAVBAR -->
         <?php
     include "../dao/pdo.php";
+    include "../dao/danhgia.php";
     include "../dao/danhmuc.php";
     include "../dao/sanpham.php";
     include "../dao/post.php";
@@ -99,31 +106,63 @@
     if (isset($_GET['action'] )) {
         $act = $_GET['action'];
         switch ($act) {
+            case 'listdg':
+                $listdg = feedback_selectall();
+                include "comment/list.php";
+                break;
+            case 'xoadg':
+                if (isset($_GET['IDDG'])&&($_GET['IDDG']>0)) {
+                    feedback_delete($_GET['IDDG']);
+                  }
+                  $listdh = feedback_selectall();
+                  include "comment/list.php";
+                break;
+                case 'suadg':
+                    if (isset($_GET['IDDG'])&&($_GET['IDDG']>0)) {
+                        $dg=feedback_select_by_id($_GET['IDDG']);
+                        if (is_array($dg)) {
+                            extract($dg);
+                        } else {
+                            echo "Không tìm thấy sản phẩm";
+                        }
+                    }
+                    include "comment/update.php";
+                    break;
+                case 'updatedg':
+                    if (isset($_POST['capnhatdg'])&&($_POST['capnhatdg'])) {
+                        $IDDG = $_POST['IDDG'];
+                        $NoiDung = $_POST['NoiDung'];
+                        $Sao = $_POST['Sao'];
+                      }
+                    feedback_update($IDDG,$NoiDung,$Sao);
+                    $listdg = feedback_selectall();
+                    include "comment/list.php";
+                    break;   
             case 'adddm':
                 if(isset($_POST['addlist'])&&($_POST['addlist'])){
                      $ten=$_POST['ten'];
                      $madm=$_POST['madm'];
-                     danhmuc_insert($madm, $ten);
+                     catalog_insert($madm, $ten);
                     }
-                    $listdm = danhmuc_select_all();
+                    $listdm = catalog_select_all();
                     include "category/add.php";
                     break;
                 case 'listdm':
-                    $listdm = danhmuc_select_all();
+                    $listdm = catalog_select_all();
                     include "category/list.php";
                     break;
                 case 'xoadm':
                     if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                        danhmuc_delete($_GET['id']);
+                        catalog_delete($_GET['id']);
                     }
-                    $listdm = danhmuc_select_all();
+                    $listdm = catalog_select_all();
                     $sql = "select * from danhmuc order by LOAISP desc";
                     $listdm = pdo_query($sql);
                     include "category/list.php";
                     break;
                 case 'suadm':
                     if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                        $dm = danhmuc_select_by_id($_GET['id']);
+                        $dm = catalog_select_by_id($_GET['id']);
                     }
                     include "category/update.php";
                     break;
@@ -132,9 +171,9 @@
                         $ten = $_POST['ten'];
                         $thutu = $_POST['thutu'];
                         $madm = $_POST['madm'];
-                        danhmuc_update($thutu, $madm, $ten);
+                        catalog_update($thutu, $madm, $ten);
                     }
-                    $listdm = danhmuc_select_all();
+                    $listdm = catalog_select_all();
                     include "category/list.php";
                     break;
                 case 'addsp':
@@ -186,9 +225,9 @@
 
                         // Tiếp tục xử lý các công việc khác trong code của bạn...
         
-                        sanpham_insert($iddm, $ten, $gia, $soluong, $filename, $mota);
+                        product_insert($iddm, $ten, $gia, $soluong, $filename, $mota);
                     }
-                    $listdm = danhmuc_select_all();
+                    $listdm = catalog_select_all();
                     include "product/add.php";
                     break;
                 case 'listsp':
@@ -199,35 +238,33 @@
                         $keyw = '';
                         $iddm = 0;
                     }
-                    $listdm = danhmuc_select_all();
-                    $listsp = sanpham_select_all($keyw, $iddm);
+                    $listdm = catalog_select_all();
+                    $listsp = product_select_all($keyw, $iddm);
                     include "product/list.php";
                     break;
                 case 'xoasp':
                     if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                        sanpham_delete($_GET['id']);
+                        product_delete($_GET['id']);
                     }
                 
-                sanpham_update($id,$ten,$gia,$soluong,$filename,$mota);
-                $sanpham=sanpham_select_by_id($id);
+                product_update($id,$ten,$gia,$soluong,$filename,$mota);
+                $sanpham=product_select_by_id($id);
                 include "product/list.php";
                 break;
-                case 'listdn':
-                    # code...
-                    break;
-                    $listdh = hoadon_selectall();
+                case 'listdh':
+                    $listdh = bill_selectall();
                     include "order/list.php";
                     break;
                  case 'xoadh':
                         if (isset($_GET['IDDH'])&&($_GET['IDDH']>0)) {
-                            hoadon_delete($_GET['IDDH']);
+                            bill_delete($_GET['IDDH']);
                         }
-                        $listdh = hoadon_selectall();
+                        $listdh = bill_selectall();
                         include "order/list.php";
                         break;
                  case 'suadh':
                     if (isset($_GET['IDDH'])&&($_GET['IDDH']>0)) {
-                        $dh=hoadon_select_by_id($_GET['IDDH']);
+                        $dh=bill_select_by_id($_GET['IDDH']);
                         if (is_array($dh)) {
                             extract($dh);
                         } else {
@@ -248,8 +285,8 @@
                         $NGAYDATHANG = $_POST['NGAYDATHANG'];
                         
                       }
-                      hoadon_update( $IDDH , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );  
-                    $listdh = hoadon_selectall();
+                      bill_update( $IDDH , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );  
+                    $listdh = bill_selectall();
                     include "order/list.php";
                     break;
                 
@@ -269,7 +306,7 @@
                         }
                         post_insert($ten,$tomtat,$noidung,$iddm,$filename);
                        }
-                    $listdm=danhmuc_select_all();              
+                    $listdm=catalog_select_all();              
                     include "post/add.php";
                     
                 break;

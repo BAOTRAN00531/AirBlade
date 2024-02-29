@@ -27,5 +27,5 @@ echo "<br>";
 echo $_POST['pttt'];
 echo "<br>";
 echo $NGAYDATHANG;
-hoadon_insert( $MASP , $iduser , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );
+bill_insert( $MASP , $iduser , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );
 ?>

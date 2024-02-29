@@ -1,16 +1,16 @@
 <?php 
 include_once "pdo.php";
 
-function khieunai_insert( $UserID , $NoiDung , $Image ){
+function report_insert( $UserID , $NoiDung , $Image ){
     $sql = "INSERT INTO khieunai(iduser,NoiDung,HINH) VALUES('$UserID','$NoiDung','$Image')";
     pdo_execute($sql);
 }
-function khieunai_selectall()
+function report_selectall()
 {
     $sql = "SELECT * FROM khieunai";
     return pdo_query($sql);
 }
-function khieunai_delete( $MAKN )
+function report_delete( $MAKN )
 {
     $sql = "DELETE FROM khieunai WHERE MAKN = $MAKN";
     pdo_execute($sql);
