@@ -180,13 +180,14 @@
 <?php 
 $TENSP = $_POST['TENSP'];
 $GIASP = $_POST['GIASP'];
+$HINH = $_POST['HINH'];
 ?>
 <body>
     <div class="container">
         <h2>Đơn hàng</h2>
         <div class="form-container">
             <div>
-                <img src="/web/mẫu.jpg" alt="Hình sản phẩm">
+                <img src="<?php echo $HINH ?>" alt="Hình sản phẩm">
             </div>
             <form action="../../index.php?action=hoadon" method="post">
                 <h1><?php echo $TENSP ?></h1>

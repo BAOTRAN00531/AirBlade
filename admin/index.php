@@ -70,6 +70,12 @@
 					<span class="text">Quản lý tài khoản</span>
 				</a>
 			</li>
+            <li class="active">
+				<a href="index.php?action=listkn">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Quản lý khiếu nại</span>
+				</a>
+			</li>
 		</ul>
 		<ul class="side-menu">
 			<li>
@@ -103,6 +109,7 @@
     include "../dao/danhgia.php";
     include "../dao/danhmuc.php";
     include "../dao/sanpham.php";
+    include "../dao/khieunai.php";
     include "../dao/post.php";
     include "../dao/hoadon.php";
     if (isset($_GET['action'] )) {
@@ -310,10 +317,49 @@
                        }
                     $listdm=catalog_select_all();              
                     include "post/add.php";
-
+                    case 'luukn':
+                        if( isset( $_GET['MAKN'] ) && ( $_GET['MAKN'] > 0 ) )
+                        {
+                            $UserID = $_GET['iduser'];
+                            $MAKN = $_GET['MAKN'];
+                            $MASP = $_GET['MASP'];
+                            $NoiDung = $_GET['NoiDung'];
+                            $HINH = $_GET['HINH'];
+                            luutru_khieunai( $UserID , $MASP , $NoiDung , $HINH );
+                        }
+                        $list_khieunai = report_selectall();
+                        include "../view/report/report_handling.php";
+                        break;
+                    case 'xoakn':
+                        if( isset( $_GET['MAKN'] ) && ( $_GET['MAKN'] > 0 ) )
+                        {
+                            report_delete( $_GET['MAKN'] );
+                        }
+                        $list_khieunai = report_selectall();
+                        include "../view/report/report_handling.php";
                     break;
-                case 'logout':
-                    unset($_SESSION['ROLE']);
+                    case 'listkn':
+                        $list_khieunai = report_selectall();
+                        include "../view/report/report_handling.php";
+                        break;
+                    case 'themkn':
+                        $NoiDung = $_POST['noidung'];
+                        $UserID = 0;
+                        $filename=$_FILES['image']['name'];
+                        $target_dir = "../AirBlade/uploads/";
+                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)){
+    
+                        }else{
+    
+                        }
+                        report_insert( $UserID , $NoiDung , $filename );
+                        $list_khieunai = report_selectall();
+                        include "../view/report/report_handling.php";
+                        break;                    
+                break;
+            case 'logout':
+                    unset( $_SESSION['ROLE'] );
                     header("Location: ../login.php");
                     break;
                 case 'suabl':
