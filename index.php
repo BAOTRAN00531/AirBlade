@@ -43,10 +43,9 @@ ob_start();
                         $HOTEN = $_POST['HOTEN'];
                         $DIACHI = $_POST['DIACHI'];
                         $PHONE = $_POST['SDT'];
-                        $EMAIL = $_POST['email'];
                         $TONG = $_POST['TONG'];
-                        $PTTT = $_POST['pttt'];
-                        bill_insert( $MASP , $iduser , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );
+                        $PTTT = $_POST['PTTT'];
+                        bill_insert( $MASP , $iduser , $HOTEN , $DIACHI , $PHONE , $TONG , $PTTT , $NGAYDATHANG );
                         include "view/order/hoadon.php";
                         break;
                     case 'catalogs':
