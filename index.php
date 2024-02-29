@@ -29,6 +29,7 @@ ob_start();
         include "dao/khieunai.php";
         include "dao/post.php";
         $dsdm=catalog_loadall();
+        $news=post_selectall();
         include "view/header.php";
         if (isset($_GET['action'] )&&($_GET['action'])) {
             $action = $_GET['action'];
@@ -174,7 +175,7 @@ ob_start();
                                 include "view/post/detailpost.php";
                                 break;
                     case 'news':
-                        $news=post_selectall();
+                        
                         include "view/content/news.php";
                         break;
                     case 'introduce':

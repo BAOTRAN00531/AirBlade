@@ -31,6 +31,33 @@
 <body>
     <div class="container">
         <div class="box form-box">
+            <?php 
+            include("./php/config.php");
+            if(isset($_POST['submit'])){
+                $username = $_POST['username'];
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+
+                //verifying the unique email
+
+                $verify_query = mysqli_query($con,"SELECT Email FROM users WHERE Email='$email'");
+
+                if(mysqli_num_rows($verify_query) !=0 ){
+                    echo "<div class='message'>
+                              <p>Email này đã được sử dụng, Vui lòng thử lại với 1 Email khác!</p>
+                          </div> <br>";
+                    echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button>";
+                }
+                else{
+                    mysqli_query($con,"INSERT INTO users(Username,Email,Password) VALUES('$username','$email','$password')") or die("Erroe Occured");
+
+                    echo "<div class='message'>
+                              <p>Đăng ký thành công!</p>
+                          </div> <br>";
+                    echo "<a href='index.php'><button class='btn'>Đăng nhập</button>";
+                }
+            } else {
+            ?>
             <header>Đăng ký</header>
             <form action="" method="post" onsubmit="return validateForm()">
                 <div class="field input">
@@ -61,6 +88,7 @@
                     Đã có tài khoản? <a href="index.php?action=signin">Đăng nhập</a>
                 </div>
             </form>
+            <?php } ?>
         </div>
     </div>
 </body>
