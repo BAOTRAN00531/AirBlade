@@ -26,6 +26,7 @@ ob_start();
         include "dao/danhgia.php";
         include "dao/danhmuc.php";
         include "dao/hoadon.php";
+        include "dao/post.php";
         include "dao/khieunai.php";
         include "dao/baidang.php";
         $dsdm=danhmuc_loadall();
@@ -33,6 +34,19 @@ ob_start();
         if (isset($_GET['action'] )&&($_GET['action'])) {
             $action = $_GET['action'];
                 switch ($action) {
+                    case 'hoadon':
+                        $NGAYDATHANG = date('d-m-Y');
+                        $MASP = $_POST['idsp'];
+                        $iduser = $_POST['iduser'];
+                        $HOTEN = $_POST['HOTEN'];
+                        $DIACHI = $_POST['DIACHI'];
+                        $PHONE = $_POST['SDT'];
+                        $EMAIL = $_POST['email'];
+                        $TONG = $_POST['TONG'];
+                        $PTTT = $_POST['pttt'];
+                        hoadon_insert( $MASP , $iduser , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );
+                        include "view/order/hoadon.php";
+                        break;
                     case 'catalogs':
                         $dmf1 = danhmuc_filter(1);
                         foreach ( $dmf1 as $one )
@@ -137,12 +151,18 @@ ob_start();
                         baidang_insert( $UserID , $NoiDung ,$Tag , $Image , $NgayDang );
                         $list_baidang = baidang_selectall();
                         include "../AirBlade/view/post/baidang_process.php";            
-                        break;    
-                
+                        break;   
                     case 'catory':
                         include "catory.php";
                         break;
+                    case 'detailnews':
+                        if(isset($_GET['idp'])&&($_GET['idp']>0)){
+                            $id=$_GET['idp'];
+                          $onepost=post_select_by_id($id);}
+                            include "view/post/detailpost.php";
+                            break;
                     case 'news':
+                        $news=post_selectall();
                         include "view/content/news.php";
                         break;
                     case 'introduce':

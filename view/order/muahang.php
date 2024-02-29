@@ -50,7 +50,7 @@
                 <div class="thanh-toan-right">
                     <table>
                         <h3>Địa chỉ thanh toán</h3>
-                        <form action="hoadon.php" method="post">
+                        <form action="../../index.php?action=hoadon" method="post">
                             <label for="HOTEN">Họ và Tên: </label><br>
                             <input type="text" pattern="^sáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựýỳỷỹỵÁÀẢÃẠĂẮẰẲẴẶÂẤẦẨẪẬÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰÝỲỶỸỴđĐ]+$/" id="HOTEN" name="HOTEN" required
                                 placeholder="Nhập họ và tên.."><br>

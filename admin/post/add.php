@@ -9,25 +9,23 @@
 </head>
 
 <body>
-    <div class="baiviet">
-        <h1>THÊM BÀI VIẾT</h1>
-    </div>
+    <h1>THÊM BÀI VIẾT</h1>
     <br>
     <form action="index.php?action=addpost" id="post-form" method="post">
-        <div class="">Tiêu đề: <br>
+        <div class="">Tên: <br>
             <input type="text" name="tenbv" id="rowlist">
         </div>
         <br>
         <div class="">Hình: <br>
-            <input class="input-hinh" type="file" name="hinh" id="rowlist">
-        </div>
-        <div class="">Tóm tắt: <br>
-            <textarea name="tomtat" id="myTextarea" cols="30" rows="10"></textarea>
-        </div>
-        <div class="">Nội Dung: <br>
-            <textarea name="noidung" id="myTextarea" cols="30" rows="10"></textarea>
-        </div>
-        <div class="">
+            <input class="input-hinh" type="file" name="hinh" id="hinh" >
+       </div>
+       <div class="">Tóm tắt: <br>
+            <textarea name="tomtat" id="myTextarea" cols="30" rows="10"></textarea> 
+       </div>
+       <div class="">Nội Dung: <br>
+            <textarea name="noidung" id="myTextarea" cols="30" rows="10"></textarea> 
+       </div>
+       <div class="">
             DANH MỤC
             <select name="iddm" id="">
                 <?php
