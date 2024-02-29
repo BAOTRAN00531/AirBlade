@@ -22,8 +22,14 @@ include_once "pdo.php";
         , EMAIL='".$EMAIL."' , TONG='".$TONG."' , PTTT='".$PTTT."' , NGAYDATHANG='".$NGAYDATHANG."' WHERE IDDH=".$IDDH;
         pdo_execute($sql);
     }
+
     function hoadon_select_by_id($IDDH){
         $sql = "SELECT * FROM donhang WHERE IDDH=".$IDDH;
+        return pdo_query($sql);
+
+    }
+    function hoadon_count_by_id($IDDH){
+        $sql = "SELECT COUNT(*) FROM donhang WHERE IDDH=".$IDDH;
         return pdo_query($sql);
 
     }

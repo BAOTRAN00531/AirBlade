@@ -51,7 +51,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="index?action=listdg">
 					<i class='bx bxs-star'></i>
 					<span class="text">Quản lý đánh giá</span>
 				</a>
@@ -83,6 +83,7 @@
         <?php
     include "../dao/pdo.php";
     include "../dao/danhmuc.php";
+    include "../dao/danhgia.php";
     include "../dao/sanpham.php";
     include "../dao/post.php";
     include "../dao/hoadon.php";
@@ -238,7 +239,38 @@
                     $listdh = hoadon_selectall();
                     include "order/list.php";
                     break;
-                
+                    case 'listdg':
+                        $listdg = danhgia_selectall();
+                        include "comment/list.php";
+                        break;
+                    case 'xoadg':
+                        if (isset($_GET['IDDG'])&&($_GET['IDDG']>0)) {
+                            danhgia_delete($_GET['IDDG']);
+                          }
+                          $listdh = danhgia_selectall();
+                          include "comment/list.php";
+                        break;
+                        case 'suadg':
+                            if (isset($_GET['IDDG'])&&($_GET['IDDG']>0)) {
+                                $dg=danhgia_select_by_id($_GET['IDDG']);
+                                if (is_array($dg)) {
+                                    extract($dg);
+                                } else {
+                                    echo "Không tìm thấy sản phẩm";
+                                }
+                            }
+                            include "comment/update.php";
+                            break;
+                        case 'updatedg':
+                            if (isset($_POST['capnhatdg'])&&($_POST['capnhatdg'])) {
+                                $IDDG = $_POST['IDDG'];
+                                $NoiDung = $_POST['NoiDung'];
+                                $Sao = $_POST['Sao'];
+                              }
+                            danhgia_update($IDDG,$NoiDung,$Sao);
+                            $listdg = danhgia_selectall();
+                            include "comment/list.php";
+                            break;                
             case 'addpost':
                     if(isset($_POST['addpost'])&&($_POST['addpost'])){
                         $ten=$_POST['tenbv'];

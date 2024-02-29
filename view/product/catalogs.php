@@ -1,7 +1,16 @@
-
+<?php 
+                        foreach ( $dmf1 as $one )
+                        {
+                            extract($one);
+                        }
+                        foreach ( $dmf2 as $two )
+                        {
+                            extract($two);
+                        }
+            ?>
 <section id="main">
     <div class="container">
-        <h2>YAMAHA</h2>
+        <h2><?php echo $one['LOAISP']; ?></h2>
         <div class="row">
         <?php 
         foreach( $list1 as $first )
@@ -22,7 +31,7 @@
         ?>
         </div>
 
-        <h2>HONDA</h2>
+        <h2><?php echo $two['LOAISP']; ?></h2>
         <div class="row"> 
         <?php 
         foreach( $list2 as $second )
