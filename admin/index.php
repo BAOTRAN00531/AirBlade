@@ -326,7 +326,7 @@
                             luutru_khieunai( $UserID , $MASP , $NoiDung , $HINH );
                         }
                         $list_khieunai = report_selectall();
-                        include "../AirBlade/view/report/report_handling.php";
+                        include "../view/report/report_handling.php";
                         break;
                     case 'xoakn':
                         if( isset( $_GET['MAKN'] ) && ( $_GET['MAKN'] > 0 ) )
@@ -334,11 +334,11 @@
                             report_delete( $_GET['MAKN'] );
                         }
                         $list_khieunai = report_selectall();
-                        include "../AirBlade/view/report/report_handling.php";
+                        include "../view/report/report_handling.php";
                     break;
                     case 'listkn':
                         $list_khieunai = report_selectall();
-                        include "../AirBlade/view/report/report_handling.php";
+                        include "../view/report/report_handling.php";
                         break;
                     case 'themkn':
                         $NoiDung = $_POST['noidung'];
@@ -353,7 +353,7 @@
                         }
                         report_insert( $UserID , $NoiDung , $filename );
                         $list_khieunai = report_selectall();
-                        include "../AirBlade/view/report/report_process.php";
+                        include "../view/report/report_handling.php";
                         break;                    
                 break;
             case 'logout':

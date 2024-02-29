@@ -165,6 +165,7 @@ ob_start();
                         include "catory.php";
                         break;
                     case 'news':
+                        
                         include "view/content/news.php";
                         break;
                     case 'introduce':

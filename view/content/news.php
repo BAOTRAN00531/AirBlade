@@ -1,5 +1,4 @@
 <section id="main">
-<<<<<<< HEAD
         <h1>Tin tức mới</h1>
         <hr>
         <div class="container">
@@ -95,7 +94,6 @@
                     corporis sequi ex quo nam, dicta repudiandae.</p>
             </div>
         </div>
-=======
     <?php  
         foreach( $news as $tintuc )
         {
@@ -114,5 +112,4 @@
           </table>";
         }
         ?>
->>>>>>> parent of 6172427 (fixed post)
     </section>
