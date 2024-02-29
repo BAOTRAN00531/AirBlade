@@ -64,13 +64,13 @@
 					<span class="text">Quản lý đánh giá</span>
 				</a>
 			</li>
-			<li class="active">
+			<li class="">
 				<a href="#">
 					<i class='bx bxs-group' ></i>
 					<span class="text">Quản lý tài khoản</span>
 				</a>
 			</li>
-            <li class="active">
+            <li class="">
 				<a href="index.php?action=listkn">
 					<i class='bx bxs-group' ></i>
 					<span class="text">Quản lý khiếu nại</span>
