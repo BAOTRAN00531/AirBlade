@@ -26,7 +26,6 @@ ob_start();
         include "dao/danhgia.php";
         include "dao/danhmuc.php";
         include "dao/hoadon.php";
-        include "dao/baidang.php";
         include "dao/khieunai.php";
         //include "dao/post.php";
         $dsdm=catalog_loadall();
