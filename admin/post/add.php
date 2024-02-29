@@ -13,7 +13,7 @@
         <h1>THÊM BÀI VIẾT</h1>
     </div>
     <br>
-    <form action="index.php?action=addpost" id="post-form" method="post">
+    <form action="index.php?action=addpost" id="post-form" method="post" enctype="multipart/form-data">
         <div class="">Tiêu đề: <br>
             <input type="text" name="tenbv" id="rowlist">
         </div>
