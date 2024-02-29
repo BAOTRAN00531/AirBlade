@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Boxicons -->
-	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-   
-	<!-- My CSS -->
-	<link rel="stylesheet" href="../CSS/admin.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Admin</title>
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="../CSS/admin.css">
+
+    <title>Admin</title>
 </head>
+
 <body>
 	<!-- SIDEBAR -->
 	<section id="sidebar">
@@ -33,7 +35,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="index.php?action=listdh">
+				<a href="#">
 					<i class='bx bxs-receipt'></i>
 					<span class="text">Quản lý đơn hàng</span>
 				</a>
@@ -51,7 +53,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="index?action=listdg">
+				<a href="#">
 					<i class='bx bxs-star'></i>
 					<span class="text">Quản lý đánh giá</span>
 				</a>
@@ -83,10 +85,8 @@
         <?php
     include "../dao/pdo.php";
     include "../dao/danhmuc.php";
-    include "../dao/danhgia.php";
     include "../dao/sanpham.php";
     include "../dao/post.php";
-    include "../dao/hoadon.php";
     if (isset($_GET['action'] )) {
         $act = $_GET['action'];
         switch ($act) {
@@ -201,76 +201,6 @@
                 $sanpham=sanpham_select_by_id($id);
                 include "product/list.php";
                 break;
-            case 'listdh':
-                $listdh = hoadon_selectall();
-                include "order/list.php";
-                break;
-            case 'xoadh':
-                if (isset($_GET['IDDH'])&&($_GET['IDDH']>0)) {
-                    hoadon_delete($_GET['IDDH']);
-                  }
-                  $listdh = hoadon_selectall();
-                  include "order/list.php";
-                break;
-                case 'suadh':
-                    if (isset($_GET['IDDH'])&&($_GET['IDDH']>0)) {
-                        $dh=hoadon_select_by_id($_GET['IDDH']);
-                        if (is_array($dh)) {
-                            extract($dh);
-                        } else {
-                            echo "Không tìm thấy sản phẩm";
-                        }
-                    }
-                    include "order/update.php";
-                    break;
-                case 'updatedh':
-                    if (isset($_POST['capnhatdh'])&&($_POST['capnhatdh'])) {
-                        $IDDH = $_POST['IDDH'];
-                        $HOTEN = $_POST['HOTEN'];
-                        $DIACHI = $_POST['DIACHI'];
-                        $PHONE = $_POST['PHONE'];
-                        $EMAIL = $_POST['EMAIL'];
-                        $PTTT = $_POST['PTTT'];
-                        $TONG = $_POST['TONG'];
-                        $NGAYDATHANG = $_POST['NGAYDATHANG'];
-                        
-                      }
-                      hoadon_update( $IDDH , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );  
-                    $listdh = hoadon_selectall();
-                    include "order/list.php";
-                    break;
-                    case 'listdg':
-                        $listdg = danhgia_selectall();
-                        include "comment/list.php";
-                        break;
-                    case 'xoadg':
-                        if (isset($_GET['IDDG'])&&($_GET['IDDG']>0)) {
-                            danhgia_delete($_GET['IDDG']);
-                          }
-                          $listdh = danhgia_selectall();
-                          include "comment/list.php";
-                        break;
-                        case 'suadg':
-                            if (isset($_GET['IDDG'])&&($_GET['IDDG']>0)) {
-                                $dg=danhgia_select_by_id($_GET['IDDG']);
-                                if (is_array($dg)) {
-                                    extract($dg);
-                                } else {
-                                    echo "Không tìm thấy sản phẩm";
-                                }
-                            }
-                            include "comment/update.php";
-                            break;
-                        case 'updatedg':
-                            if (isset($_POST['capnhatdg'])&&($_POST['capnhatdg'])) {
-                                $IDDG = $_POST['IDDG'];
-                                $NoiDung = $_POST['NoiDung'];
-                                $Sao = $_POST['Sao'];
-                              }
-                            danhgia_update($IDDG,$NoiDung,$Sao);
-                            $listdg = danhgia_selectall();
-                            include "comment/list.php";
-                            break;                
             case 'addpost':
                     if(isset($_POST['addpost'])&&($_POST['addpost'])){
                         $ten=$_POST['tenbv'];
@@ -280,74 +210,78 @@
                         $filename=$_FILES['hinh']['name'];
                         $target_dir = "../uploads/";
                         $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
-                        if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)){
-    
-                        }else{
-    
+                        // Kiểm tra xem có tệp tin được tải lên không
+                        if (!empty($filename)) {
+                            if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                                // Upload thành công, gọi hàm để thêm bài đăng vào cơ sở dữ liệu
+                                post_insert($ten, $tomtat, $noidung, $iddm, $filename);
+                                echo "Tải lên hình ảnh thành công.";
+                            } else {
+                                echo "Đã xảy ra lỗi khi tải lên hình ảnh.";
+                            }
+                        } else {
+                            echo "Vui lòng chọn một hình ảnh.";
                         }
-                        post_insert($ten,$tomtat,$noidung,$iddm,$filename);
-                       }
-                    $listdm=danhmuc_select_all();              
+                    }
+                    $listdm = danhmuc_select_all();
                     include "post/add.php";
-                    
-                break;
-            case 'logout':
-                    unset( $_SESSION['ROLE'] );
+                    break;
+
+                case 'logout':
+                    unset($_SESSION['ROLE']);
                     header("Location: ../login.php");
-                    break; 
-            case 'suabl':
-                     if ( isset( $_POST['suabl'] ) )
-                    {
+                    break;
+                case 'suabl':
+                    if (isset($_POST['suabl'])) {
 
                         $sql_edit = "UPDATE `binhluan` set `noidung` = '$noidungsua' WHERE `id` = $_GET[id] ";
-                        mysqli_query($conn,$sql_edit); 
+                        mysqli_query($conn, $sql_edit);
+                        header('Location:../../index.php?action=binhluan');
+                    } else {
+                        $id = $_GET['id'];
+                        $sql_xoa = "DELETE FROM binhluan where id='" . $id . "' ";
+                        mysqli_query($conn, $sql_xoa);
                         header('Location:../../index.php?action=binhluan');
                     }
-                    else
-                    {
-                        $id=$_GET['id'];
-                        $sql_xoa= "DELETE FROM binhluan where id='".$id."' ";
-                        mysqli_query($conn,$sql_xoa);  
-                        header('Location:../../index.php?action=binhluan');  
-                    }          
-                
-            default:
+                    break;
+
+                default:
                     # code...
                     break;
             }
-        } 
-      
-?>
-	</section>
-	<!-- CONTENT -->
-    
-	<script src="../JS/admin.js"></script>
-  <script
-    type="text/javascript"
-    src='https://cdn.tiny.cloud/1/0i54asjabx2x5mm0zu0itj3e2pcs5uk4bcy1nr8pg5cr9gca/tinymce/6/tinymce.min.js'
-    referrerpolicy="origin">
-  </script>
-  <script type="text/javascript">
-  tinymce.init({
-    selector: '#myTextarea',
-    width: 600,
-    height: 300,
-    plugins: [
-      'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
-      'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
-      'media', 'table', 'emoticons', 'template', 'help'
-    ],
-    toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
-      'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
-      'forecolor backcolor emoticons | help',
-    menu: {
-      favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }
-    },
-    menubar: 'favs file edit view insert format tools table help',
-    content_css: 'css/content.css'
-  });
-  </script>
+        }
+
+        ?>
+    </section>
+    <!-- CONTENT -->
+
+    <script src="../JS/admin.js"></script>
+    <script type="text/javascript"
+        src='https://cdn.tiny.cloud/1/0i54asjabx2x5mm0zu0itj3e2pcs5uk4bcy1nr8pg5cr9gca/tinymce/6/tinymce.min.js'
+        referrerpolicy="origin">
+        </script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: '#myTextarea',
+            width: 600,
+            height: 300,
+            plugins: [
+                'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+                'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
+                'media', 'table', 'emoticons', 'template', 'help'
+            ],
+            toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
+                'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
+                'forecolor backcolor emoticons | help',
+            menu: {
+                favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }
+            },
+            menubar: 'favs file edit view insert format tools table help',
+            content_css: 'css/content.css'
+        });
+    </script>
 
 
 </body>
+
 </html>

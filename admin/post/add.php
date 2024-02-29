@@ -10,9 +10,10 @@
 
 <body>
     <h1>THÊM BÀI VIẾT</h1>
-        <form action="index.php?action=addpost" id="post-form" method="post" enctype='multipart/form-data'>
+    <br>
+    <form action="index.php?action=addpost" id="post-form" method="post">
         <div class="">Tên: <br>
-                <input type="text" name="tenbv" id="rowlist" > 
+            <input type="text" name="tenbv" id="rowlist">
         </div>
         <br>
         <div class="">Hình: <br>
@@ -33,14 +34,11 @@
                     echo '<option value="' . $IDDM . '">' . $LOAISP . '</option>';
                 }
                 ?>
-
-
             </select>
         </div>
-        <div>
+        <div class="">
             <input type="submit" id="add" name="addpost" value="Thêm">
             <input type="reset" value="Nhập lại">
-            <a href=""><input type="button" value="Danh Sách">
         </div>
     </form>
 </body>

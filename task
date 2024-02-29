@@ -6,7 +6,6 @@ moudule quản lý bài viết chưa có
 bài viết ở trang chủ chưa có
 dsbài viết ở trang chủ chưa có
 headline của từng danh mục chưa đi theo id vẫn bị lỗi echo tên sản phẩm theo id
-chưa có bài viết ở news.php
 chưa loadall_feedback trên trang chi tiết sản phẩm
 chưa có ui mua hàng 
 chưa có nút report
@@ -19,7 +18,6 @@ chưa có chuyển hướng sang trang admin
 chưa có ui qldanhmuc
 chưa build logout hoàn chỉnh
 chưa build chức năng user
-chưa có moudule bài viết
 chưa có moudule khiếu nại
 chưa có moudule bình luận
 chưa có moudule thống kê
