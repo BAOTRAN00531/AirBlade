@@ -26,6 +26,10 @@ ob_start();
         include "dao/danhgia.php";
         include "dao/danhmuc.php";
         include "dao/hoadon.php";
+<<<<<<< HEAD
+=======
+        include "dao/khieunai.php";
+>>>>>>> parent of 63e0459 (Merge branch 'main' of https://github.com/BAOTRAN00531/AirBlade)
         include "dao/baidang.php";
         include "dao/khieunai.php";
         //include "dao/post.php";
@@ -34,6 +38,7 @@ ob_start();
         if (isset($_GET['action'] )&&($_GET['action'])) {
             $action = $_GET['action'];
                 switch ($action) {
+<<<<<<< HEAD
                     case 'complaint':
                         include "view/report/khieunai_form.php";
                         break;
@@ -50,6 +55,8 @@ ob_start();
                         hoadon_insert( $MASP , $iduser , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );
                         include "view/order/hoadon.php";
                         break;
+=======
+>>>>>>> parent of 63e0459 (Merge branch 'main' of https://github.com/BAOTRAN00531/AirBlade)
                     case 'catalogs':
                         $dmf1 = danhmuc_filter(1);
                         foreach ( $dmf1 as $one )
@@ -159,21 +166,22 @@ ob_start();
                         $UserID = $_POST['UserID'];
                         $Image = $_POST['image'];
                         $NgayDang = date('d-m-Y H:i:s');
+<<<<<<< HEAD
                         post_insert( $UserID , $NoiDung ,$Tag , $Image , $NgayDang );
                         $list_post = post_selectall();
                         include "../AirBlade/view/post/post_process.php";            
                         break;   
+=======
+                        baidang_insert( $UserID , $NoiDung ,$Tag , $Image , $NgayDang );
+                        $list_baidang = baidang_selectall();
+                        include "../AirBlade/view/post/baidang_process.php";            
+                        break;    
+                
+>>>>>>> parent of 63e0459 (Merge branch 'main' of https://github.com/BAOTRAN00531/AirBlade)
                     case 'catory':
                         include "catory.php";
                         break;
-                    case 'detailnews':
-                        if(isset($_GET['idp'])&&($_GET['idp']>0)){
-                            $id=$_GET['idp'];
-                          $onepost=post_select_by_id($id);}
-                            include "view/post/detailpost.php";
-                            break;
                     case 'news':
-                        $news=post_selectall();
                         include "view/content/news.php";
                         break;
                     case 'introduce':

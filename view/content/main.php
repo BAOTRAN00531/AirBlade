@@ -12,12 +12,9 @@
           <th rowspan="2"><img src="../IMG/baoxe.jpg" alt=""><text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut sollicitudin sapien. Mauris lobortis rhoncus diam, vulputate sagittis lectus consectetur </text></th>
           <th rowspan="2"><img src="../IMG/baoxe.jpg" alt=""><text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut sollicitudin sapien. Mauris lobortis rhoncus diam, vulputate sagittis lectus consectetur </text></th>
           <th rowspan="2"><img src="../IMG/baoxe.jpg" alt=""><text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut sollicitudin sapien. Mauris lobortis rhoncus diam, vulputate sagittis lectus consectetur </text></th>
-<a href="index.php?action=listkn">list</a>             
         </tr>
       </table>
-   
 </section>
-
 <div class="banner">
   <img src="../IMG/ms_banner_img7.png">
 </div>

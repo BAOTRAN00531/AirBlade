@@ -1,6 +1,15 @@
 <?php 
-
-
+include "../AirBlade/dao/pdo.php";
+include "../AirBlade/dao/hoadon.php";
+$NGAYDATHANG = date('d-m-Y H:i:s');
+$MASP = $_POST['idsp'];
+$iduser = $_POST['iduser'];
+$HOTEN = $_POST['HOTEN'];
+$DIACHI = $_POST['DIACHI'];
+$PHONE = $_POST['SDT'];
+$EMAIL = $_POST['email'];
+$TONG = $_POST['TONG'];
+$PTTT = $_POST['pttt'];
 echo $_POST['HOTEN'];
 echo "<br>";
 echo $_POST['email'];
@@ -18,5 +27,5 @@ echo "<br>";
 echo $_POST['pttt'];
 echo "<br>";
 echo $NGAYDATHANG;
-
+hoadon_insert( $MASP , $iduser , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );
 ?>
