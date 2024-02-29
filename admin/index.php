@@ -13,7 +13,6 @@
 	<title>Admin</title>
 </head>
 <body>
-<<<<<<< HEAD
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="#" class="brand">
@@ -105,88 +104,6 @@
                      $ten=$_POST['ten'];
                      $madm=$_POST['madm'];
                      danhmuc_insert($madm, $ten);
-=======
-    <!-- SIDEBAR -->
-    <section id="sidebar">
-        <a href="#" class="brand">
-            <i class='bx bxs-smile'></i>
-            <span class="text">AdminABlade</span>
-        </a>
-        <ul class="side-menu top">
-            <li>
-                <a href="#">
-                    <i class='bx bxs-doughnut-chart'></i>
-                    <span class="text">Quản lý thống kê</span>
-                </a>
-            </li>
-            <li class="active">
-                <a href="index.php?action=listsp">
-                    <i class='bx bxs-shopping-bag-alt'></i>
-                    <span class="text">Quản lý sản phẩm</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-receipt'></i>
-                    <span class="text">Quản lý đơn hàng</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-message-dots'></i>
-                    <span class="text">Quản lý bình luận</span>
-                </a>
-            </li>
-            <li>
-                <a href="index.php?action=addpost">
-                    <i class='bx bxs-edit-alt'></i>
-                    <span class="text">Quản lý bài đăng</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-star'></i>
-                    <span class="text">Quản lý đánh giá</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-group'></i>
-                    <span class="text">Quản lý tài khoản</span>
-                </a>
-            </li>
-        </ul>
-        <ul class="side-menu">
-            <li>
-                <a href="#" class="logout">
-                    <i class='bx bxs-log-out-circle'></i>
-                    <span class="text">Logout</span>
-                </a>
-            </li>
-        </ul>
-    </section>
-    <!-- SIDEBAR -->
-    <!-- CONTENT -->
-    <section id="content">
-        <!-- NAVBAR -->
-        <nav>
-            <i class='bx bx-menu'></i>
-        </nav>
-        <!-- NAVBAR -->
-        <?php
-        include "../dao/pdo.php";
-        include "../dao/danhmuc.php";
-        include "../dao/sanpham.php";
-        include "../dao/post.php";
-        if (isset($_GET['action'])) {
-            $act = $_GET['action'];
-            switch ($act) {
-                case 'adddm':
-                    if (isset($_POST['addlist']) && ($_POST['addlist'])) {
-                        $ten = $_POST['ten'];
-                        $madm = $_POST['madm'];
-                        danhmuc_insert($madm, $ten);
->>>>>>> parent of 63e0459 (Merge branch 'main' of https://github.com/BAOTRAN00531/AirBlade)
                     }
                     $listdm = danhmuc_select_all();
                     include "category/add.php";
@@ -290,45 +207,33 @@
                     if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                         sanpham_delete($_GET['id']);
                     }
-<<<<<<< HEAD
-                }
+                
                 sanpham_update($id,$ten,$gia,$soluong,$filename,$mota);
                 $sanpham=sanpham_select_by_id($id);
                 include "product/list.php";
                 break;
-            case 'listdh':
-                $listdh = hoadon_selectall();
-                include "order/list.php";
-                break;
-            case 'xoadh':
-                if (isset($_GET['IDDH'])&&($_GET['IDDH']>0)) {
-                    hoadon_delete($_GET['IDDH']);
-                  }
-                  $listdh = hoadon_selectall();
-                  include "order/list.php";
-                break;
-                case 'suadh':
+                case 'listdn':
+                    # code...
+                    break;
+                    $listdh = hoadon_selectall();
+                    include "order/list.php";
+                    break;
+                 case 'xoadh':
+                        if (isset($_GET['IDDH'])&&($_GET['IDDH']>0)) {
+                            hoadon_delete($_GET['IDDH']);
+                        }
+                        $listdh = hoadon_selectall();
+                        include "order/list.php";
+                        break;
+                 case 'suadh':
                     if (isset($_GET['IDDH'])&&($_GET['IDDH']>0)) {
                         $dh=hoadon_select_by_id($_GET['IDDH']);
                         if (is_array($dh)) {
                             extract($dh);
-=======
-
-                    $listsp = sanpham_select_all("", 0);
-                    include "product/list.php";
-                    break;
-                case 'suasp':
-                    if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                        $sanpham = sanpham_select_by_id($_GET['id']);
-                        $listdm = danhmuc_select_all(); // Khởi tạo $listdm
-                        if ($sanpham) {
-                            extract($sanpham);
->>>>>>> parent of 63e0459 (Merge branch 'main' of https://github.com/BAOTRAN00531/AirBlade)
                         } else {
                             echo "Không tìm thấy sản phẩm";
                         }
                     }
-<<<<<<< HEAD
                     include "order/update.php";
                     break;
                 case 'updatedh':
@@ -355,43 +260,6 @@
                         $noidung=$_POST['noidung'];
                         $iddm=$_POST['iddm'];
                         $filename=$_FILES['hinh']['name'];
-=======
-                    include "product/update.php";
-                    break;
-
-                case 'updatesp':
-                    if (isset($_POST['capnhatsp']) && ($_POST['capnhatsp'])) {
-                        $ten = $_POST['tensp'];
-                        $gia = $_POST['giasp'];
-                        $mota = $_POST['mota'];
-                        $soluong = $_POST['soluong'];
-                        $id = $_POST['id'];
-                        $filename = $_FILES['hinh']['name'];
-                        $target_dir = "../uploads/";
-                        $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
-                        if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
-                            // Nếu upload ảnh thành công, tiến hành cập nhật dữ liệu
-                            sanpham_update($id, $ten, $gia, $soluong, $filename, $mota);
-                            // Chuyển hướng đến trang danh sách sản phẩm sau khi cập nhật thành công
-                            header("Location: index.php?action=listsp");
-                            exit(); // Đảm bảo không có mã HTML hoặc mã PHP nào được thực thi sau lệnh header
-                        } else {
-                            // Xử lý lỗi khi upload ảnh
-                        }
-                    }
-                    // Nếu không thực hiện chuyển hướng, tiếp tục xử lý
-                    $sanpham = sanpham_select_by_id($id);
-                    break;
-
-                case 'addpost':
-                    if (isset($_POST['addpost']) && ($_POST['addpost'])) {
-                        $id = $_POST['id'];
-                        $ten = $_POST['tenbv'];
-                        $tomtat = $_POST['tomtat'];
-                        $noidung = $_POST['noidung'];
-                        $iddm = $_POST['iddm'];
-                        $filename = $_FILES['name'];
->>>>>>> parent of 63e0459 (Merge branch 'main' of https://github.com/BAOTRAN00531/AirBlade)
                         $target_dir = "../uploads/";
                         $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                         if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)){

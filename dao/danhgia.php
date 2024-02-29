@@ -10,7 +10,6 @@ function danhgia_selectall()
     $sql = "SELECT * FROM danhgia";
     return pdo_query($sql);
 }
-<<<<<<< HEAD
 function danhgia_delete($IDDG)
 {
     $sql = "DELETE FROM danhgia WHERE IDDG = $IDDG";
@@ -30,6 +29,4 @@ function danhgia_select_by_sp($MASP){
     return pdo_query($sql);
 
 }
-=======
->>>>>>> parent of 63e0459 (Merge branch 'main' of https://github.com/BAOTRAN00531/AirBlade)
 ?>
