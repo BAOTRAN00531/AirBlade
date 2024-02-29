@@ -12,4 +12,13 @@ function post_select_by_id($id){
     $sql = "SELECT * FROM post WHERE id=".$id;
     return pdo_query($sql);
 }
+function post_delete($id){
+    $sql = "DELETE FROM post WHERE id=$id";
+    pdo_execute($sql);
+}
+function post_update($id,$tenbv,$tomtat,$noidung,$iddm,$hinh)
+{
+    $sql ="UPDATE post SET tenbv='".$tenbv."' , tomtat='".$tomtat."' , noidung='".$noidung."' , iddm='".$iddm."' , hinh='".$hinh."' WHERE id='".$id."'";
+    pdo_execute($sql);
+}
 ?>

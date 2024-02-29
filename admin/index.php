@@ -299,6 +299,10 @@
                     include "order/list.php";
                     break;
 
+                case 'listpost':
+                    $list_post = post_selectall();
+                    include "post/list.php";
+                    break;
                 case 'addpost':
                     if (isset($_POST['addpost']) && ($_POST['addpost'])) {
                         $ten = $_POST['tenbv'];
@@ -317,6 +321,38 @@
                        }
                     $listdm=catalog_select_all();              
                     include "post/add.php";
+                    break;
+                    case 'suapost':
+                        if (isset($_GET['id'])&&($_GET['id']>0)) {
+                            $post=post_select_by_id($_GET['id']);
+                            if (is_array($post)) {
+                                extract($post);
+                            } else {
+                                echo "Không tìm thấy sản phẩm";
+                            }
+                        }
+                        include "post/update.php";
+                        break;
+                    case 'xoapost':
+                        if (isset($_GET['id'])&&($_GET['id']>0)) {
+                            post_delete($_GET['id']);
+                        }
+                        $list_post = post_selectall();
+                        include "post/list.php";
+                        break;
+                    case 'updatepost':
+                        if (isset($_POST['capnhatpost']) && ($_POST['capnhatpost'])) {
+                            $id = $_POST['id'];
+                            $tenbv = $_POST['tenbv'];
+                            $tomtat = $_POST['tomtat'];
+                            $noidung = $_POST['noidung'];
+                            $iddm = $_POST['iddm'];
+                            $hinh = $_POST['hinh'];
+                          }
+                          post_update( $id , $tenbv , $tomtat , $noidung , $iddm , $hinh );  
+                        $list_post = post_selectall();
+                        include "post/list.php";                        
+                        break;
                     case 'luukn':
                         if( isset( $_GET['MAKN'] ) && ( $_GET['MAKN'] > 0 ) )
                         {
@@ -357,7 +393,6 @@
                         $list_khieunai = report_selectall();
                         include "../view/report/report_handling.php";
                         break;                    
-                break;
             case 'logout':
                     unset( $_SESSION['ROLE'] );
                     header("Location: ../login.php");
