@@ -10,6 +10,6 @@ function post_selectall(){
 }
 function post_select_by_id($id){
     $sql = "SELECT * FROM post WHERE id=".$id;
-    return pdo_query_one($sql);
+    return pdo_query($sql);
 }
 ?>

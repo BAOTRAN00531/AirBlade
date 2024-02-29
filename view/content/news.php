@@ -9,7 +9,7 @@
             $idp=$tintuc['id'];
             echo" <table class='noidung'>
             <tr>
-              <th rowspan='2'> <a href='index.php?action=detailnews&idsp=$idp'><img src='../uploads/$hinh'alt='Sản phẩm 1'></a>
+              <th rowspan='2'> <a href='index.php?action=detailnews&idp=$idp'><img src='../uploads/$hinh'alt='Sản phẩm 1'></a>
               <h4>$tenbaiviet</h4> <text>$tomtat</text>
               </a></th>
             
