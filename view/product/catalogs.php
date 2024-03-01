@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="../CSS/style.css">
 <section id="main">
     <div class="container">
         <h2><?php echo $loaisp1 ?></h2>
