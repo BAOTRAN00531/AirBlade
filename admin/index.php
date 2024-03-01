@@ -14,88 +14,138 @@
         <title>Admin</title>
     </head>
 
-    <body>
-        <!-- SIDEBAR -->
-        <section id="sidebar">
-            <a href="#" class="brand">
-                <i class='bx bxs-smile'></i>
-                <span class="text">AdminABlade</span>
-            </a>
-            <ul class="side-menu top">
-                <li>
-                    <a href="#">
-                        <i class='bx bxs-doughnut-chart'></i>
-                        <span class="text">Quản lý thống kê</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.php?action=listsp">
-                        <i class='bx bxs-shopping-bag-alt'></i>
-                        <span class="text">Quản lý sản phẩm</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.php?action=listdh">
-                        <i class='bx bxs-receipt'></i>
-                        <span class="text">Quản lý đơn hàng</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class='bx bxs-message-dots'></i>
-                        <span class="text">Quản lý bình luận</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.php?action=addpost">
-                        <i class='bx bxs-edit-alt'></i>
-                        <span class="text">Quản lý bài đăng</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class='bx bxs-star'></i>
-                        <span class="text">Quản lý đánh giá</span>
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="#">
-                        <i class='bx bxs-group'></i>
-                        <span class="text">Quản lý tài khoản</span>
-                    </a>
-                </li>
-            </ul>
-            <ul class="side-menu">
-                <li>
-                    <a href="#" class="logout">
-                        <i class='bx bxs-log-out-circle'></i>
-                        <span class="text">Logout</span>
-                    </a>
-                </li>
-            </ul>
-        </section>
-        <!-- SIDEBAR -->
-        <section id="content">
-            <!-- NAVBAR -->
-            <nav>
-                <i class='bx bx-menu'></i>
-            </nav>
-            <!-- NAVBAR -->
-            <?php
-            include "../dao/pdo.php";
-            include "../dao/danhmuc.php";
-            include "../dao/sanpham.php";
-            include "../dao/post.php";
-            include "../dao/hoadon.php";
-            if (isset($_GET['action'])) {
-                $act = $_GET['action'];
-                switch ($act) {
-                    case 'adddm':
-                        if (isset($_POST['addlist']) && ($_POST['addlist'])) {
-                            $ten = $_POST['ten'];
-                            $madm = $_POST['madm'];
-                            danhmuc_insert($madm, $ten);
+<body>
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">AdminABlade</span>
+		</a>
+		<ul class="side-menu top">
+			<li>
+				<a href="#">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Quản lý thống kê</span>
+				</a>
+			</li>
+			<li>
+				<a href="index.php?action=listsp">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Quản lý sản phẩm</span>
+				</a>
+			</li>
+			<li>
+				<a href="index.php?action=listdh">
+					<i class='bx bxs-receipt'></i>
+					<span class="text">Quản lý đơn hàng</span>
+				</a>
+			</li>
+            <li>
+				<a href="index.php?action=listdm">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Quản lý danh mục</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Quản lý bình luận</span>
+				</a>
+			</li>
+			<li>
+				<a href="index.php?action=addpost">
+					<i class='bx bxs-edit-alt'></i>
+					<span class="text">Quản lý bài đăng</span>
+				</a>
+			</li>
+            <li>
+				<a href="index.php?action=listcontact">
+					<i class='bx bxs-edit-alt'></i>
+					<span class="text">Quản lý liên hệ</span>
+				</a>
+			</li>
+			<li>
+            <a href="index?action=listdg">
+					<i class='bx bxs-star'></i>
+					<span class="text">Quản lý đánh giá</span>
+				</a>
+			</li>
+			<li class="">
+				<a href="#">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Quản lý tài khoản</span>
+				</a>
+			</li>
+            <li class="">
+				<a href="index.php?action=listkn">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Quản lý khiếu nại</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<!-- <a href="#" class="nav-link" class="sp">Quản lý sản phẩm</a> -->
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+                
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+		</nav>
+		<!-- NAVBAR -->
+        <?php
+    include "../dao/pdo.php";
+    include "../dao/danhgia.php";
+    include "../dao/contact.php";
+    include "../dao/danhmuc.php";
+    include "../dao/sanpham.php";
+    include "../dao/khieunai.php";
+    include "../dao/post.php";
+    include "../dao/hoadon.php";
+    if (isset($_GET['action'] )) {
+        $act = $_GET['action'];
+        switch ($act) {
+            case 'listcontact':
+                $list_contact = contact_select_all();
+                include "contact/list.php";
+                break;
+            case 'listdg':
+                $listdg = feedback_selectall();
+                include "comment/list.php";
+                break;
+            case 'xoadg':
+                if (isset($_GET['IDDG'])&&($_GET['IDDG']>0)) {
+                    feedback_delete($_GET['IDDG']);
+                  }
+                  $listdh = feedback_selectall();
+                  include "comment/list.php";
+                break;
+                case 'suadg':
+                    if (isset($_GET['IDDG'])&&($_GET['IDDG']>0)) {
+                        $dg=feedback_select_by_id($_GET['IDDG']);
+                        if (is_array($dg)) {
+                            extract($dg);
+                        } else {
+                            echo "Không tìm thấy sản phẩm";
                         }
+                    }
                         break;
                     case 'listdg':
                         $listdg = feedback_selectall();
