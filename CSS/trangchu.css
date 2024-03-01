@@ -396,3 +396,8 @@ button:hover {
   padding-left: 70px;
   margin-bottom: 15px;
 }
+.container h2 {
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(207, 206, 206);
+}
