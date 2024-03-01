@@ -115,7 +115,7 @@
     // }
     ?>
     <br>
-    <h3 style="text-align: center;">ĐÁNH GIÁ CỦA KHÁCH HÀNG</h3>
+    <h3 style="text-align: center;">ĐÁNH GIÁ CỦA CÁC KHÁCH HÀNG KHÁC</h3>
     <br>
     <div class="reviews-container">
         <?php foreach ($list_danhgia as $list): ?>
