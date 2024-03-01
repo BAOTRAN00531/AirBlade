@@ -1,24 +1,17 @@
-<link rel="stylesheet" href="../CSS/style.css">
 <section id="main">
+    <link rel="stylesheet" href="../../CSS/style.css">
     <div class="container" id="'.$LOAISP.'">
-        <?php
-
-        foreach ($dmf as $dm) {
-            $THUTU = $dm['THUTU']; // Trích xuất giá trị của $THUTU từ mỗi phần tử trong mảng
-            $LOAISP = $dm['LOAISP'];
-
-            echo '<h2>' . $LOAISP . '</h2>';
-        }
-        // <table class="noidung">
-        //     <tr>
-        // <?php  
+        <table class="noidung">
+            <tr>
+        <?php  
         
-        foreach ($dmf as $dm) {
-            $THUTU = $dm['THUTU']; // Trích xuất giá trị của $THUTU từ mỗi phần tử trong mảng
-            $LOAISP = $dm['LOAISP'];
-
-            echo '<h2>' . $LOAISP . '</h2>';
-        }
+       foreach ($dmf as $dm)
+            {
+              $THUTU = $dm['THUTU']; // Trích xuất giá trị của $THUTU từ mỗi phần tử trong mảng
+               $LOAISP = $dm['LOAISP'];
+            
+                echo '<h2>'.$LOAISP.'</h2>';
+                                        }
         ?>
             <?php
             $imgPath="uploads/";
@@ -34,10 +27,10 @@
                         </a>
                     </th>
                     ';
-        }
-        ?>
-        </tr>
+                }
+            ?>
+            </tr>
         </table>
-    </div>
+            </div>
     </div>
 </section>

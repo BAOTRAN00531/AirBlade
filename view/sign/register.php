@@ -40,7 +40,7 @@
     <main class="main">
         <div class="container">
             <?php
-            include("../php/config.php");
+          
             if (isset($_POST['submit'])) {
                 $username = $_POST['username'];
                 $email = $_POST['email'];
