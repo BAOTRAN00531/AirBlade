@@ -16,8 +16,7 @@ session_start();
     <div class="container">
         <div class="box form-box">
             <?php
-
-
+            include("./php/config.php");
             if (isset($_POST['submit'])) {
                 $email = mysqli_real_escape_string($con, $_POST['email']);
                 $password = mysqli_real_escape_string($con, $_POST['password']);
@@ -36,7 +35,7 @@ session_start();
                     echo "<a href='index.php'><button class='btn'>Trở về</button>";
                 }
                 if (isset($_SESSION['valid'])) {
-                    header("Location: home.php");
+                    header("Location: personalinfor.php");
                 }
             } else {
 

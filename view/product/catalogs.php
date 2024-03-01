@@ -1,7 +1,7 @@
 
 <section id="main">
     <div class="container">
-        <h2>YAMAHA</h2>
+        <h2><?php echo $loaisp1 ?></h2>
         <div class="row">
         <?php 
         foreach( $list1 as $first )
@@ -22,7 +22,7 @@
         ?>
         </div>
 
-        <h2>HONDA</h2>
+        <h2><?php echo $loaisp2 ?></h2>
         <div class="row"> 
         <?php 
         foreach( $list2 as $second )

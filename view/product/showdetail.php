@@ -23,6 +23,8 @@ table
                                 <form action="/view/order/muahang.php" method="post">
                                 <input type="text" name="TENSP" value="'.$TENSP.'" hidden>
                                 <input type="text" name="MASP" value="'.$MASP.'" hidden>
+                                <input type="text" name="GIASP" value="'.$GIASP.'" hidden>
+                                <input type="text" name="HINH" value="'.$hinh.'" hidden>
                                     <button type="submit">Mua ngay</button></p></th>
                                     </form>
                     

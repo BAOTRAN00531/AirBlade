@@ -8,12 +8,28 @@
       </div><br>
       <table class="noidung">
         <tr>
-          <th rowspan="2"><img src="../IMG/baoxe.jpg" alt=""><text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut sollicitudin sapien. Mauris lobortis rhoncus diam, vulputate sagittis lectus consectetur </text></th>
-          <th rowspan="2"><img src="../IMG/baoxe.jpg" alt=""><text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut sollicitudin sapien. Mauris lobortis rhoncus diam, vulputate sagittis lectus consectetur </text></th>
-          <th rowspan="2"><img src="../IMG/baoxe.jpg" alt=""><text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut sollicitudin sapien. Mauris lobortis rhoncus diam, vulputate sagittis lectus consectetur </text></th>
-          <th rowspan="2"><img src="../IMG/baoxe.jpg" alt=""><text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut sollicitudin sapien. Mauris lobortis rhoncus diam, vulputate sagittis lectus consectetur </text></th>
+          <?php
+        foreach( $news as $tintuc )
+        {
+            extract($tintuc);
+            $tenbaiviet=$tintuc['tenbv'];
+            $tomtat=$tintuc['tomtat'];
+            $hinh=$tintuc['hinh'];
+            $idp=$tintuc['id'];
+            echo" <table class='noidung'>
+            <tr>
+              <th rowspan='2'> <a href='index.php?action=detailnews&idp=$idp'><img src='../uploads/$hinh' width='300px' height='230px'  alt='.$hinh.'></a>
+              <h4>$tenbaiviet</h4> <text>$tomtat</text>
+             
+              </a></th>
+            
+            </tr>
+          </table>";
+        }
+        ?>
         </tr>
       </table>
+   
 </section>
 <div class="banner">
   <img src="../IMG/ms_banner_img7.png">

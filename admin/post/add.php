@@ -13,7 +13,7 @@
         <h1>THÊM BÀI VIẾT</h1>
     </div>
     <br>
-    <form action="index.php?action=addpost" id="post-form" method="post">
+    <form action="index.php?action=addpost" id="post-form" method="post" enctype="multipart/form-data">
         <div class="">Tiêu đề: <br>
             <input type="text" name="tenbv" id="rowlist">
         </div>
@@ -41,6 +41,7 @@
         <div class="">
             <input type="submit" id="add" name="addpost" value="Thêm">
             <input type="reset" value="Nhập lại">
+            <a type="button" href="index.php?action=listpost">list</a>
         </div>
     </form>
 </body>

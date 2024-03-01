@@ -27,18 +27,20 @@ ob_start();
         include "dao/danhmuc.php";
         include "dao/hoadon.php";
         include "dao/khieunai.php";
-        //include "dao/post.php";
+        include "dao/post.php";
         $dsdm=catalog_loadall();
+        $news=post_selectall();
         include "view/header.php";
         if (isset($_GET['action'] )&&($_GET['action'])) {
             $action = $_GET['action'];
                 switch ($action) {
+                    
                     case 'complaint':
                         include "view/report/report_form.php";
                         break;
                     case 'hoadon':
                         $NGAYDATHANG = date('d-m-Y');
-                        $MASP = $_POST['idsp'];
+                        $MASP = $_POST['MASP'];
                         $iduser = $_POST['iduser'];
                         $HOTEN = $_POST['HOTEN'];
                         $DIACHI = $_POST['DIACHI'];
@@ -54,6 +56,7 @@ ob_start();
                         {
                             extract($one);
                             $iddm1 = $one['IDDM'];
+                            $loaisp1 = $one['LOAISP'];
                         }
                         $list1 = product_selectall("", $iddm1);
                         $dmf2 = catalog_filter(2);
@@ -61,6 +64,7 @@ ob_start();
                         {
                             extract($two);
                             $iddm2 = $two['IDDM'];
+                            $loaisp2 = $two['LOAISP'];
                         }
                         $list2 = product_selectall("", $iddm2);
                         include "view/product/catalogs.php";
@@ -164,7 +168,14 @@ ob_start();
                     case 'catory':
                         include "catory.php";
                         break;
+                    case 'detailnews':
+                            if(isset($_GET['idp'])&&($_GET['idp']>0)){
+                                $id=$_GET['idp'];
+                              $onepost=post_select_by_id($id);}
+                                include "view/post/detailpost.php";
+                                break;
                     case 'news':
+                        
                         include "view/content/news.php";
                         break;
                     case 'introduce':
