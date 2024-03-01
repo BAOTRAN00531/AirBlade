@@ -43,8 +43,8 @@
 
 .product img {
     display: block;
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: auto;
     object-fit: cover;
     margin-bottom: 10px;
 }

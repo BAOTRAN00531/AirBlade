@@ -13,7 +13,7 @@
             $GIASP = $first['GIASP'];
             echo "
             <div class='product'>
-            <a href='index.php?action=showdetail&idsp=$MASP'><img height='100px' width='100px' src='../uploads/$hinh' alt='Sản phẩm 1'></a>
+            <a href='index.php?action=showdetail&idsp=$MASP'><img height='200px' width='auto' src='../uploads/$hinh' alt='Sản phẩm 1'></a>
              <h4>$TENSP</h4>
              <p>Giá: $GIASP VND</p>
              <button>Mua ngay</button>
@@ -34,7 +34,7 @@
             $GIASP = $second['GIASP'];
             echo "
             <div class='product'>
-            <a href='index.php?action=showdetail&idsp=$MASP'><img height='100px' width='100px' src='../uploads/$hinh' alt='Sản phẩm 1'></a>
+            <a href='index.php?action=showdetail&idsp=$MASP'><img height='200px' width='auto' src='../uploads/$hinh' alt='Sản phẩm 1'></a>
              <h4>$TENSP</h4>
              <p>Giá: $GIASP VND</p>
              <button>Mua ngay</button>
