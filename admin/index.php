@@ -96,25 +96,63 @@
                         $madm = $_POST['madm'];
                         danhmuc_insert($madm, $ten);
                     }
-                    $listdm = danhmuc_select_all();
+            case 'listdg':
+                $listdg = feedback_selectall();
+                include "comment/list.php";
+                break;
+            case 'xoadg':
+                if (isset($_GET['IDDG'])&&($_GET['IDDG']>0)) {
+                    feedback_delete($_GET['IDDG']);
+                  }
+                  $listdh = feedback_selectall();
+                  include "comment/list.php";
+                break;
+                case 'suadg':
+                    if (isset($_GET['IDDG'])&&($_GET['IDDG']>0)) {
+                        $dg=feedback_select_by_id($_GET['IDDG']);
+                        if (is_array($dg)) {
+                            extract($dg);
+                        } else {
+                            echo "Không tìm thấy sản phẩm";
+                        }
+                    }
+                    include "comment/update.php";
+                    break;
+                case 'updatedg':
+                    if (isset($_POST['capnhatdg'])&&($_POST['capnhatdg'])) {
+                        $IDDG = $_POST['IDDG'];
+                        $NoiDung = $_POST['NoiDung'];
+                        $Sao = $_POST['Sao'];
+                      }
+                    feedback_update($IDDG,$NoiDung,$Sao);
+                    $listdg = feedback_selectall();
+                    include "comment/list.php";
+                    break;   
+            case 'adddm':
+                if(isset($_POST['addlist'])&&($_POST['addlist'])){
+                     $ten=$_POST['ten'];
+                     $madm=$_POST['madm'];
+                     catalog_insert($madm, $ten);
+                    }
+                    $listdm = catalog_select_all();
                     include "category/add.php";
                     break;
                 case 'listdm':
-                    $listdm = danhmuc_select_all();
+                    $listdm = catalog_select_all();
                     include "category/list.php";
                     break;
                 case 'xoadm':
                     if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                        danhmuc_delete($_GET['id']);
+                        catalog_delete($_GET['id']);
                     }
-                    $listdm = danhmuc_select_all();
+                    $listdm = catalog_select_all();
                     $sql = "select * from danhmuc order by LOAISP desc";
                     $listdm = pdo_query($sql);
                     include "category/list.php";
                     break;
                 case 'suadm':
                     if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                        $dm = danhmuc_select_by_id($_GET['id']);
+                        $dm = catalog_select_by_id($_GET['id']);
                     }
                     include "category/update.php";
                     break;
@@ -123,9 +161,9 @@
                         $ten = $_POST['ten'];
                         $thutu = $_POST['thutu'];
                         $madm = $_POST['madm'];
-                        danhmuc_update($thutu, $madm, $ten);
+                        catalog_update($thutu, $madm, $ten);
                     }
-                    $listdm = danhmuc_select_all();
+                    $listdm = catalog_select_all();
                     include "category/list.php";
                     break;
                 case 'addsp':
@@ -177,9 +215,9 @@
 
                         // Tiếp tục xử lý các công việc khác trong code của bạn...
         
-                        sanpham_insert($iddm, $ten, $gia, $soluong, $filename, $mota);
+                        product_insert($iddm, $ten, $gia, $soluong, $filename, $mota);
                     }
-                    $listdm = danhmuc_select_all();
+                    $listdm = catalog_select_all();
                     include "product/add.php";
                     break;
                 case 'listsp':
@@ -190,13 +228,13 @@
                         $keyw = '';
                         $iddm = 0;
                     }
-                    $listdm = danhmuc_select_all();
-                    $listsp = sanpham_select_all($keyw, $iddm);
+                    $listdm = catalog_select_all();
+                    $listsp = product_select_all($keyw, $iddm);
                     include "product/list.php";
                     break;
                 case 'xoasp':
                     if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                        sanpham_delete($_GET['id']);
+                        product_delete($_GET['id']);
                     }
                     sanpham_update($id, $ten, $gia, $soluong, $filename, $mota);
                     $sanpham = sanpham_select_by_id($id);
@@ -218,6 +256,26 @@
                 case 'suadh':
                     if (isset($_GET['IDDH']) && ($_GET['IDDH'] > 0)) {
                         $dh = hoadon_select_by_id($_GET['IDDH']);
+                    }
+                
+                product_update($id,$ten,$gia,$soluong,$filename,$mota);
+                $sanpham=product_select_by_id($id);
+                include "product/list.php";
+                break;
+                case 'listdh':
+                    $listdh = bill_selectall();
+                    include "order/list.php";
+                    break;
+                 case 'xoadh':
+                        if (isset($_GET['IDDH'])&&($_GET['IDDH']>0)) {
+                            bill_delete($_GET['IDDH']);
+                        }
+                        $listdh = bill_selectall();
+                        include "order/list.php";
+                        break;
+                 case 'suadh':
+                    if (isset($_GET['IDDH'])&&($_GET['IDDH']>0)) {
+                        $dh=bill_select_by_id($_GET['IDDH']);
                         if (is_array($dh)) {
                             extract($dh);
                         } else {
@@ -236,10 +294,13 @@
                         $PTTT = $_POST['PTTT'];
                         $TONG = $_POST['TONG'];
                         $NGAYDATHANG = $_POST['NGAYDATHANG'];
-
                     }
                     hoadon_update($IDDH, $HOTEN, $DIACHI, $PHONE, $EMAIL, $TONG, $PTTT, $NGAYDATHANG);
                     $listdh = hoadon_selectall();
+                        
+                      }
+                      bill_update( $IDDH , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );  
+                    $listdh = bill_selectall();
                     include "order/list.php";
                     break;
 
@@ -261,10 +322,56 @@
                     }
                     $listdm = danhmuc_select_all();
                     include "post/add.php";
-
                     break;
                 case 'logout':
                     unset($_SESSION['ROLE']);
+                        post_insert($ten,$tomtat,$noidung,$iddm,$filename);
+                       }
+                    $listdm=catalog_select_all();              
+                    include "post/add.php";
+                    case 'luukn':
+                        if( isset( $_GET['MAKN'] ) && ( $_GET['MAKN'] > 0 ) )
+                        {
+                            $UserID = $_GET['iduser'];
+                            $MAKN = $_GET['MAKN'];
+                            $MASP = $_GET['MASP'];
+                            $NoiDung = $_GET['NoiDung'];
+                            $HINH = $_GET['HINH'];
+                            luutru_khieunai( $UserID , $MASP , $NoiDung , $HINH );
+                        }
+                        $list_khieunai = report_selectall();
+                        include "../AirBlade/view/report/report_handling.php";
+                        break;
+                    case 'xoakn':
+                        if( isset( $_GET['MAKN'] ) && ( $_GET['MAKN'] > 0 ) )
+                        {
+                            report_delete( $_GET['MAKN'] );
+                        }
+                        $list_khieunai = report_selectall();
+                        include "../AirBlade/view/report/report_handling.php";
+                    break;
+                    case 'listkn':
+                        $list_khieunai = report_selectall();
+                        include "../AirBlade/view/report/report_handling.php";
+                        break;
+                    case 'themkn':
+                        $NoiDung = $_POST['noidung'];
+                        $UserID = 0;
+                        $filename=$_FILES['image']['name'];
+                        $target_dir = "../AirBlade/uploads/";
+                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)){
+    
+                        }else{
+    
+                        }
+                        report_insert( $UserID , $NoiDung , $filename );
+                        $list_khieunai = report_selectall();
+                        include "../AirBlade/view/report/report_process.php";
+                        break;                    
+                break;
+            case 'logout':
+                    unset( $_SESSION['ROLE'] );
                     header("Location: ../login.php");
                     break;
                 case 'suabl':
