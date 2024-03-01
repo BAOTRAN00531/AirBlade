@@ -10,7 +10,7 @@
               <input type="text" name="hoten" placeholder="Họ và tên" class="box">
               <input type="email" name="email" placeholder="Email" class="box">
               <input type="text" name="sodt" placeholder="Số điện thoại" class="box">
-              <textarea name="" name="question" class="box" placeholder="Câu hỏi của bạn" id="" cols="30"
+              <textarea name="question" class="box" placeholder="Câu hỏi của bạn" id="" cols="30"
                 row="10"></textarea>
               <button type="submit" name="lienhe" id="button">Gửi</button>
             </form>

@@ -25,7 +25,7 @@
                 </div>
             </div>
             <a href="index.php?action=news">Tin tức</a>
-            <a href="index.php?action=guilienhe">Liên hệ</a>
+            <a href="index.php?action=contact">Liên hệ</a>
         <a href="index.php?action=complaint">Khiếu nại</a>    
         </div>
         

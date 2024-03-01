@@ -58,6 +58,12 @@
 					<span class="text">Quản lý bài đăng</span>
 				</a>
 			</li>
+            <li>
+				<a href="index.php?action=listcontact">
+					<i class='bx bxs-edit-alt'></i>
+					<span class="text">Quản lý liên hệ</span>
+				</a>
+			</li>
 			<li>
             <a href="index?action=listdg">
 					<i class='bx bxs-star'></i>
@@ -107,6 +113,7 @@
         <?php
     include "../dao/pdo.php";
     include "../dao/danhgia.php";
+    include "../dao/contact.php";
     include "../dao/danhmuc.php";
     include "../dao/sanpham.php";
     include "../dao/khieunai.php";
@@ -115,6 +122,10 @@
     if (isset($_GET['action'] )) {
         $act = $_GET['action'];
         switch ($act) {
+            case 'listcontact':
+                $list_contact = contact_select_all();
+                include "contact/list.php";
+                break;
             case 'listdg':
                 $listdg = feedback_selectall();
                 include "comment/list.php";

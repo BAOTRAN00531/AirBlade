@@ -188,13 +188,13 @@ ob_start();
                         include "view/content/contact.php";
                         break;
                     case 'guilienhe':
-                        if(isset($_POST['lienhe'])&&($_POST['lienhe'])){
+                      //  if(isset($_POST['lienhe'])&&($_POST['lienhe'])){
                             $hoten=$_POST['hoten'];
                             $emial=$_POST['email'];
                             $sodt=$_POST['sodt'];
                             $question=$_POST['question'];
                            
-                        }
+                      //  }
                         contact_insert($hoten,$emial,$sodt,$question);
                         include "view/content/contact.php";
                         break;
