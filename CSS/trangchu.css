@@ -152,7 +152,6 @@ body {
 }
 
 /*------------------------------- Hết NỘI DUNG --------------------------------------*/
-
 footer th {
   text-align: left;
 }
@@ -161,26 +160,34 @@ footer th {
   border-spacing: 2px;
 }
 
+a {
+  text-decoration: none;
+  /* Tắt gạch chân */
+  color: black;
+}
+
+.color_lienhe {
+  color: #2E709F;
+}
+
 .left-column {
   width: 50%;
-  height: 150px;
+  height: 350px;
   background: #E9E9E9;
   float: left;
   padding: 2%;
   font-size: 20px;
   padding-left: 10%;
-
+  font-weight: bold;
 }
 
 .right-column {
   width: 50%;
-  height: 150px;
+  height: 350px;
   background: #E9E9E9;
   float: right;
-  padding: 2%;
-  font-size: 20px;
-  padding-left: 20%;
-
+  padding-top: 3%;
+  padding-left: 5%;
 }
 
 footer hr {
@@ -196,10 +203,29 @@ h5 {
   text-align: center;
   display: flex;
   background: #E9E9E9;
-  padding-left: 40%;
+  padding-left: 20%;
   padding-top: 10px;
+  padding-bottom: 10px;
   font-size: 20px;
+}
 
+.logo_ab {
+  display: flex;
+  /* Sử dụng flexbox */
+  align-items: center;
+  /* Căn các phần tử theo chiều dọc */
+}
+
+.ab_logo {
+  display: flex;
+  /* Sử dụng flexbox */
+  align-items: center;
+  /* Căn các phần tử con theo chiều dọc */
+}
+
+.img_logo {
+  width: 70px;
+  /* Điều chỉnh kích thước hình ảnh theo nhu cầu */
 }
 
 /*------------------------------- Hết FOOTER --------------------------------------*/

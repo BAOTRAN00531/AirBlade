@@ -298,8 +298,7 @@
                     hoadon_update($IDDH, $HOTEN, $DIACHI, $PHONE, $EMAIL, $TONG, $PTTT, $NGAYDATHANG);
                     $listdh = hoadon_selectall();
                         
-                      }
-                      bill_update( $IDDH , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );  
+                    bill_update( $IDDH , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );  
                     $listdh = bill_selectall();
                     include "order/list.php";
                     break;
@@ -391,7 +390,6 @@
                     # code...
                     break;
             }
-        }
 
         ?>
     </section>
