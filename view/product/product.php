@@ -17,7 +17,7 @@
                 foreach ($dssp as $sp) {
                     extract($sp);
                     $hinh = $imgPath . $hinhanh;
-                    echo'   <th rowspan="2"> 
+                    echo'   <th> 
                     <a href="index.php?action=showdetail&idsp='.$MASP.'">
                                 <img  src="'.$hinh.'" alt="'.$TENSP.'" height="100px" width="100px">
                                 <h4>'.$TENSP.'</h4>

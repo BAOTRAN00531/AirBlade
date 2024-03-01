@@ -19,7 +19,9 @@
             echo" 
           
               <th rowspan='2'> <a href='index.php?action=detailnews&idp=$idp'><img src='../uploads/$hinh' width='300px' height='230px'  alt='.$hinh.'></a>
-              <h4>$tenbaiviet</h4> <text>$tomtat</text>
+              <h4>$tenbaiviet</h4>
+             
+              $tomtat
               </a></th>
             
           ";

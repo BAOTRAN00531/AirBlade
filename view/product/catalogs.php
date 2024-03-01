@@ -35,7 +35,7 @@
             $TENSP = $second['TENSP'];
             $GIASP = $second['GIASP'];
             echo "
-            <th rowspan='2'> 
+            <th > 
             <a href='index.php?action=showdetail&idsp=$MASP'><img height='100px' width='100px' src='../uploads/$hinh' alt='Sản phẩm 1'></a>
              <h4>$TENSP</h4>
              <p>Giá: $GIASP VND</p>
