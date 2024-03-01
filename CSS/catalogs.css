@@ -1,14 +1,5 @@
 #main {
-    padding: 20px;
-}
-.loaisp {
-    padding: 10px;
-    text-align: center;
-}
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    padding: 0px;
 }
 
 .noidung {
@@ -21,16 +12,6 @@
     justify-content: space-between;
 }
 
-.noidung th {
-    flex: 1;
-    max-width: calc(25% - 10px);
-    /* 4 cột mỗi hàng, với margin giữa các cột */
-    margin-right: 10px;
-    border: none;
-    padding: 10px;
-    text-align: center;
-}
-
 .noidung th img {
     display: block;
     margin: 0 auto;
@@ -38,20 +19,12 @@
     max-height: 100px;
 }
 
-.noidung th h4 {
-    margin-top: 10px;
-}
-
-.noidung th p {
-    margin-bottom: 10px;
-}
-
 .noidung th button {
     background-color: rgb(167, 38, 38);
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 0px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -70,21 +43,55 @@
 .buy-button {
     display: inline-block;
     vertical-align: middle;
-    margin: 10px 10px;
+    margin: 10px 13px;
 }
 
-.price {
-    background-color: gray;
+
+.noidung th img {
+    max-width: 100%;
+    /* Đảm bảo hình ảnh không vượt quá kích thước của phần tử cha */
+    height: 100%;
+    /* Giữ nguyên tỷ lệ khung hình */
 }
-.price_button {
-    background-color: gray;
-    margin: 0;
-    padding: 0;
+
+/* Định dạng container chứa các hình ảnh */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
+
+/* Định dạng các hình ảnh */
+.noidung th {
+    flex: 1;
+    max-width: calc(25% - 10px);
+    /* Đặt chiều rộng tối đa cho mỗi hình ảnh */
+    margin-right: 10px;
+    /* Khoảng cách giữa các hình ảnh */
+    border: none;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    /* Sử dụng vị trí tương đối để căn chỉnh phần tử con */
+}
+
+/* Định dạng hình ảnh */
+.noidung th img {
+    max-width: 100%;
+    /* Đảm bảo hình ảnh không vượt quá kích thước của phần tử cha */
+    height: auto;
+    /* Giữ nguyên tỷ lệ khung hình */
+}
+
+/* Định dạng tensp */
 .tensp {
     text-align: left;
+    margin: 7px 13px;
 }
-.img_logo_sp {
-    height: 200px;
-    width: 400px;
+
+/* Định dạng phần tử h2 */
+h2 {
+    text-align: center;
+    margin: 0 auto;
+    padding: 5px 550px!important;
 }

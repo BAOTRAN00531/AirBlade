@@ -17,10 +17,8 @@
             <th rowspan='2'> 
             <a href='index.php?action=showdetail&idsp=$MASP'><img class='img_logo_sp' src='../uploads/$hinh' alt='Sản phẩm 1'></a>
             <h4 class='tensp'>$TENSP</h4>
-            <div class='price_button'>
             <p class='price'>$GIASP VNĐ</p>
             <button class='buy-button'>Mua ngay</button>
-            </div>
          </th>";
                 }
                 ?>
@@ -40,12 +38,11 @@
                     $TENSP = $second['TENSP'];
                     $GIASP = $second['GIASP'];
                     echo "
-                <th rowspan='2'> 
-                <a href='index.php?action=showdetail&idsp=$MASP'><img class='img_logo_sp' src='../uploads/$hinh' alt='Sản phẩm 1'></a>
-                <h4 class='tensp'>$TENSP</h4>
-                <div class='price_button'>
-                <p class='price'>$GIASP VNĐ</p>
-                <button class='buy-button'>Mua ngay</button>
+                    <th rowspan='2'> 
+                    <a href='index.php?action=showdetail&idsp=$MASP'><img class='img_logo_sp' src='../uploads/$hinh' alt='Sản phẩm 1'></a>
+                    <h4 class='tensp'>$TENSP</h4>
+                    <p class='price'>$GIASP VNĐ</p>
+                    <button class='buy-button'>Mua ngay</button>
                 </div>
          </th>";
                 }
