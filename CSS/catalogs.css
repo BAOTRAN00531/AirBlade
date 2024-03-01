@@ -1,0 +1,64 @@
+#main {
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.noidung {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.noidung tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+.noidung th {
+    flex: 1;
+    max-width: calc(25% - 10px);
+    /* 4 cột mỗi hàng, với margin giữa các cột */
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.noidung th img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.noidung th h4 {
+    margin-top: 10px;
+}
+
+.noidung th p {
+    margin-bottom: 10px;
+}
+
+.noidung th button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.noidung th button:hover {
+    background-color: #45a049;
+}
+
+@media screen and (max-width: 768px) {
+    .noidung th {
+        max-width: calc(50% - 10px);
+        /* Hiển thị 2 cột trên mỗi hàng khi màn hình nhỏ hơn */
+    }
+}
