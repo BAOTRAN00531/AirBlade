@@ -5,7 +5,7 @@
       <div>
         <td>
           <div class="row">
-            <form>
+            <form action="index.php?action=guilienhe" method="post">
               <h2>Bạn Hỏi - Airblade Trả Lời</h2>
               <input type="text" name="hoten" placeholder="Họ và tên" class="box">
               <input type="email" name="email" placeholder="Email" class="box">

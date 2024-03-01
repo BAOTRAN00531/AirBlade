@@ -30,6 +30,7 @@ ob_start();
         include "dao/hoadon.php";
         include "dao/khieunai.php";
         include "dao/post.php";
+        include "dao/contact.php";
         $dsdm=catalog_loadall();
         $news=post_selectall();
         include "view/header.php";
@@ -184,6 +185,17 @@ ob_start();
                         include "view/content/introduce.php";
                         break;
                     case 'contact':
+                        include "view/content/contact.php";
+                        break;
+                    case 'guilienhe':
+                        if(isset($_POST['lienhe'])&&($_POST['lienhe'])){
+                            $hoten=$_POST['hoten'];
+                            $emial=$_POST['email'];
+                            $sodt=$_POST['sodt'];
+                            $question=$_POST['question'];
+                           
+                        }
+                        contact_insert($hoten,$emial,$sodt,$question);
                         include "view/content/contact.php";
                         break;
                     case 'signup':
