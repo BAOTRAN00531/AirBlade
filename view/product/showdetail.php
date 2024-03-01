@@ -16,7 +16,7 @@
         echo
             '<table class="xe">
                     <tr>
-                    <th><img src="' . $hinh . '"alt="' . $TENSP . '" height="204px" width="450px"></th>
+                    <th><img src="' . $hinh . '"alt="' . $TENSP . '"></th>
                     <th class="tieude"><p><h2>' . $TENSP . '</h2>
                                     <br>
                                     <h3>' . $GIASP . " ₫ " . '</h3>
