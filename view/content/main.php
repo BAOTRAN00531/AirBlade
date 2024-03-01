@@ -7,7 +7,7 @@
         <h2>THÔNG TIN MỚI TỪ CÁC HÃNG XE</h2>
       </div><br>
       <table class="noidung">
-        <tr>
+     <tr>
           <?php
         foreach( $news as $tintuc )
         {
@@ -16,18 +16,16 @@
             $tomtat=$tintuc['tomtat'];
             $hinh=$tintuc['hinh'];
             $idp=$tintuc['id'];
-            echo" <table class='noidung'>
-            <tr>
+            echo" 
+          
               <th rowspan='2'> <a href='index.php?action=detailnews&idp=$idp'><img src='../uploads/$hinh' width='300px' height='230px'  alt='.$hinh.'></a>
               <h4>$tenbaiviet</h4> <text>$tomtat</text>
-             
               </a></th>
             
-            </tr>
-          </table>";
+          ";
         }
         ?>
-        </tr>
+     </tr>
       </table>
    
 </section>

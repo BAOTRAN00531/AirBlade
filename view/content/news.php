@@ -1,4 +1,6 @@
 <section id="main">
+<table class="noidung">
+     <tr>
     <?php  
     
         foreach( $news as $tintuc )
@@ -8,15 +10,17 @@
             $tomtat=$tintuc['tomtat'];
             $hinh=$tintuc['hinh'];
             $idp=$tintuc['id'];
-            echo" <table class='noidung'>
-            <tr>
-              <th rowspan='2'> <a href='index.php?action=detailnews&idp=$idp'><img src='../uploads/$hinh' alt='.$hinh.'></a>
+            echo" 
+            
+              <th rowspan='2'> <a href='index.php?action=detailnews&idp=$idp'><img src='../uploads/$hinh' width='300px' height='230px' alt='.$hinh.'></a>
+              
               <h4>$tenbaiviet</h4> <text>$tomtat</text>
              
               </a></th>
             
-            </tr>
-          </table>";
+            ";
         }
         ?>
+     </tr>
+</table>
     </section>
