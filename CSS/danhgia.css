@@ -1,90 +1,128 @@
-.wrapper
-{
-    padding: 10px;
-    box-shadow: grey;
+.wrapper {
+    width: 50%;
+    /* Độ rộng của khung đánh giá */
+    margin: 0 auto;
+    /* Canh giữa khung theo chiều ngang */
+    padding: 20px;
+    /* Khoảng cách bên trong khung */
+    border: 2px solid #ccc;
+    /* Độ dày và màu đường viền */
+    border-radius: 10px;
+    /* Góc bo của đường viền */
+    box-sizing: border-box;
+    /* Kích thước của phần padding và border sẽ được tính vào độ rộng và chiều cao */
+    height: 300px;
+}
+
+.wrapper h3 {
     text-align: center;
-    border:2px solid rgb(200, 200, 200);
-    margin-top: 5px;
+    /* Căn giữa tiêu đề */
 }
 
-.wrapper h3
-{
-    font-size: 30px;
-}
-textarea
-{
-    width: 100%;
-    height: 100px;
-    padding-left: 2px;
-    border: none;
-    outline: none;
-    resize: none;
-    font-size: 20px;
-}
-textarea:placeholder-shown
-{
-    padding-left: 5px;
-    padding-top: 5px;
-}
-
-.rating
-{
-    padding-bottom: 5px;
-    font-size: 30px;
-    color: rgb(192, 189, 0);
+.rating {
     display: flex;
     justify-content: center;
-    align-items: center;
-
+    /* Căn giữa các sao */
+    margin-bottom: 10px;
+    /* Khoảng cách giữa đánh giá và textarea */
 }
 
-.rating .star
-{
+.star {
+    font-size: 24px;
+    color: #FFD700;
+    /* Màu vàng */
+    margin-right: 5px;
+    /* Khoảng cách giữa các sao */
     cursor: pointer;
 }
 
-.rating .star:hover
-{
-    transform: scale(1.1);
+.star:hover {
+    font-size: 24px;
+    color: #6ee1c3;
+    /* Màu vàng */
+    margin-right: 5px;
+    /* Khoảng cách giữa các sao */
 }
 
-.btn-group
-{
-    display: flex;
-    grid-gap: 5px;
-    align-items: center;
-}
-
-.btn-group .btn
-{
-    padding: 7px 1px;
-    border-radius: 15px;
-    border: none;
+textarea {
+    width: 100%;
+    height: 150px;
+    /* Độ rộng 100% của textarea */
+    padding: 10px;
+    /* Khoảng cách bên trong textarea */
+    border: 2px solid #ccc;
+    /* Độ dày và màu của đường viền */
+    border-radius: 5px;
+    /* Góc bo của đường viền */
+    resize: none;
+    /* Không cho phép thay đổi kích thước textarea */
     outline: none;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    /* Căn giữa nút submit */
+}
+
+.btn.submit {
+    padding: 10px 20px;
+    /* Kích thước của nút */
+    background-color: #007bff;
+    /* Màu nền của nút */
+    color: #fff;
+    /* Màu chữ của nút */
+    border: none;
+    /* Loại bỏ đường viền */
+    border-radius: 5px;
+    /* Góc bo của nút */
     cursor: pointer;
+    /* Bắt sự kiện khi rê chuột vào nút */
 }
 
-.btn-group .btn.submit
-{
-    background: rgb(45, 140, 154);
-    color: white;
-    width: 100px;
+.btn.submit:hover {
+    background-color: #0056b3;
+    /* Màu nền của nút khi di chuột vào */
 }
 
-.btn-group .btn.submit:hover
-{
-    background: rgba(36, 175, 196, 0.658); 
+
+
+
+
+
+/* Định dạng container chứa các đánh giá */
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.btn-group .btn.cancel
-{
-    background: white;
-    color:rgb(36, 174, 196);
-    width: 100px;
-
+/* Định dạng khung bao bọc cho mỗi đánh giá */
+.review-wrapper {
+    width: 70%; /* Độ rộng của mỗi khung đánh giá */
+    margin: 10px; /* Khoảng cách giữa các khung */
+    padding: 20px; /* Khoảng cách bên trong khung */
+    border: 2px solid #ccc; /* Đường viền của khung */
+    border-radius: 10px; /* Góc bo của khung */
 }
 
-.btn-group .btn.cancel:hover
-{
-    background: rgba(255, 255, 255, 0.69);
+/* Định dạng container chứa phần sao đánh giá và nội dung đánh giá */
+.rating-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Định dạng phần sao đánh giá */
+.stars {
+    font-size: 24px;
+}
+
+/* Định dạng icon sao */
+.star {
+    color: #FFD700; /* Màu vàng */
+}
+
+/* Định dạng nội dung đánh giá */
+.review-content {
+    margin-left: 30px; /* Khoảng cách giữa phần sao và nội dung */
 }
