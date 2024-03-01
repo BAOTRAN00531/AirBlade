@@ -17,9 +17,6 @@ session_start();
         <div class="container">
             <img src="../IMG/logo_final.png" alt="main logo" class="main-logo">
             <div class="form-container">
-                <br>
-                <h1>Đăng nhập</h1>
-                <br>
                 <?php
                 include("./php/config.php");
                 if (isset($_POST['submit'])) {
@@ -44,7 +41,10 @@ session_start();
                     }
                 } else {
                     ?>
-                    <form action="/register" method="post">
+                    <br>
+                    <h1 class="title_input">Đăng nhập</h1>
+                    <br>
+                    <form action="/register" method="post" class="box_input">
                         <input type="text" name="email" id="email" autocomplete="off" required placeholder="Email">
                         <input type="password" name="password" id="password" autocomplete="off" required
                             placeholder="Mật khẩu">

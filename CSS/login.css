@@ -59,7 +59,7 @@
     background: white;
     width: 500px;
     text-align: center;
-    margin-left: 17%;
+    margin-left: 20%;
 }
 
 form {
@@ -112,4 +112,12 @@ form {
 
 a {
     text-decoration: none;
+}
+
+.box_input {
+    margin-left: 10%;
+}
+
+.title_input {
+    margin-left: 0;
 }
