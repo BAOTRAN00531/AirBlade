@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../CSS/products.css">
+<link rel="stylesheet" href="../CSS/catalogs.css">
 <section id="main">
     <div class="container" id="'.$LOAISP.'">
         <?php
