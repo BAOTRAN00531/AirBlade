@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="../../CSS/admin_product_update.css">
+
 <?php
 
 foreach ($dg as $danhgia)

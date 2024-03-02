@@ -1,7 +1,7 @@
-
+<link rel="stylesheet" href="../../CSS/admin_list.css">
 
 <div class="row">    
-
+    <div class="row frmtitle"><h1>DANH SÁCH ĐÁNH GIÁ</h1></div>
             <div class="row frmcontent">
                 <div class="row mb10 frmloai">
                     <table style="text-align: center">

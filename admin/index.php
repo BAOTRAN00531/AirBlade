@@ -41,12 +41,6 @@
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class='bx bxs-message-dots'></i>
-                    <span class="text">Quản lý bình luận</span>
-                </a>
-            </li>
-            <li>
                 <a href="index.php?action=addpost">
                     <i class='bx bxs-edit-alt'></i>
                     <span class="text">Quản lý bài đăng</span>
@@ -62,12 +56,6 @@
                 <a href="index?action=listdg">
                     <i class='bx bxs-star'></i>
                     <span class="text">Quản lý đánh giá</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="#">
-                    <i class='bx bxs-group'></i>
-                    <span class="text">Quản lý tài khoản</span>
                 </a>
             </li>
             <li class="">
