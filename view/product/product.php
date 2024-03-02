@@ -14,13 +14,13 @@
         foreach ($dssp as $sp) {
             extract($sp);
             $hinh = $imgPath . $hinhanh;
-            echo '   <th> 
+            echo '   <th rowspan="2"> 
                     <a href="index.php?action=showdetail&idsp=' . $MASP . '">
-                                <img  src="' . $hinh . '" alt="' . $TENSP . '" height="100px" width="100px">
-                                <h4>' . $TENSP . '</h4>
-                                <p>' . $GIASP . " ₫ " . '</p> 
-                                <button>Mua ngay</button>
-                        </a>
+                        <img  src="' . $hinh . '" alt="' . $TENSP . '" height="100px" width="100px">
+                        <h4 class="tensp">' . $TENSP . '</h4>
+                        <p class="price">' . $GIASP . " ₫ " . '</p> 
+                        <button class="buy-button">Mua ngay</button>
+                    </a>
                     </th>
                     ';
         }

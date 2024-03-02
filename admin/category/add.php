@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Danh Mục</title>
-    <link rel="stylesheet" href="../CSS/admin_list.css">
+    <link rel="stylesheet" href="../CSS/admin_category_add.css">
     
 </head>
 <body>

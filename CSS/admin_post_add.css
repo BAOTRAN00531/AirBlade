@@ -17,7 +17,8 @@ form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Thêm để giữ nút trong form */
+    overflow: hidden;
+    /* Thêm để giữ nút trong form */
 }
 
 form div {
@@ -88,4 +89,28 @@ input[type="button"]:hover {
     align-items: center;
     justify-content: center;
     align-items: center;
+}
+
+input[type="submit"],
+input[type="reset"],
+a.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    vertical-align: middle;
+    /* Thêm thuộc tính này để căn chỉnh nút */
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+a.button:hover {
+    background-color: #45a049;
+}
+
+a.button {
+    text-decoration: none;
 }

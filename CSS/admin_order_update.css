@@ -1,0 +1,48 @@
+/* Thiết lập giao diện cho dòng tiêu đề */
+.row.frmtitle {
+    background-color: #017a74;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+/* Thiết lập giao diện cho nội dung form */
+.row.frmcontent {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 50%;
+    /* Đặt chiều rộng của box */
+    margin: 0 auto;
+    /* Canh giữa theo chiều ngang */
+    box-sizing: border-box;
+    /* Tính cả border và padding vào chiều rộng */
+}
+
+/* Thiết lập giao diện cho input text */
+input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+/* Thiết lập giao diện cho nút Submit và Reset */
+input[type="submit"],
+input[type="reset"] {
+    background-color: #017a74;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    align-items: center;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #2980b9;
+}

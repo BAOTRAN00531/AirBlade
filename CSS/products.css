@@ -1,66 +1,97 @@
 #main {
-    padding: 20px;
+    padding: 0px;
 }
 
-.container {
+.noidung {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.noidung tr {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.container h2 {
-    width: 100%;
-}
-
-.container th {
-    width: calc(25% - 20px);
-    /* 4 cột mỗi hàng, với khoảng cách 20px giữa các cột */
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-    box-sizing: border-box;
-    /* Đảm bảo padding không làm thay đổi kích thước của thẻ */
-}
-
-.container th a {
-    display: block;
-    text-decoration: none;
-}
-
-.container th img {
+.noidung th img {
     display: block;
     margin: 0 auto;
     max-width: 100px;
     max-height: 100px;
 }
 
-.container th h4 {
-    margin-top: 10px;
-    text-align: left;
-}
-
-.container th p,
-.container th button {
-    margin-top: 10px;
-}
-
-.container th button {
-    background-color: #4CAF50;
+.noidung th button {
+    background-color: rgb(167, 38, 38);
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
-.container th button:hover {
-    background-color: #45a049;
+.noidung th button:hover {
+    background-color: #017a74;
 }
 
 @media screen and (max-width: 768px) {
-    .container th {
-        width: calc(50% - 20px);
+    .noidung th {
+        max-width: calc(50% - 10px);
         /* Hiển thị 2 cột trên mỗi hàng khi màn hình nhỏ hơn */
     }
+}
+
+.price,
+.buy-button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 13px;
+}
+
+
+.noidung th img {
+    max-width: 100%;
+    /* Đảm bảo hình ảnh không vượt quá kích thước của phần tử cha */
+    height: 100%;
+    /* Giữ nguyên tỷ lệ khung hình */
+}
+
+/* Định dạng container chứa các hình ảnh */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Định dạng các hình ảnh */
+.noidung th {
+    flex: 1;
+    max-width: calc(25% - 10px);
+    /* Đặt chiều rộng tối đa cho mỗi hình ảnh */
+    margin-right: 10px;
+    /* Khoảng cách giữa các hình ảnh */
+    border: none;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    /* Sử dụng vị trí tương đối để căn chỉnh phần tử con */
+}
+
+/* Định dạng hình ảnh */
+.noidung th img {
+    max-width: 100%;
+    /* Đảm bảo hình ảnh không vượt quá kích thước của phần tử cha */
+    height: auto;
+    /* Giữ nguyên tỷ lệ khung hình */
+}
+
+/* Định dạng tensp */
+.tensp {
+    text-align: left;
+    margin: 7px 13px;
+}
+
+/* Định dạng phần tử h2 */
+h2 {
+    text-align: center;
+    margin: 0 auto;
+    padding: 5px 550px !important;
 }

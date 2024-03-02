@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../CSS/admin_category_list.css">
 <div class="row">
     <div class="row frmtitle">
         <h1>DANH SÁCH LOẠI HÀNG</h1>
@@ -11,13 +12,12 @@
                     <th>MÃ LOẠI</th>
                     <th>TÊN LOẠI</th>
                     <th></th>
-                </tr>
-                <?php
-                foreach ($listdm as $danhmuc) {
-                    extract($danhmuc);
-                    $suadm = "index.php?action=suadm&id=" . $THUTU;
-                    $xoadm = "index.php?action=xoadm&id=" . $THUTU;
-                    echo ' 
+                    <?php
+                    foreach ($listdm as $danhmuc) {
+                        extract($danhmuc);
+                        $suadm = "index.php?action=suadm&id=" . $THUTU;
+                        $xoadm = "index.php?action=xoadm&id=" . $THUTU;
+                        echo ' 
                                 <tr>
                                     <td><input type="checkbox" name="name[]" id="check_all"></td>
                                     <td>' . $THUTU . '</td>
@@ -25,12 +25,13 @@
                                     <td>' . $LOAISP . '</td>
                                     <td><a href="' . $suadm . '"><input type="button" value="Sửa"></a> <a href="' . $xoadm . '"><input type="button" value="Xóa"></a></td>
                                 </tr>';
-                }
-                ?>
+                    }
+                    ?>
+                </tr>
             </table>
         </div>
     </div>
-    <div class="">
+    <div class="options">
         <input type="button" id="btn1" value="Chọn tất cả">
         <input type="button" id="btn2" value="Bỏ chọn">
         <input type="button" value="Xóa">

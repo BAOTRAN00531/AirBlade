@@ -15,131 +15,115 @@
 </head>
 
 <body>
-	<!-- SIDEBAR -->
-	<section id="sidebar">
-		<a href="#" class="brand">
-			<i class='bx bxs-smile'></i>
-			<span class="text">AdminABlade</span>
-		</a>
-		<ul class="side-menu top">
-			<li>
-				<a href="#">
-					<i class='bx bxs-doughnut-chart' ></i>
-					<span class="text">Quản lý thống kê</span>
-				</a>
-			</li>
-			<li>
-				<a href="index.php?action=listsp">
-					<i class='bx bxs-shopping-bag-alt' ></i>
-					<span class="text">Quản lý sản phẩm</span>
-				</a>
-			</li>
-			<li>
-				<a href="index.php?action=listdh">
-					<i class='bx bxs-receipt'></i>
-					<span class="text">Quản lý đơn hàng</span>
-				</a>
-			</li>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+        <a href="#" class="brand">
+            <i class='bx bxs-smile'></i>
+            <span class="text">AdminABlade</span>
+        </a>
+        <ul class="side-menu top">
             <li>
-				<a href="index.php?action=listdm">
-					<i class='bx bxs-doughnut-chart' ></i>
-					<span class="text">Quản lý danh mục</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class='bx bxs-message-dots' ></i>
-					<span class="text">Quản lý bình luận</span>
-				</a>
-			</li>
-			<li>
-				<a href="index.php?action=addpost">
-					<i class='bx bxs-edit-alt'></i>
-					<span class="text">Quản lý bài đăng</span>
-				</a>
-			</li>
+                <a href="index.php?action=listsp">
+                    <i class='bx bxs-shopping-bag-alt'></i>
+                    <span class="text">Quản lý sản phẩm</span>
+                </a>
+            </li>
             <li>
-				<a href="index.php?action=listcontact">
-					<i class='bx bxs-edit-alt'></i>
-					<span class="text">Quản lý liên hệ</span>
-				</a>
-			</li>
-			<li>
-            <a href="index?action=listdg">
-					<i class='bx bxs-star'></i>
-					<span class="text">Quản lý đánh giá</span>
-				</a>
-			</li>
-			<li class="">
-				<a href="#">
-					<i class='bx bxs-group' ></i>
-					<span class="text">Quản lý tài khoản</span>
-				</a>
-			</li>
+                <a href="index.php?action=listdh">
+                    <i class='bx bxs-receipt'></i>
+                    <span class="text">Quản lý đơn hàng</span>
+                </a>
+            </li>
+            <li>
+                <a href="index.php?action=listdm">
+                    <i class='bx bxs-doughnut-chart'></i>
+                    <span class="text">Quản lý danh mục</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-message-dots'></i>
+                    <span class="text">Quản lý bình luận</span>
+                </a>
+            </li>
+            <li>
+                <a href="index.php?action=addpost">
+                    <i class='bx bxs-edit-alt'></i>
+                    <span class="text">Quản lý bài đăng</span>
+                </a>
+            </li>
+            <li>
+                <a href="index.php?action=listcontact">
+                    <i class='bx bxs-edit-alt'></i>
+                    <span class="text">Quản lý liên hệ</span>
+                </a>
+            </li>
+            <li>
+                <a href="index?action=listdg">
+                    <i class='bx bxs-star'></i>
+                    <span class="text">Quản lý đánh giá</span>
+                </a>
+            </li>
             <li class="">
-				<a href="index.php?action=listkn">
-					<i class='bx bxs-group' ></i>
-					<span class="text">Quản lý khiếu nại</span>
-				</a>
-			</li>
-		</ul>
-		<ul class="side-menu">
-			<li>
-				<a href="#" class="logout">
-					<i class='bx bxs-log-out-circle' ></i>
-					<span class="text">Logout</span>
-				</a>
-			</li>
-		</ul>
-	</section>
-	<!-- SIDEBAR -->
-	<!-- CONTENT -->
-	<section id="content">
-		<!-- NAVBAR -->
-		<nav>
-			<i class='bx bx-menu' ></i>
-			<!-- <a href="#" class="nav-link" class="sp">Quản lý sản phẩm</a> -->
-			<form action="#">
-				<div class="form-input">
-					<input type="search" placeholder="Search...">
-					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
-				</div>
-			</form>
-                
-			<input type="checkbox" id="switch-mode" hidden>
-			<label for="switch-mode" class="switch-mode"></label>
-		</nav>
-		<!-- NAVBAR -->
+                <a href="#">
+                    <i class='bx bxs-group'></i>
+                    <span class="text">Quản lý tài khoản</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="index.php?action=listkn">
+                    <i class='bx bxs-group'></i>
+                    <span class="text">Quản lý khiếu nại</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bxs-log-out-circle'></i>
+                    <span class="text">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- SIDEBAR -->
+    <!-- CONTENT -->
+    <section id="content">
+        <!-- NAVBAR -->
+        <nav>
+            <i class='bx bx-menu'></i>
+        </nav>
+        <!-- NAVBAR -->
         <?php
-    include "../dao/pdo.php";
-    include "../dao/danhgia.php";
-    include "../dao/contact.php";
-    include "../dao/danhmuc.php";
-    include "../dao/sanpham.php";
-    include "../dao/khieunai.php";
-    include "../dao/post.php";
-    include "../dao/hoadon.php";
-    if (isset($_GET['action'] )) {
-        $act = $_GET['action'];
-        switch ($act) {
-            case 'listcontact':
-                $list_contact = contact_select_all();
-                include "contact/list.php";
-                break;
-            case 'listdg':
-                $listdg = feedback_selectall();
-                include "comment/list.php";
-                break;
-            case 'xoadg':
-                if (isset($_GET['IDDG'])&&($_GET['IDDG']>0)) {
-                    feedback_delete($_GET['IDDG']);
-                  }
-                  $listdh = feedback_selectall();
-                  include "comment/list.php";
-                break;
+        include "../dao/pdo.php";
+        include "../dao/danhgia.php";
+        include "../dao/contact.php";
+        include "../dao/danhmuc.php";
+        include "../dao/sanpham.php";
+        include "../dao/khieunai.php";
+        include "../dao/post.php";
+        include "../dao/hoadon.php";
+        if (isset($_GET['action'])) {
+            $act = $_GET['action'];
+            switch ($act) {
+                case 'listcontact':
+                    $list_contact = contact_select_all();
+                    include "contact/list.php";
+                    break;
+                case 'listdg':
+                    $listdg = feedback_selectall();
+                    include "comment/list.php";
+                    break;
+                case 'xoadg':
+                    if (isset($_GET['IDDG']) && ($_GET['IDDG'] > 0)) {
+                        feedback_delete($_GET['IDDG']);
+                    }
+                    $listdh = feedback_selectall();
+                    include "comment/list.php";
+                    break;
                 case 'suadg':
-                    if (isset($_GET['IDDG'])&&($_GET['IDDG']>0)) {
-                        $dg=feedback_select_by_id($_GET['IDDG']);
+                    if (isset($_GET['IDDG']) && ($_GET['IDDG'] > 0)) {
+                        $dg = feedback_select_by_id($_GET['IDDG']);
                         if (is_array($dg)) {
                             extract($dg);
                         } else {
@@ -149,20 +133,20 @@
                     include "comment/update.php";
                     break;
                 case 'updatedg':
-                    if (isset($_POST['capnhatdg'])&&($_POST['capnhatdg'])) {
+                    if (isset($_POST['capnhatdg']) && ($_POST['capnhatdg'])) {
                         $IDDG = $_POST['IDDG'];
                         $NoiDung = $_POST['NoiDung'];
                         $Sao = $_POST['Sao'];
-                      }
-                    feedback_update($IDDG,$NoiDung,$Sao);
+                    }
+                    feedback_update($IDDG, $NoiDung, $Sao);
                     $listdg = feedback_selectall();
                     include "comment/list.php";
-                    break;   
-            case 'adddm':
-                if(isset($_POST['addlist'])&&($_POST['addlist'])){
-                     $ten=$_POST['ten'];
-                     $madm=$_POST['madm'];
-                     catalog_insert($madm, $ten);
+                    break;
+                case 'adddm':
+                    if (isset($_POST['addlist']) && ($_POST['addlist'])) {
+                        $ten = $_POST['ten'];
+                        $madm = $_POST['madm'];
+                        catalog_insert($madm, $ten);
                     }
                     $listdm = catalog_select_all();
                     include "category/add.php";
@@ -262,29 +246,40 @@
                     $listsp = product_select_all($keyw, $iddm);
                     include "product/list.php";
                     break;
+                case 'suasp':
+                    if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                        $sanpham = product_select_by_id($_GET['id']);
+                        if (is_array($sanpham)) {
+                            extract($sanpham);
+                        } else {
+                            echo "Không tìm thấy sản phẩm";
+                        }
+                    }
+                    include "product/update.php";
+                    break;
                 case 'xoasp':
                     if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                         product_delete($_GET['id']);
                     }
-                
-                product_update($id,$ten,$gia,$soluong,$filename,$mota);
-                $sanpham=product_select_by_id($id);
-                include "product/list.php";
-                break;
+
+                    product_update($id, $ten, $gia, $soluong, $filename, $mota);
+                    $sanpham = product_select_by_id($id);
+                    include "product/list.php";
+                    break;
                 case 'listdh':
                     $listdh = bill_selectall();
                     include "order/list.php";
                     break;
-                 case 'xoadh':
-                        if (isset($_GET['IDDH'])&&($_GET['IDDH']>0)) {
-                            bill_delete($_GET['IDDH']);
-                        }
-                        $listdh = bill_selectall();
-                        include "order/list.php";
-                        break;
-                 case 'suadh':
-                    if (isset($_GET['IDDH'])&&($_GET['IDDH']>0)) {
-                        $dh=bill_select_by_id($_GET['IDDH']);
+                case 'xoadh':
+                    if (isset($_GET['IDDH']) && ($_GET['IDDH'] > 0)) {
+                        bill_delete($_GET['IDDH']);
+                    }
+                    $listdh = bill_selectall();
+                    include "order/list.php";
+                    break;
+                case 'suadh':
+                    if (isset($_GET['IDDH']) && ($_GET['IDDH'] > 0)) {
+                        $dh = bill_select_by_id($_GET['IDDH']);
                         if (is_array($dh)) {
                             extract($dh);
                         } else {
@@ -303,9 +298,9 @@
                         $PTTT = $_POST['PTTT'];
                         $TONG = $_POST['TONG'];
                         $NGAYDATHANG = $_POST['NGAYDATHANG'];
-                        
-                      }
-                      bill_update( $IDDH , $HOTEN , $DIACHI , $PHONE , $EMAIL , $TONG , $PTTT , $NGAYDATHANG );  
+
+                    }
+                    bill_update($IDDH, $HOTEN, $DIACHI, $PHONE, $EMAIL, $TONG, $PTTT, $NGAYDATHANG);
                     $listdh = bill_selectall();
                     include "order/list.php";
                     break;
@@ -328,84 +323,82 @@
                         } else {
 
                         }
-                        post_insert($ten,$tomtat,$noidung,$iddm,$filename);
-                       }
-                    $listdm=catalog_select_all();              
+                        post_insert($ten, $tomtat, $noidung, $iddm, $filename);
+                    }
+                    $listdm = catalog_select_all();
                     include "post/add.php";
                     break;
-                    case 'suapost':
-                        if (isset($_GET['id'])&&($_GET['id']>0)) {
-                            $post=post_select_by_id($_GET['id']);
-                            if (is_array($post)) {
-                                extract($post);
-                            } else {
-                                echo "Không tìm thấy sản phẩm";
-                            }
+                case 'suapost':
+                    if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                        $post = post_select_by_id($_GET['id']);
+                        if (is_array($post)) {
+                            extract($post);
+                        } else {
+                            echo "Không tìm thấy sản phẩm";
                         }
-                        include "post/update.php";
-                        break;
-                    case 'xoapost':
-                        if (isset($_GET['id'])&&($_GET['id']>0)) {
-                            post_delete($_GET['id']);
-                        }
-                        $list_post = post_selectall();
-                        include "post/list.php";
-                        break;
-                    case 'updatepost':
-                        if (isset($_POST['capnhatpost']) && ($_POST['capnhatpost'])) {
-                            $id = $_POST['id'];
-                            $tenbv = $_POST['tenbv'];
-                            $tomtat = $_POST['tomtat'];
-                            $noidung = $_POST['noidung'];
-                            $iddm = $_POST['iddm'];
-                            $hinh = $_POST['hinh'];
-                          }
-                          post_update( $id , $tenbv , $tomtat , $noidung , $iddm , $hinh );  
-                        $list_post = post_selectall();
-                        include "post/list.php";                        
-                        break;
-                    case 'luukn':
-                        if( isset( $_GET['MAKN'] ) && ( $_GET['MAKN'] > 0 ) )
-                        {
-                            $UserID = $_GET['iduser'];
-                            $MAKN = $_GET['MAKN'];
-                            $MASP = $_GET['MASP'];
-                            $NoiDung = $_GET['NoiDung'];
-                            $HINH = $_GET['HINH'];
-                            luutru_khieunai( $UserID , $MASP , $NoiDung , $HINH );
-                        }
-                        $list_khieunai = report_selectall();
-                        include "../view/report/report_handling.php";
-                        break;
-                    case 'xoakn':
-                        if( isset( $_GET['MAKN'] ) && ( $_GET['MAKN'] > 0 ) )
-                        {
-                            report_delete( $_GET['MAKN'] );
-                        }
-                        $list_khieunai = report_selectall();
-                        include "../view/report/report_handling.php";
+                    }
+                    include "post/update.php";
                     break;
-                    case 'listkn':
-                        $list_khieunai = report_selectall();
-                        include "../view/report/report_handling.php";
-                        break;
-                    case 'themkn':
-                        $NoiDung = $_POST['noidung'];
-                        $UserID = 0;
-                        $filename=$_FILES['image']['name'];
-                        $target_dir = "../AirBlade/uploads/";
-                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
-                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)){
-    
-                        }else{
-    
-                        }
-                        report_insert( $UserID , $NoiDung , $filename );
-                        $list_khieunai = report_selectall();
-                        include "../view/report/report_handling.php";
-                        break;                    
-            case 'logout':
-                    unset( $_SESSION['ROLE'] );
+                case 'xoapost':
+                    if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                        post_delete($_GET['id']);
+                    }
+                    $list_post = post_selectall();
+                    include "post/list.php";
+                    break;
+                case 'updatepost':
+                    if (isset($_POST['capnhatpost']) && ($_POST['capnhatpost'])) {
+                        $id = $_POST['id'];
+                        $tenbv = $_POST['tenbv'];
+                        $tomtat = $_POST['tomtat'];
+                        $noidung = $_POST['noidung'];
+                        $iddm = $_POST['iddm'];
+                        $hinh = $_POST['hinh'];
+                    }
+                    post_update($id, $tenbv, $tomtat, $noidung, $iddm, $hinh);
+                    $list_post = post_selectall();
+                    include "post/list.php";
+                    break;
+                case 'luukn':
+                    if (isset($_GET['MAKN']) && ($_GET['MAKN'] > 0)) {
+                        $UserID = $_GET['iduser'];
+                        $MAKN = $_GET['MAKN'];
+                        $MASP = $_GET['MASP'];
+                        $NoiDung = $_GET['NoiDung'];
+                        $HINH = $_GET['HINH'];
+                        luutru_khieunai($UserID, $MASP, $NoiDung, $HINH);
+                    }
+                    $list_khieunai = report_selectall();
+                    include "../view/report/report_handling.php";
+                    break;
+                case 'xoakn':
+                    if (isset($_GET['MAKN']) && ($_GET['MAKN'] > 0)) {
+                        report_delete($_GET['MAKN']);
+                    }
+                    $list_khieunai = report_selectall();
+                    include "../view/report/report_handling.php";
+                    break;
+                case 'listkn':
+                    $list_khieunai = report_selectall();
+                    include "../view/report/report_handling.php";
+                    break;
+                case 'themkn':
+                    $NoiDung = $_POST['noidung'];
+                    $UserID = 0;
+                    $filename = $_FILES['image']['name'];
+                    $target_dir = "../AirBlade/uploads/";
+                    $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+
+                    } else {
+
+                    }
+                    report_insert($UserID, $NoiDung, $filename);
+                    $list_khieunai = report_selectall();
+                    include "../view/report/report_handling.php";
+                    break;
+                case 'logout':
+                    unset($_SESSION['ROLE']);
                     header("Location: ../login.php");
                     break;
                 case 'suabl':

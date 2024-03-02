@@ -1,0 +1,70 @@
+/* Thiết lập giao diện cho dòng tiêu đề */
+.row.frmtitle {
+    background-color: #017a74;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+/* Thiết lập giao diện cho nội dung form */
+.row.frmcontent {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Thiết lập giao diện cho bảng */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    /* Thêm margin-bottom */
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Màu nền cho từng hàng lẻ của bảng */
+table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Thiết lập giao diện cho checkbox */
+input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-right: 5px;
+}
+
+/* Thiết lập giao diện cho các nút */
+.row>.row {
+    text-align: center;
+    margin-top: 0px;
+    /* Thêm margin-top */
+}
+
+.row>.row input[type="button"] {
+    margin: 5px;
+}
+
+/* Thiết lập giao diện cho các nút button */
+input[type="button"] {
+    background-color: #017a74;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+input[type="button"]:hover {
+    background-color: #2980b9;
+}

@@ -1,0 +1,81 @@
+/* Thiết lập giao diện cho danh sách đơn hàng */
+.row.frmcontent {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Thiết lập giao diện cho bảng */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Màu nền cho từng hàng lẻ của bảng */
+table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Thiết lập giao diện cho nút Sửa và Xóa */
+input[type="button"] {
+    background-color: #017a74;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    /* Hiển thị button dạng block */
+    margin-bottom: 10px;
+    /* Khoảng cách giữa các button */
+}
+
+input[type="button"]:hover {
+    background-color: #2980b9;
+}
+
+/* Thiết lập giao diện cho các nút chọn hết và bỏ chọn */
+.button_option {
+    background-color: #017a74;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    /* Hiển thị button dạng block */
+    margin-bottom: 10px;
+    /* Khoảng cách giữa các button */
+}
+
+.button_option:hover {
+    background-color: #2980b9;
+}
+
+
+/* Thiết lập giao diện cho cột tiêu đề */
+th {
+    background-color: #017a74;
+    color: #fff;
+}
+
+/* Thiết lập giao diện cho cột "Ngày đặt hàng" */
+td:nth-child(9) {
+    font-style: italic;
+}
+
+/* Thiết lập giao diện cho dòng tiêu đề */
+.row.frmtitle {
+    background-color: #017a74;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    text-align: center;
+}

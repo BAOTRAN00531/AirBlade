@@ -38,10 +38,10 @@
                 ?>
             </select>
         </div>
-        <div class="">
+        <div class="button">
             <input type="submit" id="add" name="addpost" value="Thêm">
             <input type="reset" value="Nhập lại">
-            <a type="button" href="index.php?action=listpost">list</a>
+            <a type="button" class="button" href="index.php?action=listpost">list</a>
         </div>
     </form>
 </body>

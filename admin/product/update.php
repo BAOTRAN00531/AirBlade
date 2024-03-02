@@ -1,15 +1,16 @@
 <?php
-if (is_array($sanpham)) {
+if (isset($sanpham) && is_array($sanpham)) {
         extract($sanpham);
 }
-if (is_array($listdm)) {
-        extract($listdm);
+if (isset($listdm) && is_array($listdm)) {
+        // Không sử dụng extract ở đây, thay vào đó sử dụng tên biến cụ thể hơn
+        // extract($listdm);
 }
 $imgPATH = "../uploads/" . $hinhanh;
-if (is_file($imgPATH)) {
+if (file_exists($imgPATH)) {
         $hinh = "<img src='" . $imgPATH . "' height='100px' width='100px'>";
 } else {
-        $hinh = "không có ảnh";
+        $hinh = "Không có ảnh";
 }
 ?>
 <link rel="stylesheet" href="../CSS/admin_product_update.css">
@@ -24,25 +25,31 @@ if (is_file($imgPATH)) {
                                 <select name="iddm" id="">
                                         <option value="0" selected>Tất cả</option>
                                         <?php
-                                        foreach ($listdm as $danhmuc) {
-                                                extract($danhmuc);
-                                                if ($IDDM == $iddm)
-                                                        $s = "selected";
-                                                else
-                                                        $s = "";
-                                                echo '<option value="' . $IDDM . '" ' . $s . '>' . $LOAISP . '</option>';
+                                        if (isset($listdm) && is_array($listdm)) {
+                                                foreach ($listdm as $danhmuc) {
+                                                        // Sử dụng tên biến cụ thể hơn
+                                                        $IDDM = $danhmuc['IDDM'];
+                                                        $LOAISP = $danhmuc['LOAISP'];
+                                                        if ($IDDM == $iddm) {
+                                                                $s = "selected";
+                                                        } else {
+                                                                $s = "";
+                                                        }
+                                                        echo '<option value="' . $IDDM . '" ' . $s . '>' . $LOAISP . '</option>';
+                                                }
                                         }
                                         ?>
                                 </select>
                         </div>
                         <div class="">Tên Sản Phẩm: <br>
-                                <input type="text" name="tensp" id="rowlist" value="<?= $TENSP ?>">
+                                <input type="text" name="tensp" id="rowlist" value="<?= isset($TENSP) ? $TENSP : '' ?>">
                         </div>
                         <div class="">Giá: <br>
-                                <input type="text" name="giasp" id="rowlist" value="<?= $GIASP ?>">
+                                <input type="text" name="giasp" id="rowlist" value="<?= isset($GIASP) ? $GIASP : '' ?>">
                         </div>
                         <div class="">Số lượng: <br>
-                                <input type="text" name="soluong" id="rowlist" value="<?= $TONKHO ?>">
+                                <input type="text" name="soluong" id="rowlist"
+                                        value="<?= isset($TONKHO) ? $TONKHO : '' ?>">
                         </div>
                         <div class="">Hình: <br>
                                 <input type="file" name="hinh" id="hinh" onchange="loadImage(this)"><br><br>
@@ -51,17 +58,17 @@ if (is_file($imgPATH)) {
                                 </div>
                         </div>
                         <div class="">Mô Tả:<br>
-                                <textarea name="mota" id="" cols="30" rows="10"><?= $MOTA ?></textarea>
+                                <textarea name="mota" id="" cols="30"
+                                        rows="10"><?= isset($MOTA) ? $MOTA : '' ?></textarea>
                         </div>
                         <div>
-                                <input type="hidden" name="id" value="<?= $MASP ?>">
+                                <input type="hidden" name="id" value="<?= isset($MASP) ? $MASP : '' ?>">
                                 <input type="submit" name="capnhatsp" value="CẬP NHẬT">
                                 <a href="index.php?action=listsp"><input type="button" value="Danh Sách"></a>
                         </div>
                 </form>
 
                 <script>
-                        // Function to load selected image into the image container
                         function loadImage(input) {
                                 if (input.files && input.files[0]) {
                                         var reader = new FileReader();
@@ -72,11 +79,10 @@ if (is_file($imgPATH)) {
                                 }
                         }
 
-                        // Function to redirect to the listsp page after form submission
                         function redirectToPage() {
                                 alert('Đã cập nhật thông tin sản phẩm thành công');
-                                // window.location.href = 'index.php?action=listsp';
-                                return true; // Allow form submission
+                                return true;
                         }
                 </script>
         </div>
+</div>

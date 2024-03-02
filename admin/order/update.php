@@ -1,13 +1,13 @@
 <?php
 
-foreach ($dh as $donhang)
-{
+foreach ($dh as $donhang) {
     extract($donhang);
 }
 
-    
+
 ?>
-<div class="row">    
+<link rel="stylesheet" href="../CSS/admin_order_update.css">
+<div class="row">
     <div class="row frmtitle">
         <h1>CẬP NHẬT LOẠI HÀNG</h1>
     </div>
@@ -15,48 +15,48 @@ foreach ($dh as $donhang)
         <form action="index.php?action=updatedh" method="post">
             <div class="">
                 IDDH: <br>
-                <input type="text" name="IDDH" id="IDDH" readonly value="<?=$IDDH?>">
+                <input type="text" name="IDDH" id="IDDH" readonly value="<?= $IDDH ?>">
             </div>
             <div class="">
                 Mã sản phẩm: <br>
-                <input type="text" name="MASP" id="MASP" readonly value="<?=$MASP?>">
+                <input type="text" name="MASP" id="MASP" readonly value="<?= $MASP ?>">
             </div>
             <div class="">
                 Mã người dung: <br>
-                <input type="text" name="iduser" readonly value="<?=$iduser?>">
+                <input type="text" name="iduser" readonly value="<?= $iduser ?>">
             </div>
             <div class="">
                 Tên : <br>
-                <input type="text" name="HOTEN" value="<?=$HOTEN?>"> 
+                <input type="text" name="HOTEN" value="<?= $HOTEN ?>">
             </div>
             <div class="">
                 Địa chỉ: <br>
-                <input type="text" name="DIACHI" value="<?=$DIACHI?>">
+                <input type="text" name="DIACHI" value="<?= $DIACHI ?>">
             </div>
             <div class="">
                 Số điện thoại: <br>
-                <input type="text" name="PHONE" value="<?=$PHONE?>">
+                <input type="text" name="PHONE" value="<?= $PHONE ?>">
             </div>
             <div class="">
                 Email: <br>
-                <input type="text" name="EMAIL" value="<?=$EMAIL?>">
+                <input type="text" name="EMAIL" value="<?= $EMAIL ?>">
             </div>
             <div class="">
                 Tổng tiền: <br>
-                <input type="text" name="TONG" value="<?=$TONG?>">
+                <input type="text" name="TONG" value="<?= $TONG ?>">
             </div>
             <div class="">
                 Phương thức thanh toán: <br>
-                <input type="text" name="PTTT" value="<?=$PTTT?>">
+                <input type="text" name="PTTT" value="<?= $PTTT ?>">
             </div>
             <div class="">
                 Ngày đặt hàng: <br>
-                <input type="text" name="NGAYDATHANG" value="<?=$NGAYDATHANG?>">
+                <input type="text" name="NGAYDATHANG" value="<?= $NGAYDATHANG ?>">
             </div>
             <div>
                 <input type="submit" name="capnhatdh" value="CẬP NHẬT">
                 <input type="reset" value="Nhập lại">
-            </div>                 
+            </div>
         </form>
     </div>
-</div>    
+</div>
